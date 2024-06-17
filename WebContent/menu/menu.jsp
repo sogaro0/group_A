@@ -1,0 +1,39 @@
+<%-- 学生一覧JSP --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- 文字化けの対策 --%>
+<% request.setCharacterEncoding("UTF-8"); %>
+
+<c:import url="/common/base.jsp">
+    <c:param name="title">
+        <h1 class="toptitle">得点管理システム</h1>
+    </c:param>
+    <c:param name="content">
+    <div class="row">
+    <c:import url="/common/sidemenu.jsp">
+    </c:import>
+
+        <section class="col-lg-10">
+			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacisty-10 py-2 px-4">メニュー</h2>
+			<div class="box student">・学生管理<br>
+
+                <form action="../student/student_list_action" method="get">
+                    <button type="submit" class="StudentCreate.action">
+                    学生管理
+                    </button>
+                </form>
+             </div>
+            <div class="box grade">・成績管理<br>
+                <button class="StudentCreate.action">成績登録</button>
+                <button class="StudentCreate.action">成績参照</button>
+             </div>
+             <div class="box subject">・科目管理<br>
+                <button class="StudentCreate.action">科目管理</button>
+             </div>
+		</section>
+		</div>
+    </c:param>
+    <c:param name="scripts"></c:param>
+</c:import>
