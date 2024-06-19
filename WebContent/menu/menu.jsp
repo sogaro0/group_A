@@ -30,7 +30,11 @@
                 <button class="StudentCreate.action">成績参照</button>
              </div>
              <div class="box subject">・科目管理<br>
-                <button class="StudentCreate.action">科目管理</button>
+              <form action="../subject/subject_list_action" method="get">
+                    <button type="submit" class="SubjectCreate.action">
+                    科目管理
+                    </button>
+                </form>
              </div>
 		</section>
 		</div>
