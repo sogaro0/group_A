@@ -40,53 +40,67 @@ public class SubjectDAO extends DAO {
 		// ここまで
 	}
 
-	public int delete(Subject subject) throws Exception {
 
-		Connection con=getConnection();
-		PreparedStatement st=con.prepareStatement(
-				"delete from subject where cd=?");
+/**
+ * Subject表のデータを更新する。
+ * @param subject
+ * @return
+ * @throws Exception
+ */
+public int update(Subject subject) throws Exception {
 
-		st.setString(1, subject.getCd());
-		int line= st.executeUpdate();
-		st.close();
-		con.close();
-		return line;
-		}
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			 "update subject set "
+			+ "name = ?"
+			+ "where cd = ?");
 
-	public int insert(Subject subject) throws Exception {
+	st.setString(1, subject.getName());
+	st.setString(2, subject.getCd());
+	int line= st.executeUpdate();
 
-		Connection con=getConnection();
-		PreparedStatement st=con.prepareStatement(
-				"insert into subject (SCHOOL_CD,CD, NAME)"
-				+ " values('oom', ?, ?)");
+	st.close();
+	con.close();
+	return line;
+}
+/**
+ * Subject表のデータを削除する。
+ * @param subject
+ * @return
+ * @throws Exception
+ */
+public int delete(Subject subject) throws Exception {
 
-		st.setString(1, subject.getCd());
-		st.setString(2, subject.getName());
-		int line= st.executeUpdate();
-		st.close();
-		con.close();
-		return line;
+Connection con=getConnection();
+PreparedStatement st=con.prepareStatement(
+		"delete from subject where cd=?");
+
+st.setString(1, subject.getCd());
+int line= st.executeUpdate();
+st.close();
+con.close();
+return line;
 }
 
-	/**
-	 * Subject表のデータを更新する。
-	 * @param subject
-	 * @return
-	 * @throws Exception
-	 */
-	public int update(Subject subject) throws Exception {
+/**
+ * Subject表のデータを作成する。
+ * @param subject
+ * @return
+ * @throws Exception
+ */
+public int insert(Subject subject) throws Exception {
 
-		Connection con=getConnection();
-		PreparedStatement st=con.prepareStatement(
-				 "update subject set name = ?"
-				+ "where cd = ?");
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			"insert into subject (school_cd,CD,NAME)"
+			+ " values('oom', ?,?)");
 
-		st.setString(1, subject.getName());
-		st.setString(2, subject.getCd());
-		int line= st.executeUpdate();
+	st.setString(1, subject.getCd());
+	st.setString(2, subject.getName());
+	int line= st.executeUpdate();
+	st.close();
+	con.close();
+	return line;
+}
 
-		st.close();
-		con.close();
-		return line;
-	}
 }

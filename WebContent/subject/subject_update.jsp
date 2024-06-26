@@ -22,7 +22,16 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目情報変更</h2>
 
+		<script type="text/javascript">
+ 			document.getElementById("year").innerHTML = getYear();
 
+ 			function getYear() {
+   				var nowYear = now.getFullYear();
+   				return nowYear;
+		  }
+		 </script>
+
+			<p><span id="year"></span></p>
 
 			<form action="../subject/subject_update_excute_action" method="get">
 

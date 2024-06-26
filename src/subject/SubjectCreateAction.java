@@ -28,10 +28,13 @@ public class SubjectCreateAction extends HttpServlet {
 			    Date date = new Date();
 				int year = date.getYear() + 1900;
 
+			    System.out.println(year);
+
 			    ArrayList<Integer> year_list = new ArrayList<>();
 
 			    for (int i = year-10; i < year+11; i++){
 			    	year_list.add(i);
+			    	System.out.println(year_list);
 			    	}
 
 				// クラス番号ClassNumテーブルを読ませて、subject_create.jspに渡す
