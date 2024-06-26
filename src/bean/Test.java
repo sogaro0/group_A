@@ -7,11 +7,12 @@ public class Test {
 	private String student_no;
 	private String subject_cd;
 	private String school_cd;
-	private int no;
+	private int times;
 	private int point;
 	private String class_num;
 	private Date test_day;
 	private boolean is_pass;
+	private String subject;
 
 
 	public String getStudent_no() {
@@ -23,8 +24,8 @@ public class Test {
 	public String getSchool_cd() {
 		return school_cd;
 	}
-	public int getNo() {
-		return no;
+	public int getTimes() {
+		return times;
 	}
 	public int getPoint() {
 		return point;
@@ -39,6 +40,9 @@ public class Test {
 	public boolean getIs_pass() {
 		return is_pass;
 	}
+	public String getSubject() {
+		return subject;
+	}
 
 
 	public void setStudent_no(String student_no){
@@ -50,8 +54,8 @@ public class Test {
 	public void setSchool_cd(String school_cd){
 		this.school_cd=school_cd;
 	}
-	public void setNo(int no){
-		this.no=no;
+	public void setTimes(int times){
+		this.times=times;
 	}
 	public void setPoint(int point){
 		this.point=point;
@@ -65,7 +69,9 @@ public class Test {
 	public void setIs_pass(boolean is_pass){
 		this.is_pass=is_pass;
 	}
-
+	public void setSubject(String subject){
+		this.subject=subject;
+	}
 
 
 }
