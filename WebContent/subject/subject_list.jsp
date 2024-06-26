@@ -21,7 +21,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">科目管理</h2>
             <div class="my-2 text-end px-4">
-                <a href="../student/student_create_action">新規登録</a>
+                <a href="../subject/subject_create_action">新規登録</a>
             </div>
 
             <c:choose>
@@ -35,8 +35,8 @@
                             <tr>
                                 <td>${subject.cd}</td>
                                 <td>${subject.name}</td>
-                                <td><a href="../student/student_update_action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}">変更</a></td>
-                                <td><a href="student_delete.jsp?no=${student.no}">削除</a></td>
+                                <td><a href="subject_update_action?cd=${subject.cd}&name=${subject.name}">変更</a></td>
+                                <td><a href="subject_delete.jsp?cd=${subject.cd}">削除</a></td>
                             </tr>
                         </c:forEach>
                     </table>
