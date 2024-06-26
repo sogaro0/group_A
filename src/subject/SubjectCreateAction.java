@@ -27,6 +27,7 @@ public class SubjectCreateAction extends HttpServlet {
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
 				int year = date.getYear() + 1900;
+
 			    System.out.println(year);
 
 			    ArrayList<Integer> year_list = new ArrayList<>();

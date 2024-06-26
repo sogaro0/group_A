@@ -63,7 +63,6 @@ public int update(Subject subject) throws Exception {
 	con.close();
 	return line;
 }
-
 /**
  * Subject表のデータを削除する。
  * @param subject
