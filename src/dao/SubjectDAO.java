@@ -39,5 +39,54 @@ public class SubjectDAO extends DAO {
 		return list;
 		// ここまで
 	}
+
+	public int delete(Subject subject) throws Exception {
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"delete from subject where cd=?");
+
+		st.setString(1, subject.getCd());
+		int line= st.executeUpdate();
+		st.close();
+		con.close();
+		return line;
+		}
+
+	public int insert(Subject subject) throws Exception {
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"insert into subject (SCHOOL_CD,CD, NAME)"
+				+ " values('oom', ?, ?)");
+
+		st.setString(1, subject.getCd());
+		st.setString(2, subject.getName());
+		int line= st.executeUpdate();
+		st.close();
+		con.close();
+		return line;
 }
 
+	/**
+	 * Subject表のデータを更新する。
+	 * @param subject
+	 * @return
+	 * @throws Exception
+	 */
+	public int update(Subject subject) throws Exception {
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				 "update subject set name = ?"
+				+ "where cd = ?");
+
+		st.setString(1, subject.getName());
+		st.setString(2, subject.getCd());
+		int line= st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+	}
+}

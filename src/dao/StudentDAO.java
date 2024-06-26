@@ -87,12 +87,12 @@ public int delete(Student student) throws Exception {
 	return line;
 }
 
-/**
- * Student表のデータを更新する。
- * @param student
- * @return
- * @throws Exception
- */
+	/**
+	 * Student表のデータを更新する。
+	 * @param student
+	 * @return
+	 * @throws Exception
+	 */
 public int update(Student student) throws Exception {
 
 	Connection con=getConnection();
@@ -112,6 +112,37 @@ public int update(Student student) throws Exception {
 	return line;
 }
 
+	/**
+	 * Student表から学生番号を検索する。(バリデーション用)
+	 * @param student
+	 * @return list<Student>
+	 * @throws Exception
+	 */
+public List<Student> validete(String no) throws Exception {
+	List<Student> list=new ArrayList<>();
+
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+	"select no from student "
+	+ "where no = ?");
+
+	st.setString(1, no);
+
+	ResultSet rs=st.executeQuery();
+
+		while (rs.next()){
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+
+			list.add(p);
+		}
+	st.close();
+	con.close();
+
+	return list;
+
+	}
+
+
 }
-
-

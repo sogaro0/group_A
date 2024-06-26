@@ -37,8 +37,8 @@
             <form action="../student/student_create_excute_action" method="get">
 
             <p><label>入学年度<br>
-            <select name="ent_year" >
-				<option value="O">--------</option>
+            <select name="ent_year" required="required">
+				<option value="">--------</option>
                 <c:forEach var="year" items="${year_list}">
 				<option value=${year}>${year}</option>
 				</c:forEach>
@@ -46,11 +46,14 @@
 			</label></p>
 
 			<p><label>学生番号<br>
-			<input type="text" name="no" placeholder="学生番号を入力してください" value=${no} >
+			<input type="text" name="no" placeholder="学生番号を入力してください" required="required" value=${no} >
 			</label></p>
 
+			<%-- エラー文 --%>
+			<div id="error-message">${message}</div>
+
 			<p><label>氏名<br>
-			<input type="text"  name="name" placeholder="氏名を入力してください"  value=${name} >
+			<input type="text"  name="name" placeholder="氏名を入力してください" required="required" value=${name} >
 			</label></p>
 
 
