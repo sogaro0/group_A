@@ -11,7 +11,7 @@ import bean.Student;
 public class StudentDAO extends DAO {
 
 	/**
-	 * Student表から全ての情報をデータを表示する。
+	 * Product表からキーワードを検索し、該当する商品のListを返却する。
 	 * @param keyword
 	 * @return list<Product>
 	 * @throws Exception
@@ -44,6 +44,7 @@ public class StudentDAO extends DAO {
 		return list;
 		// ここまで
 	}
+
 
 	/**
 	 * Student表へデータを挿入する。
@@ -87,12 +88,12 @@ public int delete(Student student) throws Exception {
 	return line;
 }
 
-	/**
-	 * Student表のデータを更新する。
-	 * @param student
-	 * @return
-	 * @throws Exception
-	 */
+/**
+ * Student表のデータを更新する。
+ * @param student
+ * @return
+ * @throws Exception
+ */
 public int update(Student student) throws Exception {
 
 	Connection con=getConnection();
@@ -112,37 +113,27 @@ public int update(Student student) throws Exception {
 	return line;
 }
 
-	/**
-	 * Student表から学生番号を検索する。(バリデーション用)
-	 * @param student
-	 * @return list<Student>
-	 * @throws Exception
-	 */
-public List<Student> validete(String no) throws Exception {
+public List<Student> ent_year() throws Exception {
+	// ここから
 	List<Student> list=new ArrayList<>();
 
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-	"select no from student "
-	+ "where no = ?");
-
-	st.setString(1, no);
-
+	"select distinct ent_year from student order by ent_year;");
 	ResultSet rs=st.executeQuery();
 
-		while (rs.next()){
-			Student p=new Student();
-			p.setNo(rs.getString("no"));
+	while (rs.next()){
+		Student p=new Student();
+		p.setEntYear(rs.getInt("ent_year"));
 
-			list.add(p);
-		}
+		list.add(p);
+	}
 	st.close();
 	con.close();
 
 	return list;
-
-	}
-
-
+	// ここまで
 }
+}
+

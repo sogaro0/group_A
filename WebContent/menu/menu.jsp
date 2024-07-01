@@ -16,7 +16,7 @@
     </c:import>
 
         <section class="col-lg-10">
-			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacisty-10 py-2 px-4">メニュー</h2>
+			<h2 class="h3 mb-3 fw-norma bg-light bg-opacisty-10 py-2 px-4">メニュー</h2>
 			<div class="box student">・学生管理<br>
 
                 <form action="../student/student_list_action" method="get">
@@ -27,7 +27,9 @@
              </div>
             <div class="box grade">・成績管理<br>
                 <button class="StudentCreate.action">成績登録</button>
-                <button class="StudentCreate.action">成績参照</button>
+             <form action="../test/test_list_action" method="get">
+                <button class="TestCreate.action">成績参照</button>
+                </form>
              </div>
              <div class="box subject">・科目管理<br>
               <form action="../subject/subject_list_action" method="get">
@@ -41,5 +43,3 @@
     </c:param>
     <c:param name="scripts"></c:param>
 </c:import>
-
-<!-- test matsushita -->
