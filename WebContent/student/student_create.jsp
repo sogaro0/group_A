@@ -20,7 +20,7 @@
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
+            <h2 class="titlesize h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報登録</h2>
 
 		<script type="text/javascript">
  			document.getElementById("year").innerHTML = getYear();
@@ -46,14 +46,14 @@
 			</label></p>
 
 			<p><label>学生番号<br>
-			<input type="text" name="no" placeholder="学生番号を入力してください" required="required" value=${no} >
+			<input type="text" class="textsize" name="no" placeholder="学生番号を入力してください" required="required" value=${no} >
 			</label></p>
 
 			<%-- エラー文 --%>
 			<div id="error-message">${message}</div>
 
 			<p><label>氏名<br>
-			<input type="text"  name="name" placeholder="氏名を入力してください" required="required" value=${name} >
+			<input type="text" class="textsize" name="name" placeholder="氏名を入力してください" required="required" value=${name} >
 			</label></p>
 
 

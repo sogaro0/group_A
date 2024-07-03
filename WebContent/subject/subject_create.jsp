@@ -20,16 +20,16 @@
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="titlesize h3 mb-3 fw-norma bg-ligth bg-opacity-10 py-2 px-4">科目情報登録</h2>
+            <h2 class="h3 mb-3 fw-norma bg-ligth bg-opacity-10 py-2 px-4">科目情報登録</h2>
 
  		<form action="../subject/subject_create_excute_action" method="get">
 
 			<p><label>科目コード<br>
-			<input type="text" class="textsize" name="cd" placeholder="科目コードを入力してください" required="required" value=${no} >
+			<input type="text" name="cd" placeholder="科目コードを入力してください" required="required" value=${no} >
 			</label></p>
 
 			<p><label>科目名<br>
-			<input type="text" class="textsize" name="name" placeholder="科目名を入力してください" required="required" value=${name}>
+			<input type="text" name="name" placeholder="科目名を入力してください" required="required" value=${name}>
 			</label></p>
 
 
