@@ -95,21 +95,31 @@ background-color: #f2f8ff;
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 
-/* ふざけあり */
+/* 	sticky外し */
 footer{
     width: 100%;
     text-align: center;
     padding: 1px 0;
-	position: sticky;
     bottom: 0; /*下に固定*/
 }
 
-/* サイズと中央揃え(仮) */
-footer small {
-	text-align: center;
+.textsize {
 	display: block;
-	padding: 8px 0;
+	width: 500%;
 }
 
+.titlesize {
+	display: block;
+	width: 450%;
+}
+
+.test-wide{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
 
 /* 更新 */

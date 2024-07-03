@@ -4,19 +4,21 @@ import java.util.Date;
 
 public class Test {
 
-	private String student_no;
+	private String student_num;
 	private String subject_cd;
 	private String school_cd;
-	private int no;
+	private int times;
 	private int point;
 	private String class_num;
 	private Date test_day;
 	private boolean is_pass;
 	private String subject;
+	private int ent_year;
+	private String name;
 
 
-	public String getStudent_no() {
-		return student_no;
+	public String getStudentNum() {
+		return student_num;
 	}
 	public String getSubject_cd() {
 		return subject_cd;
@@ -24,13 +26,13 @@ public class Test {
 	public String getSchool_cd() {
 		return school_cd;
 	}
-	public int getNo() {
-		return no;
+	public int getTimes() {
+		return times;
 	}
 	public int getPoint() {
 		return point;
 	}
-	public String getClass_num() {
+	public String getClassNum() {
 		return class_num;
 	}
 	public Date getTest_day() {
@@ -43,10 +45,16 @@ public class Test {
 	public String getSubject() {
 		return subject;
 	}
+	public int getEntYear() {
+		return ent_year;
+	}
+	public String getName() {
+		return name;
+	}
 
 
-	public void setStudent_no(String student_no){
-		this.student_no=student_no;
+	public void setStudentNum(String student_no){
+		this.student_num=student_no;
 	}
 	public void setSubject_cd(String subject_cd){
 		this.subject_cd=subject_cd;
@@ -54,13 +62,13 @@ public class Test {
 	public void setSchool_cd(String school_cd){
 		this.school_cd=school_cd;
 	}
-	public void setNo(int no){
-		this.no=no;
+	public void setTimes(int times){
+		this.times=times;
 	}
 	public void setPoint(int point){
 		this.point=point;
 	}
-	public void setClass_num(String class_num){
+	public void setClassNum(String class_num){
 		this.class_num=class_num;
 	}
 	public void setTest_day(Date test_day){
@@ -72,6 +80,11 @@ public class Test {
 	public void setSubject(String subject){
 		this.subject=subject;
 	}
-
+	public void setEntYear(int ent_year){
+		this.ent_year=ent_year;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
 
 }

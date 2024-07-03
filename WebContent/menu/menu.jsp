@@ -26,7 +26,9 @@
                 </form>
              </div>
             <div class="box grade">・成績管理<br>
-                <button class="StudentCreate.action">成績登録</button>
+                <form action="../test/test_regist_action" method="get">
+                	<button type="submit" class="StudentCreate.action">成績登録</button>
+                </form>
              <form action="../test/test_list_action" method="get">
                 <button class="TestCreate.action">成績参照</button>
                 </form>
