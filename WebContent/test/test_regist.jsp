@@ -77,7 +77,7 @@
 					<c:when test="${not empty result}">
 						<c:forEach var="result" items="${result}" end="0">
 							<div>
-								<p>科目:${result.subject}(${result.times})</p>
+								<p>科目:${result.subject}(${result.times}回)</p>
 	                    	</div>
 	                    </c:forEach>
 
