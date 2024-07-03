@@ -31,7 +31,7 @@ public class TestDAO extends DAO {
 			p.setStudent_no(rs.getString("student_no"));
 			p.setSubject_cd(rs.getString("subject_cd"));
 			p.setSchool_cd(rs.getString("school_cd"));
-			p.setTimes(rs.getInt("times"));
+			p.setNo(rs.getInt("no"));
 			p.setPoint(rs.getInt("point"));
 			p.setClass_num(rs.getString("class_num"));
 			p.setTest_day(rs.getDate("test_day"));

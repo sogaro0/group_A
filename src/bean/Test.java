@@ -7,7 +7,7 @@ public class Test {
 	private String student_no;
 	private String subject_cd;
 	private String school_cd;
-	private int times;
+	private int no;
 	private int point;
 	private String class_num;
 	private Date test_day;
@@ -24,8 +24,8 @@ public class Test {
 	public String getSchool_cd() {
 		return school_cd;
 	}
-	public int getTimes() {
-		return times;
+	public int getNo() {
+		return no;
 	}
 	public int getPoint() {
 		return point;
@@ -54,8 +54,8 @@ public class Test {
 	public void setSchool_cd(String school_cd){
 		this.school_cd=school_cd;
 	}
-	public void setTimes(int times){
-		this.times=times;
+	public void setNo(int no){
+		this.no=no;
 	}
 	public void setPoint(int point){
 		this.point=point;
