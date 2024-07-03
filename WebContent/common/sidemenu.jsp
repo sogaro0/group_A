@@ -8,23 +8,23 @@
 
 <div class="display_none active">
 <a class="sidemenu_title">サイドメニュー</a>
-<div class="my-2 text-end px-4">
+<div class="submenu_title">
 <a href="../menu/menu.jsp">メニュー</a>
 </div>
 
 	<a class="sidemenu_title">・学生管理</a>
-	<div class="my-2 text-end px-4">
+	<div class="submenu_title">
 	<a href="../student/student_list_action" method="get" class="StudentCreate.action">学生管理</a>
 	</div>
 	<a class="sidemenu_title">・成績管理</a>
-	<div class="my-2 text-end px-4">
+	<div class="submenu_title">
 	<a href="StudentCreate.action">成績登録</a>
 	</div>
-	<div class="my-2 text-end px-4">
+	<div class="submenu_title">
 	<a href="StudentCreate.action">成績参照</a>
 	</div>
 	<a class="sidemenu_title">・科目管理</a>
-	<div class="my-2 text-end px-4">
+	<div class="submenu_title">
 	<a href="../subject/subject_list_action">科目管理</a>
 	</div>
 	</div>
