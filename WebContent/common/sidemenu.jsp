@@ -21,7 +21,7 @@
 	<a href="StudentCreate.action">成績登録</a>
 	</div>
 	<div class="submenu_title">
-	<a href="StudentCreate.action">成績参照</a>
+	<a href="../test/test_list_action">成績参照</a>
 	</div>
 	<a class="sidemenu_title">・科目管理</a>
 	<div class="submenu_title">
