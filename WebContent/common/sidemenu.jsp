@@ -18,7 +18,7 @@
 	</div>
 	<a class="sidemenu_title">・成績管理</a>
 	<div class="submenu_title">
-	<a href="StudentCreate.action">成績登録</a>
+	<a href="../test/test_regist_action">成績登録</a>
 	</div>
 	<div class="submenu_title">
 	<a href="../test/test_list_action">成績参照</a>
