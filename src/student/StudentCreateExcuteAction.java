@@ -51,7 +51,7 @@ public class StudentCreateExcuteAction extends HttpServlet {
 
 			    // 学生番号Noに重複があるか調べる
 				StudentDAO dao=new StudentDAO();
-				List<Student> list=dao.validete(no);
+				List<Student> list=dao.validate(no);
 				System.out.println(list);
 				// 重複していた場合、メッセージを格納
 				if (list != null){

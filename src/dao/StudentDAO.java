@@ -135,5 +135,27 @@ public List<Student> ent_year() throws Exception {
 	return list;
 	// ここまで
 }
+
+public List<Student> validate(String no) throws Exception {
+	// ここから
+	List<Student> list=new ArrayList<>();
+
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+	"select * from student where no = ?");
+	st.setString(1, no);
+	ResultSet rs=st.executeQuery();
+	rs.next();
+	Student p=new Student();
+	p.setNo(rs.getString("no"));
+
+	list.add(p);
+
+	return list;
+	// ここまで
+}
+
+
 }
 
