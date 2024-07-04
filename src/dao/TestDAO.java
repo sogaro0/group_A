@@ -69,13 +69,17 @@ public class TestDAO extends DAO {
 //	}
 //}
 
-//入学年度:指定 クラス番号:指定(分類番号:なし)
+
+//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
 public List<Test> search(Student test, Test test1) throws Exception {
 	List<Test> list=new ArrayList<>();
 
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
+
+//	testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
+//	生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
 	"select distinct student_no, point, student.name, ent_year, test.class_num, subject.name, test.no from test "
 	+ "join student "
 	+ "on test.student_no = student.no "
@@ -102,17 +106,13 @@ public List<Test> search(Student test, Test test1) throws Exception {
 			p.setPoint(rs.getInt("point"));
 			list.add(p);
 		}
-		System.out.println(rs);
 	st.close();
 	con.close();
 
-	System.out.println(list);
 	return list;
 	}
 
-
-
-
+//テスト回数を重複しないように取り出す
 public List<Test> dup() throws Exception {
 	List<Test> list=new ArrayList<>();
 
