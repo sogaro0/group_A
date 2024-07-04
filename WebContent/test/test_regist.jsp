@@ -11,6 +11,10 @@
 <c:import url="/common/base.jsp">
     <c:param name="scripts"></c:param>
 
+	<c:param name="title">
+        <h1 class="toptitle">得点管理システム</h1>
+    </c:param>
+
     <c:param name="content">
     <div class="row">
     <c:import url="/common/sidemenu.jsp"></c:import>

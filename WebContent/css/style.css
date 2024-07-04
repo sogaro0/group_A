@@ -1,4 +1,6 @@
 all {
+	width: 200%;
+	heigth: 200%;
 	display: flex;
 }
 
