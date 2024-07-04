@@ -34,13 +34,11 @@ public class TestRegistAction extends HttpServlet {
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
 				int year = date.getYear() + 1900;
-			    System.out.println(year);
 
 			    ArrayList<Integer> year_list = new ArrayList<>();
 
 			    for (int i = year-10; i < year+11; i++){
 			    	year_list.add(i);
-			    	System.out.println(year_list);
 			    	}
 
 			    // h2コンソールから学生のリストを取得
@@ -71,14 +69,18 @@ public class TestRegistAction extends HttpServlet {
 				System.out.println(boot);
 				System.out.println(boot2);
 
+//				もしもbootがnullでない時次の処理へ
 				if (boot != null){
-					System.out.println("hogehoge");
+
+//					もしbootがboot2と同じ文字列だったら次の処理へ
 					if (boot.equals(boot2)){
-						System.out.println("a");
+
+//						test_regist.jspからデータを取り寄せる
 						int ent_year = Integer.parseInt(request.getParameter("f1"));
 						String class_num = request.getParameter("f2");
 						String subject = request.getParameter("f3");
 						int times = Integer.parseInt(request.getParameter("f4"));
+
 
 						Student p = new Student();
 						p.setClassNum(class_num);
@@ -88,21 +90,18 @@ public class TestRegistAction extends HttpServlet {
 						p1.setSubject(subject);
 						p1.setTimes(times);
 
+//						TestDAOからデータを取り寄せる
 						TestDAO dao4=new TestDAO();
 						List<Test> list4=dao4.search(p, p1);
 						request.setAttribute("result", list4);
 
-						System.out.println(list4);
-
+//						test_regist.jspに取り寄せたデータを送信
 						request.getRequestDispatcher("test_regist.jsp")
 						.forward(request,response);
 					}
 				}
 
-				else {
-					System.out.println("asdfadsfadf");
-				}
-
+//				test_regist.jspにデータを送信
 				request.getRequestDispatcher("test_regist.jsp")
 				.forward(request,response);
 
