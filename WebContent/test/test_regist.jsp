@@ -73,6 +73,7 @@
                 </div>
             </form>
 
+				<!-- リスト表示 -->
 				<c:choose>
 					<c:when test="${not empty result}">
 						<c:forEach var="result" items="${result}" end="0">
