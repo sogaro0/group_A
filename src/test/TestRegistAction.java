@@ -66,8 +66,6 @@ public class TestRegistAction extends HttpServlet {
 
 				String boot = request.getParameter("f5");
 				String boot2 = "abc";
-				System.out.println(boot);
-				System.out.println(boot2);
 
 //				もしもbootがnullでない時次の処理へ
 				if (boot != null){
