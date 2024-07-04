@@ -24,8 +24,8 @@
             </div>
 
             <form method="get">
-                <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                <div class="col-xl">
+                <div class="border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
+                <div class="test-wide col-xl">
                 <p>科目情報</p>
                     <div class="col-xl">
                         <label class="form-label" for="student-f1-select">入学年度</label>
@@ -64,7 +64,7 @@
 
             <form method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                <div class="col-xl">
+                <div class="test-wide col-xl">
                 <p>学生情報</p>
                     <div class="col-xl">
                         <label class="form-label" for="student-f1-select">学生番号</label>
