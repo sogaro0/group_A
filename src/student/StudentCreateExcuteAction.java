@@ -44,19 +44,23 @@ public class StudentCreateExcuteAction extends HttpServlet {
 				Matcher m1 = p1.matcher(no);
 				// 照合結果をtrueまたはfalseで取得する
 			    boolean result = m1.matches();
+				System.out.println(result);
 
 			    if (result == false){
 			    	message = "学生番号は数字を入力してください";
 			    }
 
+
 			    // 学生番号Noに重複があるか調べる
 				StudentDAO dao=new StudentDAO();
-				List<Student> list=dao.validate(no);
-				System.out.println(list);
+				String cnt=dao.validate(no);
+				System.out.println(cnt);
 				// 重複していた場合、メッセージを格納
-				if (list != null){
+
+				if (cnt.equals("1")){
 					message = "学生番号が重複しています";
 				}
+
 				System.out.println(message);
 
 

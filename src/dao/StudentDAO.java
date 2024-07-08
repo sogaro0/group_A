@@ -66,6 +66,7 @@ public class StudentDAO extends DAO {
 		int line= st.executeUpdate();
 		st.close();
 		con.close();
+		System.out.println("hogehogehoge");
 		return line;
 	}
 
@@ -136,23 +137,20 @@ public List<Student> ent_year() throws Exception {
 	// ここまで
 }
 
-public List<Student> validate(String no) throws Exception {
+public String validate(String no) throws Exception {
 	// ここから
-	List<Student> list=new ArrayList<>();
 
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-	"select * from student where no = ?");
+	"select count(*) as no from student where no = ?");
 	st.setString(1, no);
+
 	ResultSet rs=st.executeQuery();
 	rs.next();
-	Student p=new Student();
-	p.setNo(rs.getString("no"));
 
-	list.add(p);
-
-	return list;
+	String cnt = rs.getString("no");
+	return cnt;
 	// ここまで
 }
 
