@@ -85,7 +85,8 @@ public List<Test> search(Student test, Test test1) throws Exception {
 	+ "on test.student_no = student.no "
 	+ "join subject "
 	+ "on test.subject_cd = subject.cd "
-	+ "where ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ? ");
+	+ "where ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ? "
+	+ "order by student_no");
 
 		st.setInt(1, test.getEntYear());
 		st.setString(2, test.getClassNum());
@@ -132,5 +133,22 @@ public List<Test> dup() throws Exception {
 			con.close();
 
 			return list;
+		}
+
+//成績登録のDAO
+public int update(Test test) throws Exception {
+
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			 "update test set point = ? "
+			+ "where student_no = ?");
+
+	st.setInt(1, test.getPoint());
+	st.setString(2, test.getStudentNum());
+	int line= st.executeUpdate();
+
+	st.close();
+	con.close();
+	return line;
 		}
 }

@@ -52,7 +52,6 @@ public class Test {
 		return name;
 	}
 
-
 	public void setStudentNum(String student_no){
 		this.student_num=student_no;
 	}

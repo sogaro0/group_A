@@ -85,8 +85,9 @@
 								<p>科目:${result.subject}(${result.times}回)</p>
 	                    	</div>
 	                    </c:forEach>
+				<form action="test_rejist_execute_action" method="get">
+                    <table class="table table-hover">
 
-                    	<table class="table table-hover">
                         	<tr>
                             	<th>入学年度</th>
                             	<th>クラス</th>
@@ -100,10 +101,13 @@
                                 	<td>${result.classNum}</td>
                                 	<td>${result.studentNum}</td>
                                 	<td>${result.name}</td>
-                                	<td>${result.point}</td>
+                                	<td><input type="text" class="point" name="point_${studentNum}" value=${result.point}></td>
+                                	<input type="hidden" class="point" name="studentNum" value=${result.studentNum}>
                                 </tr>
                         	</c:forEach>
                     </table>
+                   	<button type="submit" class="TestRejistExecuteAction">登録して終了</button>
+                  </form>
 					</c:when>
 				</c:choose>
 
