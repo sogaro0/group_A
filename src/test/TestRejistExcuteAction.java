@@ -24,7 +24,7 @@ public class TestRejistExcuteAction extends HttpServlet {
 			try{
 
 				//test_rejisrt.jspから値を取得
-			    String[] point = request.getParameterValues("point_${studentNum}");
+			    String[] point = request.getParameterValues("point");
 			    String[] student_no = request.getParameterValues("studentNum");
 
 			    //得点のリストをintに変換

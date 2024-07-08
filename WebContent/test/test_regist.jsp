@@ -101,7 +101,7 @@
                                 	<td>${result.classNum}</td>
                                 	<td>${result.studentNum}</td>
                                 	<td>${result.name}</td>
-                                	<td><input type="text" class="point" name="point_${studentNum}" value=${result.point}></td>
+                                	<td><input type="text" class="point" name="point" value=${result.point}></td>
                                 	<input type="hidden" class="point" name="studentNum" value=${result.studentNum}>
                                 </tr>
                         	</c:forEach>
