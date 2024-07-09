@@ -2,6 +2,7 @@ package student;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,13 +27,17 @@ public class StudentUpdateExcuteAction extends HttpServlet {
 				String name = request.getParameter("name");
 				String class_num = request.getParameter("class_num");
 				boolean is_attend = request.getParameter("is_attend") != null;
+				String birth_day_sting = request.getParameter("birth_day");
 
+				//誕生日の型変換
+		        Date birth_day= java.sql.Date.valueOf(birth_day_sting);
 
 				Student p = new Student();
 				p.setNo(no);
 				p.setName(name);
 				p.setClassNum(class_num);
 				p.setIsAttend(is_attend);
+				p.setBirthDay(birth_day);
 
 				StudentDAO dao=new StudentDAO();
 				int line =dao.update(p);

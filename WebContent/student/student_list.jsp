@@ -74,6 +74,7 @@
                             <th>氏名</th>
                             <th>クラス</th>
                             <th class="text-center">在学中</th>
+                             <th>誕生日<th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -94,6 +95,7 @@
                                       </c:otherwise>
                                     </c:choose>
                                 </td>
+                               	<td>${ student.birthDay}</td>
                                 <td><a href="../student/student_update_action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}">変更</a></td>
                                 <td><a href="student_delete.jsp?no=${student.no}">削除</a></td>
                             </tr>

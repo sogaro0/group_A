@@ -34,7 +34,7 @@
             </form>
         </section>
 	<form action="../student/student_list_action" method="get">
-    <button type="submit" class="StudentCreate.action">戻る</button>
+    <button type="submit" class="StudentCreateaction">戻る</button>
     </form>
 
     </div>

@@ -2,8 +2,8 @@ package student;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,7 +19,6 @@ import bean.Student;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
 
-
 @WebServlet(urlPatterns={"/student/student_create_excute_action"})
 public class StudentCreateExcuteAction extends HttpServlet {
 	public void doGet (
@@ -33,6 +32,10 @@ public class StudentCreateExcuteAction extends HttpServlet {
 				String name = request.getParameter("name");
 				int ent_year = Integer.parseInt(request.getParameter("ent_year"));
 				String class_num = request.getParameter("class_num");
+				String birth_day_sting = request.getParameter("birth_day");
+
+				//誕生日の型変換
+		        Date birth_day= java.sql.Date.valueOf(birth_day_sting);
 
 				// エラーメッセージの文字列
 				String message = "";
@@ -68,15 +71,12 @@ public class StudentCreateExcuteAction extends HttpServlet {
 				if (message != ""){
 
 					// 現在の年数+-10年のリストを取得
-				    Date date = new Date();
+				    java.util.Date date =  new java.util.Date();
 					int year = date.getYear() + 1900;
-				    System.out.println(year);
-
 				    ArrayList<Integer> year_list = new ArrayList<>();
 
 				    for (int i = year-10; i < year+11; i++){
 				    	year_list.add(i);
-				    	System.out.println(year_list);
 				    	}
 
 
@@ -87,7 +87,6 @@ public class StudentCreateExcuteAction extends HttpServlet {
 
 					request.setAttribute("class_num", list1);
 					request.setAttribute("year_list", year_list);
-
 
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("student_create.jsp")
@@ -101,6 +100,7 @@ public class StudentCreateExcuteAction extends HttpServlet {
 					p.setName(name);
 					p.setEntYear(ent_year);
 					p.setClassNum(class_num);
+					p.setBirthDay(birth_day);
 
 					int line =dao.insert(p);
 

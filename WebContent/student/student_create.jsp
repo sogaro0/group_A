@@ -65,6 +65,9 @@
 			</select>
 			</label></p>
 
+			<p><label>誕生日<br>
+			<input type="text" class="textsize" name="birth_day" placeholder="誕生日を入力してください	" required="required" value=${birthday} >
+			</label></p>
 
             <button type="submit" class="StudentCreate.action">
             登録して終了

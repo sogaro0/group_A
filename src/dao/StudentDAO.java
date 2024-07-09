@@ -57,12 +57,13 @@ public class StudentDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
 				"insert into student (no, name, ent_year, class_num, is_attend, school_cd, birth_day)"
-				+ " values(?, ?, ?, ?, True, 'oom', '2004-12-15')");
+				+ " values(?, ?, ?, ?, True, 'oom', ?)");
 
 		st.setString(1, student.getNo());
 		st.setString(2, student.getName());
 		st.setInt(3, student.getEntYear());
 		st.setString(4, student.getClassNum());
+		st.setDate(5, student.getBirthDay());
 		int line= st.executeUpdate();
 		st.close();
 		con.close();
@@ -100,13 +101,15 @@ public int update(Student student) throws Exception {
 	Connection con=getConnection();
 	PreparedStatement st=con.prepareStatement(
 			 "update student set name = ?,"
-			+ "class_num = ?, is_attend = ?"
+			+ "class_num = ?, is_attend = ?,"
+			+ "birth_day = ?"
 			+ "where no = ?");
 
 	st.setString(1, student.getName());
 	st.setString(2, student.getClassNum());
 	st.setBoolean(3, student.getIsAttend());
-	st.setString(4, student.getNo());
+	st.setDate(4, student.getBirthDay());
+	st.setString(5, student.getNo());
 	int line= st.executeUpdate();
 
 	st.close();
