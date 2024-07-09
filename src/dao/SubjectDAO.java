@@ -11,7 +11,7 @@ import bean.Subject;
 public class SubjectDAO extends DAO {
 
 	/**
-	 * Product表からキーワードを検索し、該当する商品のListを返却する。
+	 * Subject表からキーワードを検索し、該当する商品のListを返却する。
 	 * @param keyword
 	 * @return list<Product>
 	 * @throws Exception
@@ -23,7 +23,8 @@ public class SubjectDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-		"select * from Subject");
+		"select * from Subject "
+		+ "order by cd");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()){
