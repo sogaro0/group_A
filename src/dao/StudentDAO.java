@@ -23,7 +23,8 @@ public class StudentDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-		"select * from student");
+		"select * from student where is_attend = true "
+		+ "order by no asc");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()){
@@ -79,15 +80,25 @@ public class StudentDAO extends DAO {
 	 */
 public int delete(Student student) throws Exception {
 
-	Connection con=getConnection();
-	PreparedStatement st=con.prepareStatement(
-			"delete from student where no=?");
+	Connection con1=getConnection();
+	PreparedStatement st1=con1.prepareStatement(
+			"delete from student where no= ? ;");
 
-	st.setString(1, student.getNo());
-	int line= st.executeUpdate();
-	st.close();
-	con.close();
-	return line;
+//学生表の該当データを削除する
+	st1.setString(1, student.getNo());
+	int line= st1.executeUpdate();
+	st1.close();
+//成績表の該当データを削除する
+	Connection con2=getConnection();
+	PreparedStatement st2=con2.prepareStatement(
+			"delete from test where student_no = ?;");
+
+	st2.setString(1, student.getNo());
+	int line2= st2.executeUpdate();
+	st2.close();
+
+	con2.close();
+	return line2;
 }
 
 /**

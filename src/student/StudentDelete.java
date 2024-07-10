@@ -27,8 +27,11 @@ public class StudentDelete extends HttpServlet {
 				Student p = new Student();
 				p.setNo(no);
 
-				StudentDAO dao=new StudentDAO();
-				int line =dao.delete(p);
+				StudentDAO dao1=new StudentDAO();
+				int line1 =dao1.delete(p);
+
+				StudentDAO dao2=new StudentDAO();
+				int line2 =dao2.delete(p);
 
 				request.getRequestDispatcher("student_delete_done.jsp")
 				.forward(request,response);
