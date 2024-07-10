@@ -20,7 +20,7 @@
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報削除</h2>
+            <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">学生情報削除</h2>
 
 
             <form action="../student/student_delete" method="get">
@@ -31,12 +31,11 @@
             削除する
             </button>
 
+            <form action="../student/student_list_action" method="get">
+    		<button type="button" onclick="history.back()">戻る</button>
+    		</form>
             </form>
         </section>
-	<form action="../student/student_list_action" method="get">
-    <button type="submit" class="StudentCreateaction">戻る</button>
-    </form>
-
     </div>
     </c:param>
 </c:import>
