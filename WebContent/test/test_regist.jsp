@@ -94,6 +94,7 @@
                             	<th>学生番号</th>
                             	<th>氏名</th>
                             	<th>点数</th>
+                            	<th class="text-center">判定</th>
                         	</tr>
                         	<c:forEach var="result" items="${result}">
                             	<tr>
@@ -103,6 +104,16 @@
                                 	<td>${result.name}</td>
                                 	<td><input type="text" class="point" name="point" value=${result.point}></td>
                                 	<input type="hidden" class="point" name="studentNum" value=${result.studentNum}>
+                                	<td class="text-center">
+                                    <c:choose>
+                                      <c:when test="${result.is_pass==true}">
+                                        〇
+                                      </c:when>
+                                      <c:otherwise>
+                                        ×
+                                      </c:otherwise>
+                                    </c:choose>
+                                </td>
                                 </tr>
                         	</c:forEach>
                     </table>

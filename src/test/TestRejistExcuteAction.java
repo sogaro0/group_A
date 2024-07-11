@@ -38,8 +38,16 @@ public class TestRejistExcuteAction extends HttpServlet {
 				p.setPoint(point_int[i]);
 				p.setStudentNum(student_no[i]);
 
+				//赤点の場合
+				if (point_int[i] < 60){
 				TestDAO dao=new TestDAO();
-				int line =dao.update(p);
+				int line =dao.update1(p);}
+
+				//黒点の場合
+				else if(point_int[i] >= 60){
+					TestDAO dao=new TestDAO();
+					int line =dao.update2(p);
+				}
 				}
 
 				request.getRequestDispatcher("test_rejist_done.jsp")

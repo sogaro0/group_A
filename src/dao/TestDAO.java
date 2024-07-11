@@ -80,7 +80,7 @@ public List<Test> search(Student test, Test test1) throws Exception {
 
 //	testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
 //	生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
-	"select distinct student_no, point, student.name, ent_year, test.class_num, subject.name, test.no from test "
+	"select distinct student_no, point, student.name, ent_year, test.class_num, subject.name, test.no, test.is_pass from test "
 	+ "join student "
 	+ "on test.student_no = student.no "
 	+ "join subject "
@@ -105,6 +105,7 @@ public List<Test> search(Student test, Test test1) throws Exception {
 			p.setStudentNum(rs.getString("student_no"));
 			p.setName(rs.getString("student.name"));
 			p.setPoint(rs.getInt("point"));
+			p.setIs_pass(rs.getBoolean("is_pass"));
 			list.add(p);
 		}
 	st.close();
@@ -135,12 +136,12 @@ public List<Test> dup() throws Exception {
 			return list;
 		}
 
-//成績登録のDAO
-public int update(Test test) throws Exception {
+//成績登録のDAO1(赤点の場合)
+public int update1(Test test) throws Exception {
 
 	Connection con=getConnection();
 	PreparedStatement st=con.prepareStatement(
-			 "update test set point = ? "
+			 "update test set point = ?, is_pass = false "
 			+ "where student_no = ?");
 
 	st.setInt(1, test.getPoint());
@@ -151,4 +152,22 @@ public int update(Test test) throws Exception {
 	con.close();
 	return line;
 		}
+
+//成績登録のDAO2(黒点の場合)
+public int update2(Test test) throws Exception {
+
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			 "update test set point = ?, is_pass = true "
+			+ "where student_no = ?");
+
+	st.setInt(1, test.getPoint());
+	st.setString(2, test.getStudentNum());
+	int line= st.executeUpdate();
+
+	st.close();
+	con.close();
+	return line;
+		}
+
 }

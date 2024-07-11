@@ -40,7 +40,6 @@ public class TestListAction extends HttpServlet {
 				SubjectDAO dao2=new SubjectDAO();
 				List<Subject> list2=dao2.all();
 
-
 				// アトリビュート
 				request.setAttribute("ent_year", list);
 				request.setAttribute("class_num",list1);
