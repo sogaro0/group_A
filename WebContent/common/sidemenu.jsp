@@ -16,6 +16,9 @@
 	<div class="submenu_title">
 	<a href="../student/student_list_action" method="get" class="StudentCreate.action">学生管理</a>
 	</div>
+		<div class="submenu_title">
+	<a href="../no_student/no_student_list_action" method="get" class="StudentCreate.action">退学者リスト</a>
+	</div>
 	<a class="sidemenu_title">・成績管理</a>
 	<div class="submenu_title">
 	<a href="../test/test_regist_action">成績登録</a>

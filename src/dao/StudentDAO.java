@@ -46,6 +46,36 @@ public class StudentDAO extends DAO {
 		// ここまで
 	}
 
+//退学用リスト
+	public List<Student> no_all() throws Exception {
+		// ここから
+		List<Student> list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+		"select * from student where is_attend = false "
+		+ "order by no asc");
+		ResultSet rs=st.executeQuery();
+
+		while (rs.next()){
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEntYear(rs.getInt("ent_year"));
+			p.setClassNum(rs.getString("class_num"));
+			p.setIsAttend(rs.getBoolean("is_attend"));
+			p.setSchoolCd(rs.getString("school_cd"));
+			p.setBirthDay(rs.getDate("birth_day"));
+
+			list.add(p);
+		}
+		st.close();
+		con.close();
+
+		return list;
+		// ここまで
+	}
 
 	/**
 	 * Student表へデータを挿入する。

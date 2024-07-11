@@ -24,6 +24,12 @@
                     学生管理
                     </button>
                 </form>
+
+                <form action="../no_student/no_student_list_action" method="get">
+                    <button type="submit" class="StudentCreate.action">
+                    退学者リスト
+                    </button>
+                </form>
              </div>
             <div class="box grade">・成績管理<br>
                 <form action="../test/test_regist_action" method="get">
