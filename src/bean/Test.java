@@ -9,6 +9,7 @@ public class Test {
 	private String school_cd;
 	private int times;
 	private int point;
+	private int no;
 	private String class_num;
 	private Date test_day;
 	private boolean is_pass;
@@ -32,13 +33,15 @@ public class Test {
 	public int getPoint() {
 		return point;
 	}
+	public int getNo() {
+		return no;
+	}
 	public String getClassNum() {
 		return class_num;
 	}
 	public Date getTest_day() {
 		return test_day;
 	}
-
 	public boolean getIs_pass() {
 		return is_pass;
 	}
@@ -66,6 +69,9 @@ public class Test {
 	}
 	public void setPoint(int point){
 		this.point=point;
+	}
+	public void setNo(int no){
+		this.no=no;
 	}
 	public void setClassNum(String class_num){
 		this.class_num=class_num;

@@ -23,7 +23,7 @@
             <div class="my-2 text-end px-4">
             </div>
 
-            <form method="get">
+            <form action="test_list_subject_execute_action" method="get">
                 <div class="border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div class="test-wide col-xl">
                 <p>科目情報</p>
@@ -62,11 +62,13 @@
                 </div>
             </form>
 
+
+
             <form method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                <div class="test-wide col-xl">
+               <div class="test-wide col-xl">
                 <p>学生情報</p>
-                    <div class="col-xl">
+                    <div class="col-4">
                         <label class="form-label" for="student-f1-select">学生番号</label>
 
 					<input type="text" maxlength="10" name="cd" placeholder="学生番号を入力してください" required="required" value=${""} >
@@ -78,6 +80,30 @@
                 </div>
                 </div>
             </form>
+             <!-- リスト表示 -->
+				<c:choose>
+					<c:when test="${test.size()>0}">
+					<div>検索結果:${test.size()}件</div>
+                    	<table class="table table-hover">
+                        	<tr>
+                            	<th>入学年度</th>
+                            	<th>クラス</th>
+                            	<th>学生番号</th>
+                            	<th>氏名</th>
+                            	<th>1回</th>
+                        	</tr>
+                        	<c:forEach var="test" items="${test}">
+                            	<tr>
+                                	<td>${test.entYear}</td>
+                                	<td>${test.classNum}</td>
+                                	<td>${test.no}</td>
+                                	<td>${test.name}</td>
+                                	<td>${test.point}</td>
+                                </tr>
+                        	</c:forEach>
+                    </table>
+					</c:when>
+				</c:choose>
         </section>
         <p>
         </p>

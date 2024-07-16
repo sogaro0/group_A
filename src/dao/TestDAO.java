@@ -170,4 +170,36 @@ public int update2(Test test) throws Exception {
 	return line;
 		}
 
+public List<Test> search1(Test test ) throws Exception {
+	List<Test> list3=new ArrayList<>();
+
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+	"select student.ent_year, student.class_num, student.no, student.name, point from student join test on student.no = test.student_no join subject on test.subject_cd = subject.cd "
+	+ "where test.ent_year = ? and test.class_num = ? and subject.name= ?");
+
+	st.setInt(1, test.getEntYear());
+	st.setString(2, test.getClassNum());
+	st.setString(3, test.getName());
+
+	ResultSet rs=st.executeQuery();
+
+
+
+	while (rs.next()){
+			Test p=new Test();
+			p.setEntYear(rs.getInt("ent_year"));
+			p.setClassNum(rs.getString("class_num"));
+			p.setNo(rs.getInt("no"));
+			p.setName(rs.getString("name"));
+			p.setPoint(rs.getInt("point"));
+
+			list3.add(p);
+		}
+	st.close();
+	con.close();
+
+	return list3;
+}
 }
