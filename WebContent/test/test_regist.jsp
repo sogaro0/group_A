@@ -85,6 +85,14 @@
 								<p>科目:${result.subject}(${result.times}回)</p>
 	                    	</div>
 	                    </c:forEach>
+	            <form action="../test/test_judge" >
+	                    	<input type="text" name="judge"placeholder="現在の基準点:${judge}">
+	                    	<c:forEach var="result" items="${result}">
+	                    	<input type="hidden" class="point" name="point" value=${result.point}>
+                         	<input type="hidden" class="point" name="studentNum" value=${result.studentNum}>
+                         	</c:forEach>
+	                    <button class="btn btn-secondary" id="filter-button">基準点の変更</button>
+	            </form>
 				<form action="test_rejist_execute_action" method="get">
                     <table class="table table-hover">
 

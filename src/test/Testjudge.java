@@ -10,26 +10,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//成績, bean, dao
 import bean.Test;
 import dao.TestDAO;
 
 
-@WebServlet(urlPatterns={"/test/test_rejist_execute_action"})
-public class TestRejistExcuteAction extends HttpServlet {
+@WebServlet(urlPatterns={"/test/test_judge"})
+public class Testjudge extends HttpServlet {
 	public void doGet (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
+
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
 			try{
-
 				//test_rejisrt.jspから値を取得
-			    String[] point = request.getParameterValues("point");
-			    String[] student_no = request.getParameterValues("studentNum");
+				String[] point = request.getParameterValues("point");
+		    	String[] student_no = request.getParameterValues("studentNum");
 
-			    HttpSession session = request.getSession();
-			    Integer judge = (Integer) session.getAttribute("judge");
+				//入力した基準点をセッションに追加
+				Integer judge=Integer.parseInt(request.getParameter("judge"));
+				HttpSession session=request.getSession();
+				session.setAttribute("judge", judge);
+
 
 			    //得点のリストをintに変換
 			    int[] point_int = new int[point.length];
@@ -53,13 +55,11 @@ public class TestRejistExcuteAction extends HttpServlet {
 					int line =dao.update2(p);
 				}
 				}
-
-				request.getRequestDispatcher("test_rejist_done.jsp")
+				request.getRequestDispatcher("../test/test_regist_action")
 				.forward(request,response);
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
 	}
-
 }

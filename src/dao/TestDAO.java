@@ -80,12 +80,12 @@ public List<Test> search(Student test, Test test1) throws Exception {
 
 //	testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
 //	生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
-	"select distinct student_no, point, student.name, ent_year, test.class_num, subject.name, test.no, test.is_pass from test "
+	"select distinct student_no, point, student.name, student.ent_year, test.class_num, subject.name, test.no, test.is_pass from test "
 	+ "join student "
 	+ "on test.student_no = student.no "
 	+ "join subject "
 	+ "on test.subject_cd = subject.cd "
-	+ "where ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ? "
+	+ "where student.ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ? "
 	+ "order by student_no");
 
 		st.setInt(1, test.getEntYear());

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.ClassNum;
 import bean.Student;
@@ -79,7 +80,6 @@ public class TestRegistAction extends HttpServlet {
 						String subject = request.getParameter("f3");
 						int times = Integer.parseInt(request.getParameter("f4"));
 
-
 						Student p = new Student();
 						p.setClassNum(class_num);
 						p.setEntYear(ent_year);
@@ -93,9 +93,62 @@ public class TestRegistAction extends HttpServlet {
 						List<Test> list4=dao4.search(p, p1);
 						request.setAttribute("result", list4);
 
-//						test_regist.jspに取り寄せたデータを送信
-						request.getRequestDispatcher("test_regist.jsp")
-						.forward(request,response);
+//						基準点の初期値設定のフラグ設定
+					    int flag = 0;
+
+//					    基準点の初期値設定
+					    HttpSession session = request.getSession();
+					    Integer judge = (Integer) session.getAttribute("judge");
+
+						System.out.println(judge);
+
+					    if(judge == null){
+					    	judge = 60;
+					    	flag = 1;
+							session.setAttribute("judge", judge);
+					    }
+
+//						基準値の初期設定の反映
+						if(flag == 1){
+
+							//配列を準備
+							List<Integer> point = new ArrayList<Integer>();
+					    	List<String> student_no = new ArrayList<String>();
+
+//					    	得点を配列に入れる
+					    	for(int i = 0; i < list4.size(); i++){
+					    		point.add(list4.get(i).getPoint());
+					    	};
+
+//					    	を配学生番号を配列に入れる
+					    	for(int i = 0; i < list4.size(); i++){
+					    		student_no.add(list4.get(i).getStudentNum());
+					    	};
+
+//					    	回数分処理
+						    for(int i = 0; i < point.size(); i++){
+							Test p3 = new Test();
+							p3.setPoint(point.get(i));
+							p3.setStudentNum(student_no.get(i));
+
+							//赤点の場合
+							if (point.get(i) < judge){
+								TestDAO dao5=new TestDAO();
+								int line =dao5.update1(p3);}
+
+							//黒点の場合
+							else if(point.get(i) >= judge){
+								TestDAO dao5=new TestDAO();
+								int line =dao5.update2(p3);}
+
+//							TestDAOからデータを取り寄せる
+							TestDAO dao6=new TestDAO();
+							List<Test> list5=dao6.search(p, p1);
+							request.setAttribute("result", list5);
+
+							flag = 0;
+							}
+						}
 					}
 				}
 

@@ -19,7 +19,7 @@
 			<h2 class="h3 mb-3 fw-norma bg-light bg-opacisty-10 py-2 px-4">メニュー</h2>
 			<div class="box student">・学生管理<br>
 
-                <form action="../student/student_list_action" method="get">
+               <form action="../student/student_list_action" method="get">
                     <button type="submit" class="StudentCreate.action">
                     学生管理
                     </button>
