@@ -23,8 +23,9 @@
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報変更</h2>
 			<label>変更が完了しました。</label>
 
-			<a href="student_create.jsp">戻る</a>
+
 		<form action="../student/student_list_action" method="get">
+		<a href="student_create.jsp">戻る</a>
     	<button type="submit" class="StudentCreate.action">学生一覧</button>
    		</form>
 
