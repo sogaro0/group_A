@@ -16,11 +16,11 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目情報変更</h2>
+            <h2 class="h3 mb-3 fw-norma subject bg-opacity-10 py-2 px-4">科目情報変更</h2>
 
 		<script type="text/javascript">
  			document.getElementById("year").innerHTML = getYear();
@@ -36,21 +36,18 @@
 			<form action="../subject/subject_update_excute_action" method="get">
 
 
-			<p><label>科目コード<br>
-			<input type="text" value="<%=request.getParameter("cd")%>" name='cd'readonly>
-			</label></p>
+			<label class="mx-3">科目コード</label><br>
+			<input class="select-shape mx-3" type="text" value="<%=request.getParameter("cd")%>" name='cd'readonly>
 
-			<p><label>科目名<br>
-			<input type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
-			</label></p>
+			<label class="mx-3">科目名</label><br>
+			<input class="select-shape mx-3" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
 
-
-            <button type="submit" class="SubjectUpdate.action">
+            <button class="mx-3" type="submit" class="SubjectUpdate.action">
             変更
             </button>
 			</form>
 
-            <form action="../subject/subject_list_action" method="get">
+            <form class="mx-3" action="../subject/subject_list_action" method="get">
    			<button type="submit" class="SubjectCreate.action">科目一覧</button>
    			</form>
 

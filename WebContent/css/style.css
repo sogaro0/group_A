@@ -136,6 +136,12 @@ footer{
 	float: left;
 }
 
+.select-shape {
+	width: 100%;
+	height: 35px;
+	margin-bottom :20px ;
+}
+
 table {
 	width: 80%;
 	gap: 0px 20px;
