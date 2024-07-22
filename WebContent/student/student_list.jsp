@@ -16,19 +16,21 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+
     <c:import url="/common/sidemenu.jsp"></c:import>
+
+    <div class="function">
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">学生管理</h2>
+            <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4">学生管理</h2>
             <div class="my-2 text-end px-4">
                 <a href="../student/student_create_action">新規登録</a>
             </div>
             <form action="student_search" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                    <div class="col-4">
-                        <label class="form-label" for="student-f1-select">入学年度</label>
+                    <div class="col-3 select-style">
+                        <label class="form-label" for="student-f1-select">入学年度</label><br>
                         <select class="form-select" id="student-f1-select" name="f1">
-                            <option value="0">--------</option>
+                            <option value="0">--------　　</option>
                             <c:forEach var="year" items="${year_list}">
 							<option value=${year}>${year}</option>
 							</c:forEach>
@@ -38,8 +40,8 @@
                             </c:forEach>
                         </select>
                     </div>
-    	           <div class="col-4">
-						<label class="form-label" for="student-f2-select">クラス</label>
+    	           <div class="col-2 select-style">
+						<label class="form-label" for="student-f2-select">クラス</label><br>
 						<select class="form-select" id="student-f2-select" name="f2">
 						<option value="0">--------</option>
 						<c:forEach var="class_num" items="${class_num_set}">
@@ -48,7 +50,7 @@
 						</c:forEach>
 						</select>
 					</div>
-                    <div class="col-2 form-check text-center">
+                    <div class="col-2 form-check text-center select-style">
                         <label class="form-check-label" for="student-f3-check">在学中
                             <%-- パラメーターf3が存在している場合checkboxを追記 --%>
                             <input class="from-check-input" type="checkbox"
@@ -56,7 +58,7 @@
                             <c:if test="${!empty f3}">checked</c:if> />
                         </label>
                     </div>
-                    <div class="col-2 text-center">
+                    <div class="col-2 text-center select-style">
                         <button class="btn btn-secondary" id="filter-button">絞込み</button>
                     </div>
 
@@ -66,8 +68,8 @@
             </form>
             <c:choose>
                 <c:when test="${students.size()>0}">
-                    <div>検索結果:${students.size()}件</div>
-                    <table class="table table-hover">
+                    <div class="list-style mx-3">検索結果:${students.size()}件</div>
+                    <table class="table table-hover student_list-style mx-3">
                         <tr>
                             <th>入学年度</th>
                             <th>学生番号</th>

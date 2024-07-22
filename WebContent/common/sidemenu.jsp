@@ -2,52 +2,47 @@
 
 	pageEncoding="UTF-8" %>
 
-<section class="col-lg-2 side">
+<section>
 
-<button class="dis_none_bt">×</button>
-
-<div class="display_none active">
-<a class="sidemenu_title">サイドメニュー</a>
-<div class="submenu_title">
-<a href="../menu/menu.jsp">メニュー</a>
+<div class="side-high">
+	<button class="btn-menu">≡</button>
 </div>
-
-	<a class="sidemenu_title">・学生管理</a>
-	<div class="submenu_title">
-	<a href="../student/student_list_action" method="get" class="StudentCreate.action">学生管理</a>
-	</div>
-		<div class="submenu_title">
-	<a href="../no_student/no_student_list_action" method="get" class="StudentCreate.action">退学者リスト</a>
-	</div>
-	<a class="sidemenu_title">・成績管理</a>
-	<div class="submenu_title">
-	<a href="../test/test_regist_action">成績登録</a>
-	</div>
-	<div class="submenu_title">
-	<a href="../test/test_list_action">成績参照</a>
-	</div>
-	<a class="sidemenu_title">・科目管理</a>
-	<div class="submenu_title">
-	<a href="../subject/subject_list_action">科目管理</a>
-	</div>
-	</div>
+<div class="side-high2">
+  <nav>
+  	<form action="../menu/menu.jsp" method="get">
+  		<button type="submit" class="StudentCreate.action side_bt">メニュー</button>
+  	</form>
+  	<form action="../student/student_list_action" method="get">
+		<button type="submit" class="StudentCreate.action side_bt2">学生管理</button>
+  	</form>
+  	<form action="../test/test_regist_action" method="get">
+		<button type="submit" class="StudentCreate.action side_bt2">成績登録</button>
+  	</form>
+  	<form action="../test/test_list_action" method="get">
+		<button class="TestCreate.action side_bt2">成績参照</button>
+  	</form>
+  	<form action="../subject/subject_list_action" method="get">
+		<button type="submit" class="SubjectCreate.action side_bt2">科目管理</button>
+  	</form>
+  </nav>
+</div>
 
 	<script>
 	{
-		const displayNone = document.querySelector('.display_none');
-		const dis_none_bt = document.querySelector('.dis_none_bt');
-		dis_none_bt.addEventListener('click' ,() =>{
-		if(displayNone.classList.contains('active')){
-			dis_none_bt.textContent ='≡';
-			displayNone.style.display = 'none';
-			displayNone.classList.remove('active');
-		}
+		const btn = document.querySelector('.btn-menu');
+		const nav = document.querySelector('nav');
 
-		else {
-			dis_none_bt.textContent ='×';
-			displayNone.style.display = 'block';
-			displayNone.classList.add('active');
-		}
+		btn.addEventListener('click', () => {
+		  nav.classList.toggle('open-menu')
+		  // if (btn.innerHTML === 'メニュー') {
+		  //   btn.innerHTML = '閉じる';
+		  // } else {
+		  //   btn.innerHTML = 'メニュー';
+		  // }
+		  // ↑ これと同じ意味の三項演算子での書き方 ↓
+		  btn.innerHTML = btn.innerHTML === '≡'
+		    ? '×'
+		    : '≡'
 		});
 	}
 	</script>

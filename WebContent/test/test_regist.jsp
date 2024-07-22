@@ -16,13 +16,13 @@
     </c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp"></c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">成績管理</h2>
+            <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 grade">成績管理</h2>
             <form action="../test/test_regist_action" method="get">
                 <div class="test-wide border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                    <div class="col-4">
+                    <div class="list-style mx-3">
                         <label class="form-label" for="test-f1-select">入学年度</label><br>
                         <select class="form-select" id="test-f1-select" name="f1">
                             <option value="0">--------</option>
@@ -35,7 +35,7 @@
                             </c:forEach>
                         </select>
                     </div>
-                    <div class="col-4">
+                    <div class="list-style">
                         <label class="form-label" for="test-f2-select">クラス</label><br>
                         <select class="form-select" id="test-f2-select" name="f2">
                             <option value="0">--------</option>
@@ -45,7 +45,7 @@
                             </c:forEach>
                         </select>
                     </div>
-                  <div class="col-4">
+                  <div class="list-style">
                         <label class="form-label" for="test-f3-select">科目</label><br>
                         <select class="form-select" id="test-f3-select" name="f3">
                             <option value="0">--------</option>
@@ -56,7 +56,7 @@
                         </select>
                     </div>
 
-                    <div class="col-4">
+                    <div class="list-style">
                     	<label class="form-label" for="test-f4-select">回数</label><br>
                     	<select class="times" id="test-f4-select" name="f4">
                     		<option value="0">--------</option>
@@ -70,7 +70,7 @@
                     	<input type="hidden" name="f5" value="abc">
                     </div>
 
-                    <div class="col-2 text-center">
+                    <div class="list-style text-center">
                         <button class="btn btn-secondary" id="filter-button">検索</button>
                     </div>
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
