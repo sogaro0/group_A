@@ -15,16 +15,29 @@ public class LoginExecuteAction extends Action {
 			)throws Exception{
 
 		HttpSession session=request.getSession();
-
+		String message = "";
 		String id=request.getParameter("id");
 		String password=request.getParameter("password");
 
 		TeacherDAO dao=new TeacherDAO();
 		Teacher teacher=dao.login(id, password);
 		System.out.println(teacher);
-		//	ユーザーデータをセッションに格納
-		session.setAttribute("teacher", teacher);
-		return "menu.jsp";
+		System.out.println(teacher.getId());
+
+		// ユーザーデータが格納されている場合
+		if (teacher.getId()!=null){
+			System.out.println("ユーザーデータが格納されています");
+			// ユーザーデータをセッションに格納
+			session.setAttribute("teacher", teacher);
+			return "../menu/menu.jsp";
+		}
+		// ユーザーデータが格納されていない場合
+		else {
+			// ユーザーデータが格納されていない場合
+			System.out.println("ユーザーデータが格納されていません");
+			message = "IDまたはパスワードが間違っています";
+			return "login.jsp";
+		}
 
 	}
 }

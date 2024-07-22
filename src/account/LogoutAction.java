@@ -17,7 +17,6 @@ public class LogoutAction extends Action{
 			session.invalidate();
 			        }
 
-
 		return "logout.jsp";
 	}
 

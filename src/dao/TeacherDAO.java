@@ -16,7 +16,8 @@ public class TeacherDAO extends DAO {
 	 */
 	public Teacher login(String id, String password) throws Exception {
 
-		Teacher teacher = null;
+		System.out.println("111");
+
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
@@ -25,18 +26,22 @@ public class TeacherDAO extends DAO {
 		st.setString(2, password);
 
 		ResultSet rs=st.executeQuery();
+		System.out.println("222");
 
-		Teacher p=new Teacher();
-		teacher.setId(rs.getString("id"));
-		teacher.setPassword(rs.getString("password"));
-		teacher.setName(rs.getString("name"));
-		teacher.setSchoolCd(rs.getString("school_cd"));
-		teacher.setIsWork(rs.getBoolean("is_work"));
+		Teacher teacher = new Teacher();
+		while (rs.next()) {
+			teacher.setId(rs.getString("id"));
+			teacher.setPassword(rs.getString("password"));
+			teacher.setName(rs.getString("name"));
+			teacher.setSchoolCd(rs.getString("school_cd"));
+			teacher.setIsWork(rs.getBoolean("is_work"));
+		}
 
+		System.out.println("333");
 		st.close();
 		con.close();
 
-		return p;
+		return teacher;
 
 	}
 }
