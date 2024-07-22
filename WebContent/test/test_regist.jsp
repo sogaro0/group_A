@@ -70,7 +70,7 @@
                     	<input type="hidden" name="f5" value="abc">
                     </div>
 
-                    <div class="list-style text-center">
+                    <div class="text-center">
                         <button class="btn btn-secondary" id="filter-button">検索</button>
                     </div>
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
@@ -81,11 +81,11 @@
 				<c:choose>
 					<c:when test="${not empty result}">
 						<c:forEach var="result" items="${result}" end="0">
-							<div>
+							<div class="mx-3">
 								<p>科目:${result.subject}(${result.times}回)</p>
 	                    	</div>
 	                    </c:forEach>
-	            <form action="../test/test_judge" >
+	            <form class="mx-3" action="../test/test_judge" >
 	                    	<input type="text" name="judge"placeholder="現在の基準点:${judge}">
 	                    	<c:forEach var="result" items="${result}">
 	                    	<input type="hidden" class="point" name="point" value=${result.point}>
@@ -94,7 +94,7 @@
 	                    <button class="btn btn-secondary" id="filter-button">基準点の変更</button>
 	            </form>
 				<form action="test_rejist_execute_action" method="get">
-                    <table class="table table-hover">
+                    <table class="table table-hover mx-3">
 
                         	<tr>
                             	<th>入学年度</th>
@@ -125,7 +125,7 @@
                                 </tr>
                         	</c:forEach>
                     </table>
-                   	<button type="submit" class="TestRejistExecuteAction">登録して終了</button>
+                   	<button class="mx-3" type="submit" class="TestRejistExecuteAction">登録して終了</button>
                   </form>
 					</c:when>
 				</c:choose>

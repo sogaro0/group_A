@@ -83,8 +83,8 @@
              <!-- リスト表示 -->
 				<c:choose>
 					<c:when test="${test.size()>0}">
-					<div>検索結果:${test.size()}件</div>
-                    	<table class="table table-hover">
+					<div class="mx-3">検索結果:${test.size()}件</div>
+                    	<table class="table table-hover mx-3">
                         	<tr>
                             	<th>入学年度</th>
                             	<th>クラス</th>
