@@ -16,7 +16,7 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp"></c:import>
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">退学者リスト</h2>
@@ -58,8 +58,8 @@
             </form>
             <c:choose>
                 <c:when test="${students.size()>0}">
-                    <div>検索結果:${students.size()}件</div>
-                    <table class="table table-hover">
+                    <div class="mx-3">検索結果:${students.size()}件</div>
+                    <table class="table table-hover mx-3">
                         <tr>
                             <th>入学年度</th>
                             <th>学生番号</th>

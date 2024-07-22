@@ -13,6 +13,19 @@ all {
 	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
+.login-link {
+   position: absolute;
+   right: 0;
+   top: 0;
+   font-size: 0.5em;
+   padding: 0.2em 0.5em; /* リンクのパディングを調整 */
+   text-decoration: none; /* 下線を消す */
+   color: #007bff; /* リンクの色を設定（変更可能） */
+}
+.login-link:hover {
+   text-decoration: underline; /* ホバー時の下線 */
+}
+
 .box{
  margin : 30px ;
  margin-right :115px ;
@@ -138,6 +151,12 @@ footer{
 
 .select-shape {
 	width: 100%;
+	height: 35px;
+	margin-bottom :20px ;
+}
+
+.select-shape2 {
+	width: 97%;
 	height: 35px;
 	margin-bottom :20px ;
 }

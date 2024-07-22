@@ -16,7 +16,7 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">

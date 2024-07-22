@@ -21,7 +21,7 @@
 
     <div class="function">
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 subject">科目管理</h2>
+            <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 C subject">科目管理</h2>
             <div class="my-2 text-end px-4">
                 <a href="../subject/subject_create_action">新規登録</a>
             </div>

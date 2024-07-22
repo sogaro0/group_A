@@ -15,6 +15,9 @@
   	<form action="../student/student_list_action" method="get">
 		<button type="submit" class="StudentCreate.action side_bt2">学生管理</button>
   	</form>
+  	<form action="../no_student/no_student_list_action" method="get">
+		<button type="submit" class="StudentCreate.action side_bt2">退学者リスト</button>
+  	</form>
   	<form action="../test/test_regist_action" method="get">
 		<button type="submit" class="StudentCreate.action side_bt2">成績登録</button>
   	</form>

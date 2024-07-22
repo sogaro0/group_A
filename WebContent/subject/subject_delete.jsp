@@ -16,14 +16,14 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">科目情報削除</h2>
+            <h2 class="h3 mb-3 fw-norma subject bg-opacity-10 py-2 px-4">科目情報削除</h2>
 
 
-            <form action="../subject/subject_delete" method="get">
+            <form class="mx-3" action="../subject/subject_delete" method="get">
 			<input type="hidden" value="<%=request.getParameter("cd")%>" name=cd>
 			<h2>削除しますか？</h2>
 
@@ -33,7 +33,7 @@
 
             </form>
         </section>
-	<form action="../subject/subject_list_action" method="get">
+	<form class="mx-3" action="../subject/subject_list_action" method="get">
     <button type="submit" class="SubjectList.action">戻る</button>
     </form>
 

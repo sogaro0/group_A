@@ -16,11 +16,11 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報変更</h2>
+            <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 student">学生情報変更</h2>
 
 		<script type="text/javascript">
  			document.getElementById("year").innerHTML = getYear();
@@ -33,44 +33,44 @@
 
 			<p><span id="year"></span></p>
 
-			<form action="../student/student_update_excute_action" method="get">
+			<form class="mx-3" action="../student/student_update_excute_action" method="get">
 
-            <p><label>入学年度<br>
- 			<input type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly>
-			</label></p>
-
-			<p><label>学生番号<br>
-			<input type="text" value="<%=request.getParameter("no")%>" name='no'readonly>
-			</label></p>
-
-			<p><label>氏名<br>
-			<input type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
-			</label></p>
+            <label>入学年度</label><br>
+ 			<input class="select-shape" type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly>
 
 
-			<p><label>クラス<br>
-			<select name="class_num">
+			<label>学生番号</label><br>
+			<input class="select-shape" type="text" value="<%=request.getParameter("no")%>" name='no'readonly>
+
+
+			<label>氏名</label><br>
+			<input class="select-shape" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
+
+
+
+			<label>クラス</label><br>
+			<select class="select-shape" name="class_num">
 			<c:forEach var="class_num" items="${class_num}">
             <option value=${class_num.classNum}>${class_num.classNum}</option>
             </c:forEach>
 			</select>
-			</label></p>
+
 
 
 			<p><label>在学中
     		<input type="checkbox" name="is_attend" value="ture">
 			</label></p>
 
-			<p><label>誕生日<br>
-			<input type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
-			</label></p>
+			<label>誕生日</label><br>
+			<input class="select-shape" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
+
 
             <button type="submit" class="StudentUpdate.action">
             変更
             </button>
 			</form>
 
-            <form action="../student/student_list_action" method="get">
+            <form class="mx-3" action="../student/student_list_action" method="get">
    			<button type="submit" class="StudentCreate.action">学生一覧</button>
    			</form>
 

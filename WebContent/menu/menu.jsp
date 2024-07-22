@@ -8,8 +8,8 @@
 
 <c:import url="/common/base.jsp">
     <c:param name="title">
-        <h1 class="toptitle">得点管理システム</h1>
-    </c:param>
+		<h1 class="toptitle">得点管理システム<a href="../account/Login.action" class="login-link">ログイン</a></h1>
+	</c:param>
     <c:param name="content">
 
     <c:import url="/common/sidemenu.jsp"></c:import>
