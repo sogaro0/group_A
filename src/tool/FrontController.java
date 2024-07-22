@@ -17,6 +17,8 @@ public class FrontController extends HttpServlet {
 	) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
 		try {
+
+
 			// URLの取得。
 			String path=request.getServletPath().substring(1);
 			// 「〇〇.action」を「〇〇Action」に変更する。

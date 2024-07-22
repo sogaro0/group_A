@@ -20,7 +20,7 @@ public class TeacherDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-		"select * from student where id = ? and password = ?");
+		"select * from teacher where id = ? and password = ?");
 		st.setString(1, id);
 		st.setString(2, password);
 
