@@ -176,8 +176,8 @@ public List<Test> search1(Test test ) throws Exception {
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-	"select student.ent_year, student.class_num, student.no, student.name, point from student join test on student.no = test.student_no join subject on test.subject_cd = subject.cd "
-	+ "where test.ent_year = ? and test.class_num = ? and subject.name= ?");
+	"SELECT DISTINCT student.ent_year, student.class_num, student.no, student.name, scores.POINT_1, scores.POINT_2 FROM student JOIN (SELECT STUDENT_NO, SUBJECT_CD, MAX (CASE WHEN NO = 1 THEN POINT ELSE NULL END) AS POINT_1, MAX (CASE WHEN NO = 2 THEN POINT ELSE NULL END) AS POINT_2 FROM test GROUP BY STUDENT_NO, SUBJECT_CD) AS scores ON student.no = scores.STUDENT_NO JOIN subject ON subject.cd = scores.SUBJECT_CD join test on student.no = test.student_no"
+	+ " where test.ent_year = ? and test.class_num = ? and subject.name= ?");
 
 	st.setInt(1, test.getEntYear());
 	st.setString(2, test.getClassNum());
@@ -193,7 +193,11 @@ public List<Test> search1(Test test ) throws Exception {
 			p.setClassNum(rs.getString("class_num"));
 			p.setNo(rs.getInt("no"));
 			p.setName(rs.getString("name"));
-			p.setPoint(rs.getInt("point"));
+			p.setPoint(rs.getInt("point_1"));
+			p.setPoint2(rs.getString("point_2"));
+			if (p.getPoint2() == null){
+				p.setPoint2("-");
+			}
 
 			list3.add(p);
 		}
