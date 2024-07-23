@@ -91,6 +91,7 @@
                             	<th>学生番号</th>
                             	<th>氏名</th>
                             	<th>1回</th>
+                            	<th>2回</th>
                         	</tr>
                         	<c:forEach var="test" items="${test}">
                             	<tr>
@@ -99,6 +100,7 @@
                                 	<td>${test.no}</td>
                                 	<td>${test.name}</td>
                                 	<td>${test.point}</td>
+                                	td>${test.point2}<td>
                                 </tr>
                         	</c:forEach>
                     </table>
