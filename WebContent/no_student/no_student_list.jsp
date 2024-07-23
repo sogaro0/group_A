@@ -19,7 +19,7 @@
     <div class="function">
     <c:import url="/common/sidemenu.jsp"></c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-light bg-opacity-10 py-2 px-4">退学者リスト</h2>
+            <h2 class="h3 mb-3 fw-norma student bg-opacity-10 py-2 px-4">退学者リスト</h2>
             <div class="my-2 text-end px-4">
             </div>
             <form action="no_student_search" method="get">
