@@ -100,7 +100,7 @@
                                 	<td>${test.no}</td>
                                 	<td>${test.name}</td>
                                 	<td>${test.point}</td>
-                                	td>${test.point2}<td>
+                                	<td>${test.point2}<td>
                                 </tr>
                         	</c:forEach>
                     </table>
