@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns={"/no_student/*.action","/student/*.action",
-		"/subject/*.action","/test/*.action"})
+@WebServlet(urlPatterns={"*.action"})
 public class FrontController extends HttpServlet {
 
 	public void doPost(
@@ -27,7 +26,8 @@ public class FrontController extends HttpServlet {
 			System.out.println(teacher_name);
 			// もしセッションが空なら、ログイン画面に飛ぶ
 			if (teacher_id==null) {
-				request.getRequestDispatcher("./account/Login.action")
+				System.out.println("セッションが空です");
+				request.getRequestDispatcher("../account/login.jsp")
 				.forward(request,response);
 			}
 

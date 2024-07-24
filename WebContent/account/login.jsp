@@ -43,7 +43,7 @@ input[type="submit"]:hover {
    background-color: #87cefa;
 }
 </style>
-<form action="LoginExecute.action" method="post">
+<form action="../account/login_excute_action" method="post">
 <p>ID<input type="text" name="id"></p>
 <p>パスワード
 <input type="password" id="password" name="password">

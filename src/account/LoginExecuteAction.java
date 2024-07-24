@@ -1,18 +1,28 @@
 package account;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Teacher;
 import dao.TeacherDAO;
-import tool.Action;
 
-public class LoginExecuteAction extends Action {
+@WebServlet(urlPatterns={"/account/login_excute_action"})
+public class LoginExecuteAction extends HttpServlet {
 
-	public String execute(
+	public void doPost(
 			HttpServletRequest request, HttpServletResponse response
-			)throws Exception{
+			) throws ServletException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out=response.getWriter();
+		try{
+
 		System.out.println("a");
 		HttpSession session=request.getSession();
 		String message = "";
@@ -31,15 +41,20 @@ public class LoginExecuteAction extends Action {
 			// ユーザーデータをセッションに格納
 			session.setAttribute("teacher_id", teacher.getId());
 			session.setAttribute("teacher_name", teacher.getName());
-			return "../menu/menu.jsp";
+			request.getRequestDispatcher("../menu/menu.jsp")
+			.forward(request,response);
+
 		}
 		// ユーザーデータが格納されていない場合
 		else {
-			// ユーザーデータが格納されていない場合
 			System.out.println("ユーザーデータが格納されていません");
 			message = "IDまたはパスワードが間違っています";
-			return "login.jsp";
+			request.getRequestDispatcher("/login.jsp")
+			.forward(request,response);
+			}
 		}
-
+		catch (Exception e) {
+			e.printStackTrace(out);
+			}
+		}
 	}
-}

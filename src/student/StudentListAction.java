@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,11 +14,11 @@ import bean.ClassNum;
 import bean.Student;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/student/student_list_action"})
-public class StudentListAction extends HttpServlet {
-	public void doGet (
+public class StudentListAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 
@@ -56,12 +54,12 @@ public class StudentListAction extends HttpServlet {
 				request.setAttribute("students", list);
 				request.setAttribute("year_list", year_list);
 
-				request.getRequestDispatcher("student_list.jsp")
-				.forward(request,response);
+
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "student_list.jsp";
 	}
 
 }
