@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,11 +12,11 @@ import bean.ClassNum;
 import bean.Student;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/no_student/no_student_update_action"})
-public class No_StudentUpdateAction extends HttpServlet {
-	public void doGet (
+public class NoStudentUpdateAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -39,12 +37,11 @@ public class No_StudentUpdateAction extends HttpServlet {
 
 				request.setAttribute("class_num", list);
 				request.setAttribute("student", list2);
-				request.getRequestDispatcher("no_student_update.jsp")
-				.forward(request,response);
 
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "no_student_update.jsp";
 	}
 }

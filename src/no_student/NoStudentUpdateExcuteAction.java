@@ -5,18 +5,16 @@ import java.io.PrintWriter;
 import java.sql.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Student;
 import dao.StudentDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/no_student/no_student_update_excute_action"})
-public class No_StudentUpdateExcuteAction extends HttpServlet {
-	public void doGet (
+public class NoStudentUpdateExcuteAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -42,11 +40,10 @@ public class No_StudentUpdateExcuteAction extends HttpServlet {
 				StudentDAO dao=new StudentDAO();
 				int line =dao.update(p);
 
-				request.getRequestDispatcher("no_student_update_done.jsp")
-				.forward(request,response);
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "no_student_update_done.jsp";
 	}
 }

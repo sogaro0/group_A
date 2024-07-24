@@ -14,7 +14,7 @@ import dao.StudentDAO;
 
 
 @WebServlet(urlPatterns={"/no_student/no_student_delete"})
-public class No_StudentDelete extends HttpServlet {
+public class NoStudentDelete extends HttpServlet {
 	public void doGet (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {

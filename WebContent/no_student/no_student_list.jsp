@@ -88,7 +88,7 @@
                                     </c:choose>
                                 </td>
                                	<td>${student.birthDay}</td>
-                                <td><a href="../no_student/no_student_update_action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}&birth_day=${student.birthDay}">変更</a></td>
+                                <td><a href="../no_student/NoStudentUpdate.action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}&birth_day=${student.birthDay}">変更</a></td>
                                 <td><a href="no_student_delete.jsp?no=${student.no}">削除</a></td>
                             </tr>
                         </c:forEach>

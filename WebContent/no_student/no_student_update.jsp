@@ -33,7 +33,7 @@
 
 			<p><span id="year"></span></p>
 
-			<form action="../no_student/no_student_update_excute_action" method="get">
+			<form action="../no_student/NoStudentUpdateExcute.action" method="get">
 
             <p><label class="mx-3">入学年度<br>
  			<input type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly>
@@ -65,7 +65,7 @@
             </button>
 			</form>
 
-            <form class="mx-3" action="../no_student/no_student_list_action" method="get">
+            <form class="mx-3" action="../no_student/NoStudentList.action" method="get">
    			<button type="submit" class="StudentCreate.action">学生一覧</button>
    			</form>
 

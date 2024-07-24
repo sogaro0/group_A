@@ -26,7 +26,7 @@
                     </button>
                 </form>
 
-                <form action="../no_student/no_student_list_action" method="get">
+                <form action="../no_student/NoStudentList.action" method="get">
                     <button type="submit" class="StudentCreate.action bt">
                     退学者リスト
                     </button>
