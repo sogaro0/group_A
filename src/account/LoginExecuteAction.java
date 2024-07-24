@@ -23,12 +23,14 @@ public class LoginExecuteAction extends Action {
 		Teacher teacher=dao.login(id, password);
 		System.out.println(teacher);
 		System.out.println(teacher.getId());
+		System.out.println(teacher.getName());
 
 		// ユーザーデータが格納されている場合
 		if (teacher.getId()!=null){
 			System.out.println("ユーザーデータが格納されています");
 			// ユーザーデータをセッションに格納
-			session.setAttribute("teacher", teacher);
+			session.setAttribute("teacher_id", teacher.getId());
+			session.setAttribute("teacher_name", teacher.getName());
 			return "../menu/menu.jsp";
 		}
 		// ユーザーデータが格納されていない場合

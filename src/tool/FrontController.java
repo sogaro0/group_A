@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns={"*.action"})
+@WebServlet(urlPatterns={"/no_student/*.action","/student/*.action",
+		"/subject/*.action","/test/*.action"})
 public class FrontController extends HttpServlet {
 
 	public void doPost(
@@ -17,14 +19,19 @@ public class FrontController extends HttpServlet {
 	) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
 		try {
-//			HttpSession session=request.getSession();
-//			// もしセッションが空なら、ログイン画面に飛ぶ
-//			if (session!=null) {
-//				request.getRequestDispatcher("./account/Login.action")
-//				.forward(request,response);
-//			}
+			HttpSession session=request.getSession();
+			String teacher_id = (String) session.getAttribute("teacher_id");
+			String teacher_name = (String) session.getAttribute("teacher_name");
 
-			// URLの取得。
+			System.out.println(teacher_id);
+			System.out.println(teacher_name);
+			// もしセッションが空なら、ログイン画面に飛ぶ
+			if (teacher_id==null) {
+				request.getRequestDispatcher("./account/Login.action")
+				.forward(request,response);
+			}
+
+			// URLの取得
 			String path=request.getServletPath().substring(1);
 			// 「〇〇.action」を「〇〇Action」に変更する。
 			// search.action ⇒ searchAction

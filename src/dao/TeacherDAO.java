@@ -16,7 +16,6 @@ public class TeacherDAO extends DAO {
 	 */
 	public Teacher login(String id, String password) throws Exception {
 
-		System.out.println("111");
 
 		Connection con=getConnection();
 
@@ -26,7 +25,6 @@ public class TeacherDAO extends DAO {
 		st.setString(2, password);
 
 		ResultSet rs=st.executeQuery();
-		System.out.println("222");
 
 		Teacher teacher = new Teacher();
 		while (rs.next()) {
@@ -37,7 +35,6 @@ public class TeacherDAO extends DAO {
 			teacher.setIsWork(rs.getBoolean("is_work"));
 		}
 
-		System.out.println("333");
 		st.close();
 		con.close();
 
