@@ -12,10 +12,14 @@
 		<% String teacher_name = (String) session.getAttribute("teacher_name"); %>
 		<c:choose>
 		<c:when test="${empty teacher_name}">
+			<p>
 			<a href="../account/Login.action" class="login-link">ログイン</a>
+    		</p>
     	</c:when>
     	<c:otherwise>
-    		<a href="../account/logout_action" class="login-link" method="get">ログアウト</a>
+	    	<div class="login-link" style="color:black">${teacher_name}さん |
+    		<a href="../account/logout_action" method="get">ログアウト</a>
+    		</div>
     	</c:otherwise>
 		</c:choose>
 		</h1>
@@ -23,7 +27,6 @@
 
 	</c:param>
     <c:param name="content">
-	<div id="teacher_name">${teacher_name}</div>
     <c:import url="/common/sidemenu.jsp"></c:import>
 
     <div class="function">
