@@ -168,6 +168,12 @@ footer{
 	margin-bottom :20px ;
 }
 
+.select-shape3 {
+	border: none;
+	height: 35px;
+	margin-bottom :20px ;
+}
+
 .test-table {
 	width: 95%;
 	gap: 0px 20px;
