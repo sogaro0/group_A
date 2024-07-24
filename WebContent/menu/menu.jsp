@@ -8,10 +8,22 @@
 
 <c:import url="/common/base.jsp">
     <c:param name="title">
-		<h1 class="toptitle">得点管理システム<a href="../account/Login.action" class="login-link">ログイン</a></h1>
+		<h1 class="toptitle">得点管理システム
+		<% String teacher_name = (String) session.getAttribute("teacher_name"); %>
+		<c:choose>
+		<c:when test="${empty teacher_name}">
+			<a href="../account/Login.action" class="login-link">ログイン</a>
+    	</c:when>
+    	<c:otherwise>
+    		<a href="../account/logout_action" class="login-link" method="get">ログアウト</a>
+    	</c:otherwise>
+		</c:choose>
+		</h1>
+
+
 	</c:param>
     <c:param name="content">
-
+	<div id="teacher_name">${teacher_name}</div>
     <c:import url="/common/sidemenu.jsp"></c:import>
 
     <div class="function">

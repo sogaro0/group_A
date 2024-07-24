@@ -22,8 +22,6 @@ public class FrontController extends HttpServlet {
 			String teacher_id = (String) session.getAttribute("teacher_id");
 			String teacher_name = (String) session.getAttribute("teacher_name");
 
-			System.out.println(teacher_id);
-			System.out.println(teacher_name);
 			// もしセッションが空なら、ログイン画面に飛ぶ
 			if (teacher_id==null) {
 				System.out.println("セッションが空です");
