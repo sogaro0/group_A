@@ -16,15 +16,15 @@
     <c:param name="scripts"></c:param>
 
     <c:param name="content">
-    <div class="row">
+    <div class="function">
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報削除</h2>
-			<label>削除が完了しました。</label>
+            <h2 class="h3 mb-3 fw-norma student bg-opacity-10 py-2 px-4">学生情報削除</h2>
+			<label class="mx-3">削除が完了しました。</label>
 
 	<form action="../student/StudentList.action" method="get">
-    <button type="submit" class="StudentCreate.action">学生一覧</button>
+    <button type="submit" class="StudentCreate.action mx-3">学生一覧</button>
     </form>
         </section>
         </div>
