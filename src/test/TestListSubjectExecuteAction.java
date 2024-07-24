@@ -84,7 +84,7 @@ public class TestListSubjectExecuteAction extends HttpServlet {
 
 
 
-				request.getRequestDispatcher("test_list.jsp")
+				request.getRequestDispatcher("test_list_subject.jsp")
 				.forward(request,response);
 
 			} catch (Exception e) {
