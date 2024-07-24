@@ -37,7 +37,7 @@
 
 
 			<label class="mx-3">科目コード</label><br>
-			<input class="select-shape2 mx-3" type="text" value="<%=request.getParameter("cd")%>" name='cd'readonly>
+			<input class="mx-3" type="text" value="<%=request.getParameter("cd")%>" name='cd'readonly>
 
 			<label class="mx-3">科目名</label><br>
 			<input class="select-shape2 mx-3" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">

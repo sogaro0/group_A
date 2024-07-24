@@ -161,9 +161,26 @@ footer{
 	margin-bottom :20px ;
 }
 
-table {
-	width: 80%;
+.test-table {
+	width: 95%;
 	gap: 0px 20px;
+}
+
+.test-table-width {
+	width: 10%;
+}
+
+.test-table-wide {
+	width: 30%;
+	height: 45px;
+}
+
+.test-boder {
+	border-top:1px solid #c7c7c7;
+}
+
+.test-boder2 {
+	border-top:1px solid #c7c7c7;
 }
 
 /*メニューページのボタン1*/
@@ -221,21 +238,6 @@ table {
 	 background-color: #b5fbb7;
 	 color :  #000000;
 	 font-size : 160%;
-}
-
-/*サイドメニューのボタンを浮かせて左に寄せ、可動域を画面いっぱいにする*/
-.side-high {
-	position: absolute;
-	right: 0;
-	height: 100%;
-}
-
-/*サイドメニューを浮かせて左に寄せ、可動域を画面いっぱいにし幅を20%にする*/
-.side-high2 {
-	position: absolute;
-	right: 0;
-	height: 100%;
-	width: 20%;
 }
 
 /* サイドメニュー本体の装飾 */
@@ -311,7 +313,6 @@ nav {
   position: sticky;
   top: 0;
   float: right;
-  z-index: 1;
   overflow-x: hidden;
   text-align: center;
   width: 0;
@@ -321,6 +322,7 @@ nav {
 /* メニューを開いた時 */
 nav.open-menu {
   width: 100%;
+  z-index: 2;
 }
 
 /* 更新 */

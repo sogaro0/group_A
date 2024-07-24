@@ -2,6 +2,23 @@
 
 	pageEncoding="UTF-8" %>
 
+<style>
+	/*サイドメニューを浮かせて左に寄せ、可動域を画面いっぱいにし幅を20%にする*/
+	.side-high2 {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: 10%;
+	}
+
+	/*サイドメニューのボタンを浮かせて左に寄せ、可動域を画面いっぱいにする*/
+	.side-high {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	}
+</style>
+
 <section>
 
 <div class="side-high">
@@ -49,4 +66,5 @@
 		});
 	}
 	</script>
+
 </section>
