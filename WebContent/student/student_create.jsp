@@ -34,7 +34,7 @@
 
 			<p><span id="year"></span></p>
 
-            <form class="mx-3" action="../student/student_create_excute_action" method="get">
+            <form class="mx-3" action="../student/StudentCreateExcute.action" method="get">
 
             <label>入学年度</label><br>
             <select class="select-shape" name="ent_year" required="required">
@@ -72,7 +72,7 @@
             </form>
 
 
-	<form action="../student/student_list_action" method="get">
+	<form action="../student/StudentList.action" method="get">
     <button class="mx-3" type="submit" class="StudentCreate.action">戻る</button>
     </form>
      </section>

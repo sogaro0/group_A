@@ -24,7 +24,7 @@
 			<label class="mx-3">変更が完了しました。</label>
 
 
-		<form class="mx-3" action="../student/student_list_action" method="get">
+		<form class="mx-3" action="../student/StudentList.action" method="get">
     	<button type="submit" class="StudentCreate.action">学生一覧</button><br>
     	<a href="student_create.jsp">戻る</a>
    		</form>

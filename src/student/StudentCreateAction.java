@@ -7,22 +7,22 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.ClassNum;
 import dao.ClassNumDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/student/student_create_action"})
-public class StudentCreateAction extends HttpServlet {
-	public void doGet (
+public class StudentCreateAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
+
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
+
 			try{
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
@@ -44,11 +44,10 @@ public class StudentCreateAction extends HttpServlet {
 				request.setAttribute("class_num", list);
 				request.setAttribute("year_list", year_list);
 
-				request.getRequestDispatcher("student_create.jsp")
-				.forward(request,response);
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "student_create.jsp";
 	}
 }

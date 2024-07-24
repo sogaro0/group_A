@@ -23,7 +23,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 student">学生管理</h2>
             <div class="my-2 text-end px-4">
-                <a href="../student/student_create_action">新規登録</a>
+                <a href="../student/StudentCreate.action">新規登録</a>
             </div>
             <form action="student_search" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
@@ -98,7 +98,7 @@
                                     </c:choose>
                                 </td>
                                	<td>${ student.birthDay}</td>
-                                <td><a href="../student/student_update_action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}&birth_day=${student.birthDay}">変更</a></td>
+                                <td><a href="../student/StudentUpdate.action?ent_year=${student.entYear}&no=${student.no}&name=${student.name}&classnum=${student.classNum}&birth_day=${student.birthDay}">変更</a></td>
                                 <td><a href="student_delete.jsp?no=${student.no}">削除</a></td>
                             </tr>
                         </c:forEach>

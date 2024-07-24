@@ -25,12 +25,12 @@
 
 
 
-                <form class="mx-3" action="../student/student_create_action" method="get">
+                <form class="mx-3" action="../student/StudentCreate.action" method="get">
                     <button type="submit" class="StudentCreate.action">
                     戻る
                     </button>
                    </form>
-			      <form class="mx-3" action="../student/student_list_action" method="get">
+			      <form class="mx-3" action="../student/StudentList.action" method="get">
                     <button type="submit" class="StudentCreate.action">
                     学生一覧
                     </button>

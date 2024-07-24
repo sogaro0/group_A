@@ -31,7 +31,7 @@
             削除する
             </button>
 
-            <form action="../student/student_list_action" method="get">
+            <form action="../student/StudentList.action" method="get">
     		<button type="button" onclick="history.back()">戻る</button>
     		</form>
             </form>

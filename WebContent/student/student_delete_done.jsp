@@ -23,7 +23,7 @@
             <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">学生情報削除</h2>
 			<label>削除が完了しました。</label>
 
-	<form action="../student/student_list_action" method="get">
+	<form action="../student/StudentList.action" method="get">
     <button type="submit" class="StudentCreate.action">学生一覧</button>
     </form>
         </section>
