@@ -48,8 +48,9 @@ public class LoginExecuteAction extends HttpServlet {
 		// ユーザーデータが格納されていない場合
 		else {
 			System.out.println("ユーザーデータが格納されていません");
-			message = "IDまたはパスワードが間違っています";
-			request.getRequestDispatcher("/login.jsp")
+			message = "※IDまたはパスワードが間違っています";
+			request.setAttribute("message", message);
+			request.getRequestDispatcher("/account/login.jsp")
 			.forward(request,response);
 			}
 		}

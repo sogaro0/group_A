@@ -4,6 +4,13 @@ all {
 	display: flex;
 }
 
+/*エラー文*/
+#error-message {
+	color: red;
+	font-size: small;
+
+}
+
 /*rowの代わり*/
 .function {
 	width: 90%;
