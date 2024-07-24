@@ -24,7 +24,7 @@
                 <div class="test-wide border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                     <div class="list-style mx-3">
                         <label class="form-label" for="test-f1-select">入学年度</label><br>
-                        <select class="form-select" id="test-f1-select" name="f1">
+                        <select class="form-select test-select" id="test-f1-select" name="f1">
                             <option value="0">--------</option>
                             <c:forEach var="year" items="${year_list}">
 							<option value=${year}>${year}</option>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="list-style">
                         <label class="form-label" for="test-f2-select">クラス</label><br>
-                        <select class="form-select" id="test-f2-select" name="f2">
+                        <select class="form-select test-select" id="test-f2-select" name="f2">
                             <option value="0">--------</option>
                             <c:forEach var="class_num" items="${class_num_set}">
                                 <%-- 現在numと選択されていたがf2が一致していた場合selectedを追記 --%>
@@ -45,9 +45,9 @@
                             </c:forEach>
                         </select>
                     </div>
-                  <div class="list-style">
+                  <div class="list-style2">
                         <label class="form-label" for="test-f3-select">科目</label><br>
-                        <select class="form-select" id="test-f3-select" name="f3">
+                        <select class="form-select test-select" id="test-f3-select" name="f3">
                             <option value="0">--------</option>
                             <c:forEach var="subject" items="${subject}">
                                 <%-- 現在numと選択されていたがf3が一致していた場合selectedを追記 --%>
@@ -58,7 +58,7 @@
 
                     <div class="list-style">
                     	<label class="form-label" for="test-f4-select">回数</label><br>
-                    	<select class="times" id="test-f4-select" name="f4">
+                    	<select class="times test-select" id="test-f4-select" name="f4">
                     		<option value="0">--------</option>
                     		<c:forEach var="test" items="${test}">
                                 <%-- 現在numと選択されていたがf4が一致していた場合selectedを追記 --%>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-secondary" id="filter-button">検索</button>
+                        <button class="btn btn-secondary test-btn" id="filter-button">検索</button>
                     </div>
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
                 </div>
