@@ -22,7 +22,7 @@
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma subject bg-opacity-10 py-2 px-4">科目情報登録</h2>
 
- 		<form class="mx-3" action="../subject/subject_create_excute_action" method="get">
+ 		<form class="mx-3" action="../subject/SubjectCreateExcute.action" method="get">
 
 			<label>科目コード</label><br>
 			<input class="select-shape" type="text" name="cd" placeholder="科目コードを入力してください" required="required" value=${no} >

@@ -9,8 +9,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,10 +16,10 @@ import bean.ClassNum;
 import bean.Student;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/student/student_create_excute_action"})
-public class StudentCreateExcuteAction extends HttpServlet {
-	public void doGet (
+public class StudentCreateExcuteAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -105,13 +103,12 @@ public class StudentCreateExcuteAction extends HttpServlet {
 					int line =dao.insert(p);
 
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("student_create_done.jsp")
-					.forward(request,response);
 				}
 
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "student_create_done.jsp";
 	}
 }

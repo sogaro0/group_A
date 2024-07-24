@@ -33,7 +33,7 @@
 
 			<p><span id="year"></span></p>
 
-			<form action="../subject/subject_update_excute_action" method="get">
+			<form action="../subject/SubjectUpdateExcute.action" method="get">
 
 
 			<label class="mx-3">科目コード</label><br>
@@ -47,7 +47,7 @@
             </button>
 			</form>
 
-            <form class="mx-3" action="../subject/subject_list_action" method="get">
+            <form class="mx-3" action="../subject/SubjectList.action" method="get">
    			<button type="submit" class="SubjectCreate.action">科目一覧</button>
    			</form>
 

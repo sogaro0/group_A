@@ -33,7 +33,7 @@
 
             </form>
         </section>
-	<form class="mx-3" action="../subject/subject_list_action" method="get">
+	<form class="mx-3" action="../subject/SubjectList.action" method="get">
     <button type="submit" class="SubjectList.action">戻る</button>
     </form>
 

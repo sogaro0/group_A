@@ -5,18 +5,16 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Subject;
 import dao.SubjectDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/subject/subject_update_action"})
-public class SubjectUpdateAction extends HttpServlet {
-	public void doGet (
+public class SubjectUpdateAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -31,12 +29,11 @@ public class SubjectUpdateAction extends HttpServlet {
 				request.getParameter("name");
 
 				request.setAttribute("subject", list2);
-				request.getRequestDispatcher("subject_update.jsp")
-				.forward(request,response);
 
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "subject_update.jsp";
 	}
 }

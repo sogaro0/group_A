@@ -58,7 +58,7 @@
 			</label></p>
 
 			<label class="mx-3">誕生日</label><br>
-			<input class="select-shape mx-3" type="text" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
+			<input class="select-shape mx-3" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
 
             <button class="mx-3" type="submit" class="StudentUpdate.action">
             変更

@@ -29,10 +29,10 @@
   	<form action="../menu/menu.jsp" method="get">
   		<button type="submit" class="StudentCreate.action side_bt">メニュー</button>
   	</form>
-  	<form action="../student/student_list_action" method="get">
+  	<form action="../student/StudentList.action" method="get">
 		<button type="submit" class="StudentCreate.action side_bt2">学生管理</button>
   	</form>
-  	<form action="../no_student/no_student_list_action" method="get">
+  	<form action="../no_student/NoStudentList.action" method="get">
 		<button type="submit" class="StudentCreate.action side_bt2">退学者リスト</button>
   	</form>
   	<form action="../test/test_regist_action" method="get">
@@ -41,7 +41,7 @@
   	<form action="../test/test_list_action" method="get">
 		<button class="TestCreate.action side_bt2">成績参照</button>
   	</form>
-  	<form action="../subject/subject_list_action" method="get">
+  	<form action="../subject/SubjectList.action" method="get">
 		<button type="submit" class="SubjectCreate.action side_bt2">科目管理</button>
   	</form>
   </nav>

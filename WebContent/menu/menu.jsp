@@ -41,7 +41,7 @@
                 </form>
              </div>
              <div class="box subject">
-              <form action="../subject/subject_list_action" method="get">
+              <form action="../subject/SubjectList.action" method="get">
                     <button type="submit" class="SubjectCreate.action bt3">
                     科目管理
                     </button>

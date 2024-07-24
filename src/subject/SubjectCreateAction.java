@@ -7,18 +7,16 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.ClassNum;
 import dao.ClassNumDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/subject/subject_create_action"})
-public class SubjectCreateAction extends HttpServlet {
-	public void doGet (
+public class SubjectCreateAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -42,11 +40,9 @@ public class SubjectCreateAction extends HttpServlet {
 				List<ClassNum> list=dao.all();
 
 
-				request.getRequestDispatcher("subject_create.jsp")
-				.forward(request,response);
-
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "subject_create.jsp";
 	}
 }

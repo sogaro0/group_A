@@ -23,7 +23,7 @@
             <h2 class="h3 mb-3 fw-norma subject bg-opacity-10 py-2 px-4">科目情報削除</h2>
 			<label  class="mx-3">削除が完了しました。</label>
 
-	<form class="mx-3" action="../subject/subject_list_action" method="get">
+	<form class="mx-3" action="../subject/SubjectList.action" method="get">
     <button type="submit" class="SubjectCreate.action">科目一覧</button>
     </form>
         </section>

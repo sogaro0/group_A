@@ -24,7 +24,7 @@
 			<label class="mx-3">登録が完了しました。</label>
 
 
-			<form class="mx-3" action="../subject/subject_list_action" method="get">
+			<form class="mx-3" action="../subject/SubjectList.action" method="get">
 				<button type="submit" class="SubjectCreate.action">科目一覧</button>
 			</form>
 
