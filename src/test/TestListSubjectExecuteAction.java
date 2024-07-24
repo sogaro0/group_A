@@ -59,18 +59,19 @@ public class TestListSubjectExecuteAction extends HttpServlet {
 
 				request.setAttribute("ent_year", list);
 				request.setAttribute("class_num",list1);
-				request.setAttribute("name",list2);
+				request.setAttribute("subject_name",list2);
 
 
 				int ent_year = Integer.parseInt(request.getParameter("f1"));
 				String class_num = request.getParameter("f2");
-				String name = request.getParameter("f3");
+				String subject_name = request.getParameter("f3");
+				System.out.print(subject_name);
 
 
 				Test p = new Test();
 				p.setEntYear(ent_year);
 				p.setClassNum(class_num);
-				p.setName(name);
+				p.setName(subject_name);
 
 
 
