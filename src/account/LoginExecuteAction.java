@@ -13,7 +13,7 @@ public class LoginExecuteAction extends Action {
 	public String execute(
 			HttpServletRequest request, HttpServletResponse response
 			)throws Exception{
-
+		System.out.println("a");
 		HttpSession session=request.getSession();
 		String message = "";
 		String id=request.getParameter("id");

@@ -17,7 +17,12 @@ public class FrontController extends HttpServlet {
 	) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
 		try {
-
+//			HttpSession session=request.getSession();
+//			// もしセッションが空なら、ログイン画面に飛ぶ
+//			if (session!=null) {
+//				request.getRequestDispatcher("./account/Login.action")
+//				.forward(request,response);
+//			}
 
 			// URLの取得。
 			String path=request.getServletPath().substring(1);
