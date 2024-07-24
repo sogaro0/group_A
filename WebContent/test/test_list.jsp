@@ -80,32 +80,7 @@
                 </div>
                 </div>
             </form>
-             <!-- リスト表示 -->
-				<c:choose>
-					<c:when test="${test.size()>0}">
-					<div class="mx-3">検索結果:${test.size()}件</div>
-                    	<table class="table table-hover mx-3">
-                        	<tr>
-                            	<th>入学年度</th>
-                            	<th>クラス</th>
-                            	<th>学生番号</th>
-                            	<th>氏名</th>
-                            	<th>1回</th>
-                            	<th>2回</th>
-                        	</tr>
-                        	<c:forEach var="test" items="${test}">
-                            	<tr>
-                                	<td>${test.entYear}</td>
-                                	<td>${test.classNum}</td>
-                                	<td>${test.no}</td>
-                                	<td>${test.name}</td>
-                                	<td>${test.point}</td>
-                                	<td>${test.point2}<td>
-                                </tr>
-                        	</c:forEach>
-                    </table>
-					</c:when>
-				</c:choose>
+
         </section>
         <p>
         </p>
