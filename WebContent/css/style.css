@@ -2,6 +2,7 @@ all {
 	width: 200%;
 	heigth: 200%;
 	display: flex;
+	font-family: 'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 
 }
 
@@ -170,7 +171,6 @@ footer{
 	width : 300px;
 	height : 100px;
 	font-size : 150%;
-	 font-family: 'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 	 background-color: #FFBEDA;
 	 color :  #000000;
 	 border: none;
@@ -178,7 +178,6 @@ footer{
 }
 
 .bt:hover {
-	 font-family: "";
 	 background-color: #ffaed7;
 	 color :  #000000;
 	 font-size : 160%;
@@ -189,7 +188,6 @@ footer{
 	width : 300px;
 	height : 100px;
 	font-size : 150%;
-	 font-family: "";
 	 background-color: #BAD3FF;
 	 color :  #000000;
 	 border: none;
@@ -197,7 +195,7 @@ footer{
 }
 
 .bt2:hover {
-	 font-family: "";
+
 	 background-color: #accfff;
 	 color :  #000000;
 	 font-size : 160%;
@@ -208,7 +206,6 @@ footer{
 	width : 300px;
 	height : 200px;
 	font-size : 150%;
-	 font-family: "";
 	 background-color: #CBFFD3;
 	 color :  #000000;
 	 border: none;
@@ -216,7 +213,6 @@ footer{
 }
 
 .bt3:hover {
-	 font-family: "";
 	 background-color: #b5fbb7;
 	 color :  #000000;
 	 font-size : 160%;
