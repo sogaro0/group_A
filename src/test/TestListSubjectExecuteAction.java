@@ -61,10 +61,18 @@ public class TestListSubjectExecuteAction extends HttpServlet {
 				request.setAttribute("class_num",list1);
 				request.setAttribute("subject_name",list2);
 
-
 				int ent_year = Integer.parseInt(request.getParameter("f1"));
 				String class_num = request.getParameter("f2");
 				String subject_name = request.getParameter("f3");
+
+	            if (ent_year == 0 || class_num.equals("0") || subject_name.equals("0")) {
+	                request.setAttribute("errorMessage", "入学年度とクラスと科目を選択してください");
+	                request.getRequestDispatcher("test_list.jsp").forward(request, response);
+	                return;
+	            }
+
+
+
 				System.out.print(subject_name);
 
 
