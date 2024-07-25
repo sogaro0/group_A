@@ -20,10 +20,10 @@
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">退学者情報削除</h2>
-			<label>削除が完了しました。</label>
+            <h2 class="h3 mb-3 fw-norma student bg-opacity-10 py-2 px-4">退学者情報削除</h2>
+			<label class="mx-3">削除が完了しました。</label>
 
-	<form action="../no_student/NoStudentList.action" method="get">
+	<form class="mx-3" action="../no_student/NoStudentList.action" method="get">
     <button type="submit" class="StudentCreate.action">退学者一覧</button>
     </form>
         </section>

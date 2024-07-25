@@ -11,6 +11,21 @@
 
 <body>
 <div class="wrapper">
+<h1 class="toptitle">得点管理システム
+		<% String teacher_name = (String) session.getAttribute("teacher_name"); %>
+		<c:choose>
+		<c:when test="${empty teacher_name}">
+			<p>
+			<a href="../account/Login.action" class="login-link">ログイン</a>
+    		</p>
+    	</c:when>
+    	<c:otherwise>
+	    	<div class="login-link" style="color:black">${teacher_name}さん
+    		<a href="../account/logout.jsp" method="get">ログアウト</a>
+    		</div>
+    	</c:otherwise>
+		</c:choose>
+		</h1>
 ${param.title}
 ${param.scripts}
 ${param.content}

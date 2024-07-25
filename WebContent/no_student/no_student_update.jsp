@@ -44,10 +44,10 @@
 			</label></p>
 
 			<label class="mx-3">氏名</label><br>
-			<input class="select-shape mx-3" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
+			<input class="select-shape2 mx-3" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
 
 			<label class="mx-3">クラス</label><br>
-			<select class="select-shape mx-3" name="class_num">
+			<select class="select-shape2 mx-3" name="class_num">
 			<c:forEach var="class_num" items="${class_num}">
             <option value=${class_num.classNum}>${class_num.classNum}</option>
             </c:forEach>
@@ -58,7 +58,7 @@
 			</label></p>
 
 			<label class="mx-3">誕生日</label><br>
-			<input class="select-shape mx-3" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
+			<input class="select-shape2 mx-3" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
 
             <button class="mx-3" type="submit" class="StudentUpdate.action">
             変更
