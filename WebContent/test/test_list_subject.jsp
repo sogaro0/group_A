@@ -30,7 +30,7 @@
                     <div class="col-xl">
                         <label class="form-label" for="student-f1-select">入学年度</label>
                         <select class="form-select" id="student-f1-select" name="f1">
-                            <option value="O">--------</option>
+                            <option value= 0>--------</option>
                             <c:forEach var="year" items="${ent_year}">
 							<option value=${year.entYear}>${year.entYear}</option>
 							</c:forEach>
@@ -105,6 +105,9 @@
                         	</c:forEach>
                     </table>
 					</c:when>
+				<c:otherwise>
+                    <div>学生情報が存在しませんでした</div>
+                </c:otherwise>
 				</c:choose>
         </section>
         <p>
