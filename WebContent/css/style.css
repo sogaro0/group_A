@@ -2,6 +2,7 @@ all {
 	width: 200%;
 	heigth: 200%;
 	display: flex;
+
 }
 
 /*エラー文*/
@@ -18,6 +19,9 @@ all {
 
 .toptitle {
 	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+	padding: 0.35em;
+	font-size: 50px;
+	letter-spacing: 1.8px;
 }
 
 .login-link {
@@ -30,14 +34,14 @@ all {
    color: #007bff; /* リンクの色を設定（変更可能） */
 }
 .login-link:hover {
-   text-decoration: underline; /* ホバー時の下線 */
+   text-decoration: none;
 }
 
 .box{
- margin : 30px ;
+ margin : 50px ;
  margin-right :115px ;
  margin-bottom :115px ;
- width:200px;
+ width:250px;
  height:100px;
  float:left;
 }
@@ -65,59 +69,7 @@ all {
   border-bottom: 2px solid #00662d;
 }
 
-/* サイドメニュータイトル */
-.sidemenu_title {
-    display: block;
-    width: 100%;
-    padding: 12px 0;
-    text-decoration: none;
-    color: #555;
-    font-weight: bold;
-    background-color: #cce1ff;
-}
 
-.sidemenu_title.current {
-    background-color: #DEEBF7;
-}
-
-.sidemenu_title.current a {
-    color: #555;
-}
-
-.sidemenu_title:hover {
-    background-color: #cce1ff;
-}
-
-/* サイドサブタイトル */
-.submenu_title {
-display: table;
-margin: 0 auto;
-padding: 0;
-width: 80%;
-text-align: center;
-}
-.submenu_title{
-display: table-cell;
-min-width: 50px;
-}
-.submenu_title{
-display: block;
-width: 100%;
-padding: 8px 0;
-text-decoration: none;
-color: #555;
-font-weight: lighter;
-}
-.submenu_title.current{
-background-color: #DEEBF7;
-}
-.submenu_title.current a{
-color: #555;
-}
-
-.submenu_title:hover{
-background-color: #f2f8ff;
-}
 
 /* 相対位置の指定 */
 .wrapper{
@@ -218,7 +170,7 @@ footer{
 	width : 300px;
 	height : 100px;
 	font-size : 150%;
-	 font-family: "";
+	 font-family: 'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 	 background-color: #FFBEDA;
 	 color :  #000000;
 	 border: none;

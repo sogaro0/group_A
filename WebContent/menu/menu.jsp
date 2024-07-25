@@ -17,7 +17,7 @@
     		</p>
     	</c:when>
     	<c:otherwise>
-	    	<div class="login-link" style="color:black">${teacher_name}さん |
+	    	<div class="login-link" style="color:black">${teacher_name}さん
     		<a href="../account/logout.jsp" method="get">ログアウト</a>
     		</div>
     	</c:otherwise>
