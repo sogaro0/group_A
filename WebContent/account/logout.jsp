@@ -46,7 +46,7 @@
 <div class="logout-container">
 <h2>ログアウト</h2>
 <p>本当にログアウトしますか？</p>
-<form action="Logout.action" method="post">
+<form action="./logout_action" method="get">
 <input type="submit" value="ログアウト">
 </form>
 <button onclick="history.back()">戻る</button>
