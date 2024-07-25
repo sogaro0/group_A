@@ -84,7 +84,7 @@ public class TestDAO extends DAO {
 				+ "student.name, new_test.point, new_test.is_pass "
 				 + "from student "
 				+ "left join ( "
-				+ "select test.point as point,test.subject_cd, test.no test.is_pass as is_pass, test.student_no as student_no, test.subject_cd, test.no from test "
+				+ "select test.point as point,test.subject_cd, test.no, test.is_pass as is_pass, test.student_no as student_no, test.subject_cd, test.no from test "
 				+ "where no=? and subject_cd=? "
 				+ ") as new_test "
 				+ "on student.no = new_test.student_no "
