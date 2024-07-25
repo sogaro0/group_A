@@ -70,49 +70,51 @@ public class TestDAO extends DAO {
 //}
 
 
-//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
-public List<Test> search(Student test, Test test1) throws Exception {
-	List<Test> list=new ArrayList<>();
+	//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
+	public List<Test> search(Student test, Test test1) throws Exception {
+		List<Test> list=new ArrayList<>();
 
-	Connection con=getConnection();
+		Connection con=getConnection();
 
-	PreparedStatement st=con.prepareStatement(
+		PreparedStatement st=con.prepareStatement(
 
-//	testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
-//	生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
-	"select distinct student_no, point, student.name, student.ent_year, test.class_num, subject.name, test.no, test.is_pass from test "
-	+ "join student "
-	+ "on test.student_no = student.no "
-	+ "join subject "
-	+ "on test.subject_cd = subject.cd "
-	+ "where student.ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ? "
-	+ "order by student_no");
+//		testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
+//		生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
+				"select student.ent_year,  student.class_num, student.no, "
+				+ "student.name, new_test.point, new_test.is_pass "
+				 + "from student "
+				+ "left join ( "
+				+ "select test.point as point,test.subject_cd, test.no test.is_pass as is_pass, test.student_no as student_no, test.subject_cd, test.no from test "
+				+ "where no=? and subject_cd=? "
+				+ ") as new_test "
+				+ "on student.no = new_test.student_no "
+				+"where student.ent_year = ? and student.class_num = ?; ");
 
-		st.setInt(1, test.getEntYear());
-		st.setString(2, test.getClassNum());
-		st.setString(3, test1.getSubject());
-		st.setInt(4, test1.getTimes());
+			st.setInt(1, test1.getTimes());
+			st.setString(2, test1.getSubject());
+			st.setInt(3, test.getEntYear());
+			st.setString(4, test.getClassNum());
 
-	ResultSet rs=st.executeQuery();
+		ResultSet rs=st.executeQuery();
 
 
-		while (rs.next()){
-			Test p=new Test();
-			p.setSubject(rs.getString("subject.name"));
-			p.setTimes(rs.getInt("test.no"));
-			p.setEntYear(rs.getInt("ent_year"));
-			p.setClassNum(rs.getString("class_num"));
-			p.setStudentNum(rs.getString("student_no"));
-			p.setName(rs.getString("student.name"));
-			p.setPoint(rs.getInt("point"));
-			p.setIs_pass(rs.getBoolean("is_pass"));
-			list.add(p);
+			while (rs.next()){
+				Test p=new Test();
+				p.setEntYear(rs.getInt("ent_year"));
+				p.setClassNum(rs.getString("class_num"));
+				p.setStudentNum(rs.getString("student.no"));
+				p.setName(rs.getString("student.name"));
+				p.setPoint(rs.getInt("point"));
+				p.setIs_pass(rs.getBoolean("is_pass"));
+				p.setTimes(rs.getInt("test.no"));
+				p.setSubject_cd(rs.getString("test.subject_cd"));
+				list.add(p);
+			}
+		st.close();
+		con.close();
+
+		return list;
 		}
-	st.close();
-	con.close();
-
-	return list;
-	}
 
 //テスト回数を重複しないように取り出す
 public List<Test> dup() throws Exception {
