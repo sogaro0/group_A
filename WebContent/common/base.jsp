@@ -1,6 +1,10 @@
 <%-- 共通部分JSP --%>
 <%@ page contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- 文字化けの対策 --%>
+<% request.setCharacterEncoding("UTF-8"); %>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +15,7 @@
 
 <body>
 <div class="wrapper">
-<h1 class="toptitle">得点管理システム
+		<h1 class="toptitle">得点管理システム
 		<% String teacher_name = (String) session.getAttribute("teacher_name"); %>
 		<c:choose>
 		<c:when test="${empty teacher_name}">
@@ -26,7 +30,7 @@
     	</c:otherwise>
 		</c:choose>
 		</h1>
-${param.title}
+
 ${param.scripts}
 ${param.content}
 </div>

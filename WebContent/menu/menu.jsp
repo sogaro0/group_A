@@ -7,32 +7,13 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <c:import url="/common/base.jsp">
-    <c:param name="title">
-		<h1 class="toptitle">得点管理システム
-		<% String teacher_name = (String) session.getAttribute("teacher_name"); %>
-		<c:choose>
-		<c:when test="${empty teacher_name}">
-			<p>
-			<a href="../account/Login.action" class="login-link">ログイン</a>
-    		</p>
-    	</c:when>
-    	<c:otherwise>
-	    	<div class="login-link" style="color:black">${teacher_name}さん
-    		<a href="../account/logout.jsp" method="get">ログアウト</a>
-    		</div>
-    	</c:otherwise>
-		</c:choose>
-		</h1>
-
-
-	</c:param>
     <c:param name="content">
     <c:import url="/common/sidemenu.jsp"></c:import>
 
     <div class="function">
 
-        <section class="col-lg-12">
-			<h2 class="h3 mb-3 fw-norma bg-light bg-opacisty-10 py-2 px-4">メニュー</h2>
+        <section class="mo-4">
+			<h2 class="h3 mb-3 fw-norma bg-light bg-opacisty-10 menu-height px-5">メニュー</h2>
 			<div class="box student">
 
                <form action="../student/StudentList.action" method="get">
