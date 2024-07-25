@@ -206,4 +206,40 @@ public List<Test> search1(Test test ) throws Exception {
 
 	return list3;
 }
+
+//学生番号で検索
+	public List<Test> searchstudentcd(Test Test) throws Exception {
+		List<Test> list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+		"select * from test "
+		+ " join student on test.student_no = student.no "
+		+ " join subject on test.subject_cd = subject.cd "
+		+ " where student_no = ?");
+
+			st.setString(1, Test.getStudentNum());
+
+		ResultSet rs=st.executeQuery();
+
+		while (rs.next()){
+			Test p=new Test();
+			p.setSubject(rs.getString("subject.name"));
+			p.setSubject_cd(rs.getString("subject_cd"));
+			p.setNo(rs.getInt("no"));
+			p.setName(rs.getString("name"));
+			p.setStudentNum(rs.getString("student_no"));
+			p.setPoint(rs.getInt("point"));
+
+
+
+			list.add(p);
+		}
+
+		st.close();
+		con.close();
+
+		return list;
+	}
 }
