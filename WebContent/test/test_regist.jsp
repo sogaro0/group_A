@@ -58,13 +58,10 @@
 
                     <div class="list-style">
                     	<label class="form-label" for="test-f4-select">回数</label><br>
-                    	<select class="times test-select" id="test-f4-select" name="f4">
-                    		<option value="0">--------</option>
-                    		<c:forEach var="test" items="${test}">
-                                <%-- 現在numと選択されていたがf4が一致していた場合selectedを追記 --%>
-                                <option value=${test.times } <c:if test="${test.times==f4}">selected</c:if>>${test.times}</option>
-                            </c:forEach>
-                    	</select>
+                    	<select name="count">
+							<option value="1">1</option>
+							<option value="2">2</option>
+						</select>
                     </div>
                     <div>
                     	<input type="hidden" name="f5" value="abc">
