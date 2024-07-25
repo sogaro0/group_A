@@ -2,10 +2,10 @@ all {
 	width: 200%;
 	heigth: 200%;
 	display: flex;
-	font-family: 'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+	font-family: 'Noto Serif JP', sans-serif;
 
 }
-
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
 /*エラー文*/
 #error-message {
 	color: red;
@@ -20,6 +20,7 @@ all {
 
 .toptitle {
 	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+	text-align: center;
 	padding: 0.35em;
 	font-size: 50px;
 	letter-spacing: 1.8px;
@@ -39,9 +40,9 @@ all {
 }
 
 .box{
- margin : 50px ;
- margin-right :115px ;
- margin-bottom :115px ;
+ margin : 40px ;
+ margin-right :70px ;
+ margin-bottom :100px ;
  width:250px;
  height:100px;
  float:left;
