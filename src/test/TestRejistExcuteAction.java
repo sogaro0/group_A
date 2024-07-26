@@ -32,6 +32,7 @@ public class TestRejistExcuteAction extends HttpServlet {
 			    String[] name = request.getParameterValues("name");
 			    String subject_cd = request.getParameter("subject_cd");
 			    int times = Integer.parseInt(request.getParameter("times"));
+			    String shool_cd = request.getParameter("school_cd");
 
 			    HttpSession session = request.getSession();
 			    Integer judge = (Integer) session.getAttribute("judge");
@@ -51,6 +52,7 @@ public class TestRejistExcuteAction extends HttpServlet {
 				p.setName(name[i]);
 				p.setSubject_cd(subject_cd);
 				p.setTimes(times);
+				p.setSchool_cd(shool_cd);
 
 				//データがない(新規登録)の場合
 				if(subject_cd == null){

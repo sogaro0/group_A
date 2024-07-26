@@ -113,10 +113,10 @@
                                 	<td>${result.name}</td>
                                 	<input type="hidden" class="tests" name="name" value=${result.name}>
                                 	<td><input type="text" class="tests" name="point" value=${result.point}></td>
-                                	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
                                 	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
                                 	<input type="hidden" class="tests" name="times" value=${times}>
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
+									<input type="hidden" class="tests" name="school_cd" value=${result.school_cd}>
                                 	<td class="text-center">
                                     <c:choose>
                                       <c:when test="${result.is_pass==true}">
