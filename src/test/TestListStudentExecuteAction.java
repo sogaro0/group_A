@@ -2,7 +2,6 @@ package test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -30,29 +29,25 @@ public class TestListStudentExecuteAction extends HttpServlet {
 			PrintWriter out=response.getWriter();
 			try{
 
-			    ArrayList<Integer> year_list = new ArrayList<>();
+				// h2コンソールから入学年度のリストを取得
+				StudentDAO dao=new StudentDAO();
+				List<Student> list=dao.ent_year();
 
+				// h2コンソールからクラス番号を取得
+				ClassNumDAO dao1=new ClassNumDAO();
+				List<ClassNum> list1=dao1.all();
 
-				 // クラス番号テーブルを読ませて、test_list.jspに渡す tryの中に入れる文
-
-			    //h2より各種を取得
-					StudentDAO dao=new StudentDAO();
-					List<Student> list=dao.all();
-
-					ClassNumDAO dao1=new ClassNumDAO();
-					List<ClassNum> list1=dao1.all();
-
-					SubjectDAO dao2=new SubjectDAO();
-					List<Subject> list2=dao2.all();
-
-
+				// h2コンソールから科目のリストを取得
+				SubjectDAO dao2=new SubjectDAO();
+				List<Subject> list2=dao2.all();
 
 				// アトリビュート
-	                request.setAttribute("year_list", year_list);
-					request.setAttribute("students", list);
-					request.setAttribute("class_num_set", list1);
-					request.setAttribute("subject", list2);
+				request.setAttribute("ent_year", list);
+				request.setAttribute("class_num",list1);
+				request.setAttribute("subject_name",list2);
 
+
+				//test_list_studentの本体
 
 				String student_id = request.getParameter("cd");
 
