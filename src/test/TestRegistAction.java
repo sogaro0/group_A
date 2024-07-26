@@ -147,6 +147,8 @@ public class TestRegistAction extends HttpServlet {
 							request.setAttribute("result", list5);
 							request.setAttribute("times", times);
 							request.setAttribute("subject_cd", subject);
+							request.setAttribute("class_num", class_num);
+							request.setAttribute("ent_year", ent_year);
 
 							flag = 0;
 							}

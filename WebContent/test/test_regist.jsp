@@ -105,9 +105,9 @@
                         	<c:forEach var="result" items="${result}">
                             	<tr>
                                 	<td>${result.entYear}</td>
-                                	<input type="hidden" class="tests" name="ent_year" value=${result.entYear}>
+                                	<input type="hidden" class="tests" name="ent_year" value=${ent_year}>
                                 	<td>${result.classNum}</td>
-                                	<input type="hidden" class="tests" name="classNum" value=${result.classNum}>
+                                	<input type="hidden" class="tests" name="class_num" value=${class_num}>
                                 	<td>${result.studentNum}</td>
                                 	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
                                 	<td>${result.name}</td>
