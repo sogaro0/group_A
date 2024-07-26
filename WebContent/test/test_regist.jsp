@@ -116,7 +116,6 @@
                                 	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
                                 	<input type="hidden" class="tests" name="times" value=${times}>
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
-									<input type="hidden" class="tests" name="school_cd" value=${result.school_cd}>
                                 	<td class="text-center">
                                     <c:choose>
                                       <c:when test="${result.is_pass==true}">

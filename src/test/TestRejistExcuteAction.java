@@ -27,7 +27,6 @@ public class TestRejistExcuteAction extends HttpServlet {
 				//test_rejisrt.jspから値を取得
 				String[] student_no = request.getParameterValues("studentNum");
 			    String subject_cd = request.getParameter("subject_cd");
-			    String school_cd = request.getParameter("school_cd");
 			    int times = Integer.parseInt(request.getParameter("times"));
 			    String[] point = request.getParameterValues("point");
 			    String class_num = request.getParameter("class_num");
@@ -36,7 +35,6 @@ public class TestRejistExcuteAction extends HttpServlet {
 
 			    System.out.println(student_no);
 			    System.out.println(subject_cd);
-			    System.out.println(school_cd);
 			    System.out.println(times);
 			    System.out.println(point);
 			    System.out.println(class_num);
