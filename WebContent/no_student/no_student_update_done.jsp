@@ -23,7 +23,6 @@
 
 		<form class="mx-3" action="../no_student/NoStudentList.action" method="get">
     		<button type="submit" class="StudentCreate.action">退学者一覧</button><br>
-    		<a href="no_student_create.jsp">戻る</a>
    		</form>
 
         </section>
