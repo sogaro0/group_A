@@ -31,7 +31,7 @@ label {
 }
 /* ボタンのスタイル */
 input[type="submit"] {
-   background-color: #87c0fa;
+   background-color: #D3EDFB;
    color: white;
    padding: 10px 20px;
    border: none;
@@ -40,25 +40,18 @@ input[type="submit"] {
    font-size: 17px;
 }
 input[type="submit"]:hover {
-   background-color: #87cefa;
+   background-color: #9FD9F6;
 }
 </style>
-<head>
-<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<form action="../account/login_excute_action" method="post">
-<p>ID<input type="text" name="id" required="required"></p>
+<form action="Login.action" method="post">
+<p>ID<input type="text" name="login"></p>
 <p>パスワード
-<input type="password" id="password" name="password" required="required">
+<input type="password" id="password" name="password">
 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
 <label for="showPassword">パスワード表示</label>
 </p>
-<!-- IDやパスワードが間違っていた場合、エラー文を表示する -->
-<div id="error-message" >${message}</div>
 <p><input type="submit" value="ログイン"></p>
 </form>
-</body>
 <script>
 function togglePasswordVisibility() {
    var passwordField = document.getElementById('password');

@@ -22,7 +22,7 @@
 .logout-done-container a {
    display: inline-block;
    margin-top: 10px;
-   background-color: #87c0fa;
+   background-color: #D3EDFB;
    color: white;
    padding: 10px 20px;
    border: none;
@@ -32,7 +32,7 @@
    text-decoration: none;
 }
 .logout-done-container a:hover {
-   background-color: #87c0fa;
+   background-color: #9FD9F6;
 }
 </style>
 <div class="logout-done-container">

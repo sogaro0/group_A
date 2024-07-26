@@ -24,7 +24,7 @@
    margin: 5px;
 }
 .logout-container input[type="submit"], .logout-container button {
-   background-color: #87cefa;
+   background-color: #D3EDFB;
    color: white;
    padding: 10px 20px;
    border: none;
@@ -33,7 +33,7 @@
    font-size: 16px;
 }
 .logout-container input[type="submit"]:hover, .logout-container button:hover {
-   background-color: #87c0fa;
+   background-color: #9FD9F6;
 }
 .logout-container button {
    background-color: #ccc;
@@ -46,7 +46,7 @@
 <div class="logout-container">
 <h2>ログアウト</h2>
 <p>本当にログアウトしますか？</p>
-<form action="./logout_action" method="get">
+<form action="Logout.action" method="post">
 <input type="submit" value="ログアウト">
 </form>
 <button onclick="history.back()">戻る</button>
