@@ -47,28 +47,6 @@ public class TestDAO extends DAO {
 		// ここまで
 	}
 
-//	/**
-//	 * Product表へデータを挿入する。
-//	 * @param product
-//	 * @return
-//	 * @throws Exception
-//	 */
-//	public int insert(Product product) throws Exception {
-//		// ここから
-//		Connection con=getConnection();
-//		PreparedStatement st=con.prepareStatement(
-//				"insert into product values(null, ?, ?)");
-//		st.setString(1, product.getName());
-//		st.setInt(1, product.getPrice());
-//		int line=st.executeUpdate();
-//
-//		st.close();
-//		con.close();
-//		// ここまで
-//		return line;
-//	}
-//}
-
 
 	//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
 	public List<Test> search(Student test, Test test1) throws Exception {
@@ -80,11 +58,11 @@ public class TestDAO extends DAO {
 
 //		testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
 //		生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
-				"select student.ent_year,  student.class_num, student.no, "
-				+ "student.name, new_test.point, new_test.is_pass "
+				"select student.ent_year, student.class_num, student.no, "
+				+ "student.name, new_test.point, new_test.is_pass, new_test.no,new_test.subject_cd "
 				 + "from student "
 				+ "left join ( "
-				+ "select test.point as point,test.subject_cd, test.no, test.is_pass as is_pass, test.student_no as student_no, test.subject_cd, test.no from test "
+				+ "select test.point as point, test.is_pass as is_pass, test.student_no as student_no, test.subject_cd, test.no from test "
 				+ "where no=? and subject_cd=? "
 				+ ") as new_test "
 				+ "on student.no = new_test.student_no "
@@ -97,7 +75,6 @@ public class TestDAO extends DAO {
 
 		ResultSet rs=st.executeQuery();
 
-
 			while (rs.next()){
 				Test p=new Test();
 				p.setEntYear(rs.getInt("ent_year"));
@@ -106,8 +83,6 @@ public class TestDAO extends DAO {
 				p.setName(rs.getString("student.name"));
 				p.setPoint(rs.getInt("point"));
 				p.setIs_pass(rs.getBoolean("is_pass"));
-				p.setTimes(rs.getInt("test.no"));
-				p.setSubject_cd(rs.getString("test.subject_cd"));
 				list.add(p);
 			}
 		st.close();
@@ -186,8 +161,6 @@ public List<Test> search1(Test test ) throws Exception {
 	st.setString(3, test.getName());
 
 	ResultSet rs=st.executeQuery();
-
-
 
 	while (rs.next()){
 			Test p=new Test();
