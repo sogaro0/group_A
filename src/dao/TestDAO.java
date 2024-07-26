@@ -206,6 +206,7 @@ public List<Test> search1(Test test ) throws Exception {
 			p.setName(rs.getString("name"));
 			p.setStudentNum(rs.getString("student_no"));
 			p.setPoint(rs.getInt("point"));
+			p.setIs_pass(rs.getBoolean("is_pass"));
 
 
 

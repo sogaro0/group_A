@@ -23,7 +23,7 @@
             <div class="my-2 text-end px-4">
             </div>
 
-            <form method="get">
+            <form action="test_list_subject_execute_action" method="get">
                 <div class="border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div class="test-wide col-xl">
                 <p>科目情報</p>
@@ -94,6 +94,7 @@
                             <th>科目コード</th>
                             <th>回数</th>
                             <th>点数</th>
+                            <th class="text-center">判定</th>
 
                             <th></th>
                         </tr>
@@ -103,6 +104,17 @@
                                <td>${test.subject_cd}</td>
                                <td>${test.no}</td>
                                <td>${test.point}</td>
+
+                               <td class="text-center">
+                                    <c:choose>
+                                      <c:when test="${test.is_pass==true}">
+                                        〇
+                                      </c:when>
+                                      <c:otherwise>
+                                        ×
+                                      </c:otherwise>
+                                    </c:choose>
+                                </td>
 
 
                             </tr>
