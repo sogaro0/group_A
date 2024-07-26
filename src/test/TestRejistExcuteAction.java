@@ -25,14 +25,23 @@ public class TestRejistExcuteAction extends HttpServlet {
 			try{
 
 				//test_rejisrt.jspから値を取得
+				String[] student_no = request.getParameterValues("studentNum");
+			    String subject_cd = request.getParameter("subject_cd");
+			    String school_cd = request.getParameter("school_cd");
+			    int times = Integer.parseInt(request.getParameter("times"));
 			    String[] point = request.getParameterValues("point");
-			    String[] student_no = request.getParameterValues("studentNum");
-			    int ent_year = Integer.parseInt(request.getParameter("ent_year"));
 			    String class_num = request.getParameter("class_num");
 			    String[] name = request.getParameterValues("name");
-			    String subject_cd = request.getParameter("subject_cd");
-			    int times = Integer.parseInt(request.getParameter("times"));
-			    String shool_cd = request.getParameter("school_cd");
+			    int ent_year = Integer.parseInt(request.getParameter("ent_year"));
+
+			    System.out.println(student_no);
+			    System.out.println(subject_cd);
+			    System.out.println(school_cd);
+			    System.out.println(times);
+			    System.out.println(point);
+			    System.out.println(class_num);
+			    System.out.println(name);
+			    System.out.println(ent_year);
 
 			    HttpSession session = request.getSession();
 			    Integer judge = (Integer) session.getAttribute("judge");
@@ -52,7 +61,8 @@ public class TestRejistExcuteAction extends HttpServlet {
 				p.setName(name[i]);
 				p.setSubject_cd(subject_cd);
 				p.setTimes(times);
-				p.setSchool_cd(shool_cd);
+				p.setSchool_cd(school_cd);
+
 
 				//データがない(新規登録)の場合
 				if(subject_cd == null){
