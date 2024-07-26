@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import bean.Teacher;
 import dao.TeacherDAO;
 
-@WebServlet(urlPatterns={"/account/login_excute_action"})
+@WebServlet(urlPatterns={"/account/login_execute_action"})
 public class LoginExecuteAction extends HttpServlet {
 
 	public void doPost(

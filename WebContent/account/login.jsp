@@ -43,14 +43,14 @@ input[type="submit"]:hover {
    background-color: #9FD9F6;
 }
 </style>
-<form action="Login.action" method="post">
+<form action="login_execute_action" method="get">
 <p>ID<input type="text" name="login"></p>
 <p>パスワード
 <input type="password" id="password" name="password">
 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
 <label for="showPassword">パスワード表示</label>
 </p>
-<p><input type="submit" value="ログイン"></p>
+<p><input type="submit" value="ログイン" ></p>
 </form>
 <script>
 function togglePasswordVisibility() {
