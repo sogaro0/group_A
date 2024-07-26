@@ -1,5 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <style>
 .logout-done-container {
    max-width: 400px;
@@ -35,8 +37,14 @@
    background-color: #9FD9F6;
 }
 </style>
+
+<c:import url="/common/base.jsp">
+<c:param name="content">
 <div class="logout-done-container">
 <h2>ログアウトが完了しました</h2>
 <a href="login.jsp">ログインページへ戻る</a>
 </div>
+</c:param>
+</c:import>
+
 <%@include file="../footer.html" %>
