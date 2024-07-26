@@ -55,7 +55,7 @@
 
 
 			<p><label>在学中
-    		<input type="checkbox" name="is_attend" value="ture">
+    		<input type="checkbox" name="is_attend" value="ture" checked="checked">
 			</label></p>
 
 			<label>誕生日</label><br>
