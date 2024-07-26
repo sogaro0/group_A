@@ -11,14 +11,7 @@ import bean.Test;
 
 public class TestDAO extends DAO {
 
-	/**
-	 * Product表からキーワードを検索し、該当する商品のListを返却する。
-	 * @param keyword
-	 * @return list<Product>
-	 * @throws Exception
-	 */
 	public List<Test> all() throws Exception {
-		// ここから
 		List<Test> list=new ArrayList<>();
 
 		Connection con=getConnection();
@@ -44,7 +37,6 @@ public class TestDAO extends DAO {
 		con.close();
 
 		return list;
-		// ここまで
 	}
 
 
@@ -217,5 +209,28 @@ public List<Test> search1(Test test ) throws Exception {
 		con.close();
 
 		return list;
+	}
+
+	public int insert(Test test) throws Exception {
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"insert into student (student_no, subject_cd, school_cd, no, point, class_num, is_pass, ent_year, name)"
+				+ " values(?, ?, 'oom', ?, ?, ?, ?, ?, ?)");
+
+		st.setString(1, test.getStudentNum());
+		st.setString(2, test.getSubject_cd());
+		st.setInt(3, test.getTimes());
+		st.setInt(4, test.getPoint());
+		st.setString(5, test.getClassNum());
+		st.setBoolean(6, test.getIs_pass());
+		st.setInt(7, test.getEntYear());
+		st.setString(7, test.getName());
+
+		int line= st.executeUpdate();
+		st.close();
+		con.close();
+
+		return line;
 	}
 }

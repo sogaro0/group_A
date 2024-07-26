@@ -80,7 +80,7 @@
 					<c:when test="${not empty result}">
 						<c:forEach var="result" items="${result}" end="0">
 							<div class="mx-3">
-								<p>科目:${result.subject}(${result.times}回)</p>
+								<p>科目:${subject_cd}(${times}回)</p>
 	                    	</div>
 	                    </c:forEach>
 	            <form class="mx-3" action="../test/test_judge" >
@@ -105,11 +105,18 @@
                         	<c:forEach var="result" items="${result}">
                             	<tr>
                                 	<td>${result.entYear}</td>
+                                	<input type="hidden" class="tests" name="ent_year" value=${result.entYear}>
                                 	<td>${result.classNum}</td>
+                                	<input type="hidden" class="tests" name="classNum" value=${result.classNum}>
                                 	<td>${result.studentNum}</td>
+                                	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
                                 	<td>${result.name}</td>
-                                	<td><input type="text" class="point" name="point" value=${result.point}></td>
-                                	<input type="hidden" class="point" name="studentNum" value=${result.studentNum}>
+                                	<input type="hidden" class="tests" name="name" value=${result.name}>
+                                	<td><input type="text" class="tests" name="point" value=${result.point}></td>
+                                	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
+                                	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
+                                	<input type="hidden" class="tests" name="times" value=${times}>
+									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
                                 	<td class="text-center">
                                     <c:choose>
                                       <c:when test="${result.is_pass==true}">

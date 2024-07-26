@@ -27,6 +27,11 @@ public class TestRejistExcuteAction extends HttpServlet {
 				//test_rejisrt.jspから値を取得
 			    String[] point = request.getParameterValues("point");
 			    String[] student_no = request.getParameterValues("studentNum");
+			    int ent_year = Integer.parseInt(request.getParameter("ent_year"));
+			    String class_num = request.getParameter("class_num");
+			    String[] name = request.getParameterValues("name");
+			    String subject_cd = request.getParameter("subject_cd");
+			    int times = Integer.parseInt(request.getParameter("times"));
 
 			    HttpSession session = request.getSession();
 			    Integer judge = (Integer) session.getAttribute("judge");
@@ -41,17 +46,40 @@ public class TestRejistExcuteAction extends HttpServlet {
 				Test p = new Test();
 				p.setPoint(point_int[i]);
 				p.setStudentNum(student_no[i]);
+				p.setEntYear(ent_year);
+				p.setClassNum(class_num);
+				p.setName(name[i]);
+				p.setSubject_cd(subject_cd);
+				p.setTimes(times);
 
-				//赤点の場合
-				if (point_int[i] < judge){
-				TestDAO dao=new TestDAO();
-				int line =dao.update1(p);}
+				//データがない(新規登録)の場合
+				if(subject_cd == null){
+					TestDAO dao1=new TestDAO();
+					int line1 =dao1.insert(p);
 
-				//黒点の場合
-				else if(point_int[i] >= judge){
-					TestDAO dao=new TestDAO();
-					int line =dao.update2(p);
+						//赤点の場合
+						if (point_int[i] < judge){
+							TestDAO dao=new TestDAO();
+							int line2 =dao.update1(p);}
+
+						//黒点の場合
+						else if(point_int[i] >= judge){
+							TestDAO dao=new TestDAO();
+							int line2 =dao.update2(p);}
 				}
+
+				//既にデータがある(更新)の場合
+				else{
+					//赤点の場合
+					if (point_int[i] < judge){
+					TestDAO dao=new TestDAO();
+					int line =dao.update1(p);}
+
+					//黒点の場合
+					else if(point_int[i] >= judge){
+						TestDAO dao=new TestDAO();
+						int line =dao.update2(p);}
+					}
 				}
 
 				request.getRequestDispatcher("test_rejist_done.jsp")

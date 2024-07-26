@@ -145,6 +145,8 @@ public class TestRegistAction extends HttpServlet {
 							TestDAO dao6=new TestDAO();
 							List<Test> list5=dao6.search(p, p1);
 							request.setAttribute("result", list5);
+							request.setAttribute("times", times);
+							request.setAttribute("subject_cd", subject);
 
 							flag = 0;
 							}
