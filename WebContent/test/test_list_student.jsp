@@ -30,7 +30,7 @@
                     <div class="col-xl select-wide">
                         <label class="form-label" for="student-f1-select">入学年度</label><br>
                         <select class="form-select" id="student-f1-select" name="f1">
-                            <option value="O">--------</option>
+                            <option value=0>--------</option>
                             <c:forEach var="year" items="${ent_year}">
 							<option value=${year.entYear}>${year.entYear}</option>
 							</c:forEach>
@@ -39,7 +39,7 @@
                     <div class="col-xl">
                         <label class="form-label" for="student-f2-select">クラス</label><br>
                         <select class="form-select" id="student-f2-select" name="f2">
-                            <option value="O">--------</option>
+                            <option value="0">--------</option>
                             <c:forEach var="num" items="${class_num}">
                             <option value=${num.classNum}>${num.classNum}</option>
                             </c:forEach>
@@ -48,7 +48,7 @@
 					<div class="col-xl">
                         <label class="form-label" for="student-f2-select">科目</label><br>
                         <select class="form-select" id="student-f2-select" name="f3">
-                            <option value="O">--------</option>
+                            <option value="0">--------</option>
 						<c:forEach var="subject" items="${subject_name}">
                             <option value=${subject.name}>${subject.name}</option>
                             </c:forEach>
