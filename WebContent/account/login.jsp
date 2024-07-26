@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+
 <style>
 /* フォーム全体のスタイル */
 form {
@@ -43,15 +44,23 @@ input[type="submit"]:hover {
    background-color: #9FD9F6;
 }
 </style>
-<form action="login_execute_action" method="get">
-<p>ID<input type="text" name="login"></p>
+
+<head>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<form action="login_execute_action" method="post">
+<p>ID<input type="text" name="id"></p>
 <p>パスワード
 <input type="password" id="password" name="password">
 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
 <label for="showPassword">パスワード表示</label>
 </p>
+<p id="error-message">${message}</p>
 <p><input type="submit" value="ログイン" ></p>
 </form>
+</body>
 <script>
 function togglePasswordVisibility() {
    var passwordField = document.getElementById('password');
