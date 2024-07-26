@@ -64,10 +64,10 @@
 
             <form action="test_list_student_execute_action" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-                <div class="test-wide col-xl">
+                <div class="test-wide mx-3">
                 <p>学生情報</p>
-                    <div class="col-xl">
-                        <label class="form-label" for="student-f1-select">学生番号</label>
+                    <div class="col-xl select-wide">
+                        <label class="form-label" for="student-f1-select">学生番号</label><br>
 
 					<input type="text" maxlength="10" name="cd" placeholder="学生番号を入力してください" required="required" value=${""} >
                     </div>
@@ -122,7 +122,7 @@
                     </table>
                 </c:when>
                 <c:otherwise>
-                    <div>　　成績情報が存在しませんでした</div>
+                    <div class="mx-3">成績情報が存在しませんでした</div>
                 </c:otherwise>
             </c:choose>
         </section>

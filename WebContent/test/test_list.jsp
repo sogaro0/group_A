@@ -83,7 +83,7 @@
 
 					<input type="text" maxlength="10" name="cd" placeholder="学生番号を入力してください" required="required" value=${""} >
                     </div>
-					<div class="text-center col-1">
+					<div class="text-center col-xl">
                         <button class="btn btn-secondary" id="filter-button">検索</button>
                     </div>
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>

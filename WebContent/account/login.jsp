@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
 /* フォーム全体のスタイル */
@@ -45,13 +46,10 @@ input[type="submit"]:hover {
 }
 </style>
 
-<head>
-<link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body>
+<c:import url="/common/base.jsp">
+<c:param name="content">
 <form action="login_execute_action" method="post">
-<p>ID<input type="text" name="id"></p>
+ID<br><input type="text" name="id">
 <p>パスワード
 <input type="password" id="password" name="password">
 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
@@ -60,7 +58,9 @@ input[type="submit"]:hover {
 <p id="error-message">${message}</p>
 <p><input type="submit" value="ログイン" ></p>
 </form>
-</body>
+</c:param>
+</c:import>
+
 <script>
 function togglePasswordVisibility() {
    var passwordField = document.getElementById('password');
