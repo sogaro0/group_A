@@ -23,17 +23,14 @@
             <div class="my-2 text-end px-4">
             </div>
 
-            <!-- エラーメッセージの表示 -->
-            <c:if test="${not empty errorMessage}">
-                <div class="alert alert-danger" role="alert">
-                    ${errorMessage}
-                </div>
-            </c:if>
+
+
 
             <form action="test_list_subject_execute_action" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div class="test-wide mx-3">
                 <p>科目情報</p>
+
                     <div class="col-xl select-wide">
                         <label class="form-label" for="student-f1-select">入学年度</label><br>
                         <select class="form-select" id="student-f1-select" name="f1">
@@ -64,8 +61,14 @@
 					<div class="col-1 text-center">
                         <button class="btn btn-secondary" id="filter-button">検索</button>
                     </div>
-                    <div class="mt-2 text-warning">${errors.get("f1")}</div>
+
                 </div>
+                            <!-- エラーメッセージの表示 -->
+            <c:if test="${not empty errorMessage}">
+                <div class=" col-12 ">
+                    ${errorMessage}
+                </div>
+            	</c:if>
                 </div>
             </form>
 
