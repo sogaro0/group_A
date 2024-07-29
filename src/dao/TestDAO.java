@@ -161,10 +161,8 @@ public List<Test> search1(Test test ) throws Exception {
 			p.setNo(rs.getInt("no"));
 			p.setName(rs.getString("name"));
 			p.setPoint(rs.getInt("point_1"));
-			p.setPoint2(rs.getString("point_2"));
-			if (p.getPoint2() == null){
-				p.setPoint2("-");
-			}
+			p.setPoint2(rs.getInt("point_2"));
+
 
 			list3.add(p);
 		}
