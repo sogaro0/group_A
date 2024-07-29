@@ -49,9 +49,9 @@ input[type="submit"]:hover {
 <c:import url="/common/base.jsp">
 <c:param name="content">
 <form action="../account/login_execute_action" method="post">
-ID<br><input type="text" name="id">
+ID<br><input type="text" name="id" required="required">
 <p>パスワード
-<input type="password" id="password" name="password">
+<input type="password" id="password" name="password" required="required">
 <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
 <label for="showPassword">パスワード表示</label>
 </p>
