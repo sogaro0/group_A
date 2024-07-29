@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.ClassNum;
 import bean.Student;
@@ -29,6 +30,15 @@ public class TestListSubjectExecuteAction extends Action {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
 			try{
+				//	セッションを取得
+				HttpSession session=request.getSession();
+				//	基準点を取得
+				Integer judge = (int) session.getAttribute("judge");
+				//	セッションで基準点が設定されていなかった場合、基準点は60とする
+				if (judge == null){
+					judge = 60;
+				}
+				request.setAttribute("judge", judge);
 
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
@@ -40,7 +50,7 @@ public class TestListSubjectExecuteAction extends Action {
 			    	year_list.add(i);
 			    	}
 
-				 // クラス番号ClassNumテーブルを読ませて、student_list.jspに渡す tryの中に入れる文
+				// クラス番号ClassNumテーブルを読ませて、student_list.jspに渡す tryの中に入れる文
 
 			    // h2コンソールから入学年度のリストを取得
 				StudentDAO dao=new StudentDAO();
@@ -77,7 +87,6 @@ public class TestListSubjectExecuteAction extends Action {
 
 				TestDAO dao_test=new TestDAO();
 				List<Test> list3 = dao_test.search1(p);
-				System.out.println(list3);
 
 				request.setAttribute("test",list3);
 

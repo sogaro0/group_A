@@ -6,6 +6,8 @@
 <%-- 文字化けの対策 --%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setContentType("text/html; charset=UTF-8"); %>
+<%-- 基準点を読み込む --%>
+
 
 
 <c:import url="/common/base.jsp">
@@ -112,7 +114,7 @@
                     </td>
                     <td>
                         <c:choose>
-                            <c:when test="${test.point >= 60}">
+                            <c:when test="${test.point >= judge}">
                                 〇
                             </c:when>
                             <c:otherwise>
@@ -133,7 +135,7 @@
                     <td>
                         <c:choose>
 
-                            <c:when test="${test.point2 >= 60}">
+                            <c:when test="${test.point2 >= judge}">
                                 〇
                             </c:when>
                             <c:otherwise>
