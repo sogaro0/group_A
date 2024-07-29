@@ -62,7 +62,13 @@ public class StudentCreateExcuteAction extends Action {
 					message = "学生番号が重複しています";
 				}
 
-				System.out.println(message);
+//				学生番号の文字数を調べる
+				int count = no.length();
+
+//				学生番号が11文字以上の場合、メッセージを格納
+				if (count > 10){
+					message = "学生番号が11文字以上です";
+				}
 
 
 				// messageにエラー文が格納されていた場合、student_create.jspにフォワードする

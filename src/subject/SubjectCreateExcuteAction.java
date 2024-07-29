@@ -23,18 +23,19 @@ public class SubjectCreateExcuteAction extends Action {
 				String cd = request.getParameter("cd");
 				String name = request.getParameter("name");
 
+//				エラーメッセージの文字列
 				String message="";
-				int num = cd.length();
+//				科目コードの文字数を調べる
+				int count = cd.length();
 
-				if (num > 3){
-
-					message = "科目コードが3文字以上です";
+				if (count > 3){
+					message = "科目コードが2文字以上です";
 
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
 					.forward(request,response);
-				}else if(num < 3){
-					message = "科目コードが3文字以下です";
+				}else if(count < 3){
+					message = "科目コードが4文字以下です";
 
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
