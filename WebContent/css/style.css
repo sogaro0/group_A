@@ -151,12 +151,13 @@ footer{
 	height: 45px;
 }
 
-.test-boder {
-	border-top:1px solid #c7c7c7;
+.student-table-wide {
+	width: 12%;
+	height: 45px;
 }
 
-.test-boder2 {
-	border-top:1px solid #c7c7c7;
+.test-boder {
+	border-top:1px solid #d3d3d3;
 }
 
 /*test_regist.jspのセレクトボックスの縦幅*/

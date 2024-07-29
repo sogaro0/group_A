@@ -34,10 +34,10 @@
                         </tr>
                         <c:forEach var="subject" items="${subject}">
                             <tr>
-                                <td class="test-table-wide test-boder2">${subject.cd}</td>
-                                <td class="test-table-wide test-boder2">${subject.name}</td>
-                                <td class="test-table-width test-boder2"><a href="SubjectUpdate.action?cd=${subject.cd}&name=${subject.name}">変更</a></td>
-                                <td class="test-table-width test-boder2"><a href="subject_delete.jsp?cd=${subject.cd}">削除</a></td>
+                                <td class="test-table-wide test-boder">${subject.cd}</td>
+                                <td class="test-table-wide test-boder">${subject.name}</td>
+                                <td class="test-table-width test-boder"><a href="SubjectUpdate.action?cd=${subject.cd}&name=${subject.name}">変更</a></td>
+                                <td class="test-table-width test-boder"><a href="subject_delete.jsp?cd=${subject.cd}">削除</a></td>
                             </tr>
                         </c:forEach>
                     </table>
