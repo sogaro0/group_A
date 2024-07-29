@@ -89,6 +89,7 @@
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
                 </div>
                 </div>
+                <div class="mx-3"> 科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</div>
             </form>
 
         </section>
