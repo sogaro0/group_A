@@ -44,8 +44,6 @@ public class StudentCreateExcuteAction extends Action {
 				// パターンと文字列の照合
 				Matcher m1 = p1.matcher(no);
 				// 照合結果をtrueまたはfalseで取得する
-			    boolean result = m1.matches();
-				System.out.println(result);
 
 			    if (result == false){
 			    	message = "学生番号は数字を入力してください";
@@ -55,7 +53,6 @@ public class StudentCreateExcuteAction extends Action {
 			    // 学生番号Noに重複があるか調べる
 				StudentDAO dao=new StudentDAO();
 				String cnt=dao.validate(no);
-				System.out.println(cnt);
 				// 重複していた場合、メッセージを格納
 
 				if (cnt.equals("1")){

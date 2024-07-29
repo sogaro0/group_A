@@ -31,13 +31,9 @@ public class LoginExecuteAction extends HttpServlet {
 
 		TeacherDAO dao=new TeacherDAO();
 		Teacher teacher=dao.login(id, password);
-		System.out.println(teacher);
-		System.out.println(teacher.getId());
-		System.out.println(teacher.getName());
 
 		// ユーザーデータが格納されている場合
 		if (teacher.getId()!=null){
-			System.out.println("ユーザーデータが格納されています");
 			// ユーザーデータをセッションに格納
 			session.setAttribute("teacher_id", teacher.getId());
 			session.setAttribute("teacher_name", teacher.getName());
@@ -47,7 +43,6 @@ public class LoginExecuteAction extends HttpServlet {
 		}
 		// ユーザーデータが格納されていない場合
 		else {
-			System.out.println("ユーザーデータが格納されていません");
 			message = "※IDまたはパスワードが間違っています";
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("/account/login.jsp")

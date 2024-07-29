@@ -82,7 +82,6 @@ public class TestRegistAction extends Action {
 
 						SubjectDAO dao7=new SubjectDAO();
 						String subject_name=dao7.search_name(subject);
-						System.out.println(subject_name);
 
 //						TestDAOからデータを取り寄せる
 						TestDAO dao4=new TestDAO();
@@ -138,8 +137,6 @@ public class TestRegistAction extends Action {
 							request.setAttribute("class_num", class_num);
 							request.setAttribute("ent_year", ent_year);
 							request.setAttribute("subject_name", subject_name);
-							System.out.println(subject_name);
-							System.out.println(times);
 
 							}
 

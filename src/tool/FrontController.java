@@ -24,7 +24,6 @@ public class FrontController extends HttpServlet {
 
 			// もしセッションが空なら、ログイン画面に飛ぶ
 			if (teacher_id==null) {
-				System.out.println("セッションが空です");
 				request.getRequestDispatcher("../account/login.jsp")
 				.forward(request,response);
 			}

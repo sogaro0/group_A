@@ -98,7 +98,6 @@ public class StudentDAO extends DAO {
 		int line= st.executeUpdate();
 		st.close();
 		con.close();
-		System.out.println("hogehogehoge");
 		return line;
 	}
 

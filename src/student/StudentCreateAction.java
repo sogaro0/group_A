@@ -27,13 +27,11 @@ public class StudentCreateAction extends Action {
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
 				int year = date.getYear() + 1900;
-			    System.out.println(year);
 
 			    ArrayList<Integer> year_list = new ArrayList<>();
 
 			    for (int i = year-10; i < year+11; i++){
 			    	year_list.add(i);
-			    	System.out.println(year_list);
 			    	}
 
 

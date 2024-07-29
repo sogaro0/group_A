@@ -76,7 +76,6 @@ public class TestDAO extends DAO {
 				p.setPoint(rs.getInt("point"));
 				p.setIs_pass(rs.getBoolean("is_pass"));
 				list.add(p);
-				System.out.println(p.getPoint());
 			}
 		st.close();
 		con.close();
