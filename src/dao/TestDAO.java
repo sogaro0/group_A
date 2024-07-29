@@ -50,7 +50,7 @@ public class TestDAO extends DAO {
 
 //		testテーブルとstudentテーブルを生徒番号で結合して、testテーブルとsubjectテーブルを教科コードで結合して、
 //		生徒番号と生徒氏名と入学年度とクラス番号とテストの得点とテストの回数と教科を取り出す
-				"select student.ent_year, student.class_num, student.no, "
+				"select student.ent_year,point, student.class_num, student.no, "
 				+ "student.name, new_test.point, new_test.is_pass, new_test.no,new_test.subject_cd "
 				 + "from student "
 				+ "left join ( "
@@ -76,6 +76,7 @@ public class TestDAO extends DAO {
 				p.setPoint(rs.getInt("point"));
 				p.setIs_pass(rs.getBoolean("is_pass"));
 				list.add(p);
+				System.out.println(p.getPoint());
 			}
 		st.close();
 		con.close();

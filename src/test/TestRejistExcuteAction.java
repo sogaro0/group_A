@@ -56,7 +56,6 @@ public class TestRejistExcuteAction extends HttpServlet {
 				TestDAO dao5=new TestDAO();
 				Test test_check = dao5.search3(student_no[i], subject_cd, times);
 
-
 				//データがない(新規登録)の場合
 				if(test_check.getSubject_cd() == null){
 					TestDAO dao1=new TestDAO();

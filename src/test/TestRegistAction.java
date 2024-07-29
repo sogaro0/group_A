@@ -89,7 +89,7 @@ public class TestRegistAction extends HttpServlet {
 						p1.setTimes(times);
 
 						SubjectDAO dao7=new SubjectDAO();
-						Subject subject_name=dao7.search_name(subject);
+						String subject_name=dao7.search_name(subject);
 
 //						TestDAOからデータを取り寄せる
 						TestDAO dao4=new TestDAO();
@@ -102,8 +102,6 @@ public class TestRegistAction extends HttpServlet {
 //					    基準点の初期値設定
 					    HttpSession session = request.getSession();
 					    Integer judge = (Integer) session.getAttribute("judge");
-
-						System.out.println(judge);
 
 					    if(judge == null){
 					    	judge = 60;
