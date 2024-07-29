@@ -88,6 +88,9 @@ public class TestRegistAction extends HttpServlet {
 						p1.setSubject(subject);
 						p1.setTimes(times);
 
+						SubjectDAO dao7=new SubjectDAO();
+						Subject subject_name=dao7.search_name(subject);
+
 //						TestDAOからデータを取り寄せる
 						TestDAO dao4=new TestDAO();
 						List<Test> list4=dao4.search(p, p1);
@@ -149,6 +152,7 @@ public class TestRegistAction extends HttpServlet {
 							request.setAttribute("subject_cd", subject);
 							request.setAttribute("class_num", class_num);
 							request.setAttribute("ent_year", ent_year);
+							request.setAttribute("subject_name", subject_name);
 
 							flag = 0;
 							}

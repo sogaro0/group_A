@@ -104,4 +104,29 @@ public int insert(Subject subject) throws Exception {
 	return line;
 }
 
+public Subject search_name(String subject) throws Exception {
+
+	Subject subject_name=new Subject();
+
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+	"select * from Subject "
+	+ "where cd = ?");
+
+	ResultSet rs=st.executeQuery();
+
+	while (rs.next()){
+		Subject p=new Subject();
+		p.setCd(rs.getString("cd"));
+
+		subject_name.setCd(rs.getString("subject_cd"));
+
+	}
+	st.close();
+	con.close();
+
+	return subject_name;
+}
+
 }
