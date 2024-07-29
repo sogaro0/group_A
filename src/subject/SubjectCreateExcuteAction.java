@@ -23,14 +23,32 @@ public class SubjectCreateExcuteAction extends Action {
 				String cd = request.getParameter("cd");
 				String name = request.getParameter("name");
 
+				String message="";
+				int num = cd.length();
 
-				Subject p = new Subject();
-				p.setCd(cd);
-				p.setName(name);
+				if (num > 3){
 
-				SubjectDAO dao=new SubjectDAO();
-				int line =dao.insert(p);
+					message = "科目コードが3文字以上です";
 
+					request.setAttribute("message", message);
+					request.getRequestDispatcher("subject_create.jsp")
+					.forward(request,response);
+				}else if(num < 3){
+					message = "科目コードが3文字以下です";
+
+					request.setAttribute("message", message);
+					request.getRequestDispatcher("subject_create.jsp")
+					.forward(request,response);
+				}else{
+					Subject p = new Subject();
+					p.setCd(cd);
+					p.setName(name);
+
+					SubjectDAO dao=new SubjectDAO();
+					int line =dao.insert(p);
+
+					request.setAttribute("message", message);
+					}
 
 			} catch (Exception e) {
 				e.printStackTrace(out);

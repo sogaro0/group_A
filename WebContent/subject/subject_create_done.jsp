@@ -18,7 +18,7 @@
     </c:import>
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma subject bg-opacity-10 py-2 px-4">科目情報登録</h2>
-			<label class="mx-3">登録が完了しました。</label>
+			<label class="btn-position">登録が完了しました。</label>
 
 
 			<form class="mx-3" action="../subject/SubjectList.action" method="get">

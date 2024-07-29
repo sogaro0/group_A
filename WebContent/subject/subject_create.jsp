@@ -24,6 +24,9 @@
 			<label>科目コード</label><br>
 			<input class="select-shape" type="text" name="cd" placeholder="科目コードを入力してください" required="required" value=${no} >
 
+			<%-- エラー文 --%>
+			<div id="error-message">${message}</div>
+
 			<label>科目名</label><br>
 			<input class="select-shape" type="text" name="name" placeholder="科目名を入力してください" required="required" value=${name}>
 
