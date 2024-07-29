@@ -114,6 +114,8 @@ public Subject search_name(String subject) throws Exception {
 	"select * from Subject "
 	+ "where cd = ?");
 
+	st.setString(1, subject);
+
 	ResultSet rs=st.executeQuery();
 
 	while (rs.next()){
