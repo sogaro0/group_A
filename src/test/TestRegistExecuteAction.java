@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,18 +11,18 @@ import javax.servlet.http.HttpSession;
 //成績, bean, dao
 import bean.Test;
 import dao.TestDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/test/test_rejist_execute_action"})
-public class TestRejistExcuteAction extends HttpServlet {
-	public void doGet (
+public class TestRegistExecuteAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
 			try{
 
-				//test_rejisrt.jspから値を取得
+				//test_regist.jspから値を取得
 				String[] student_no = request.getParameterValues("studentNum");
 			    String subject_cd = request.getParameter("subject_cd");
 			    int times = Integer.parseInt(request.getParameter("times"));
@@ -87,12 +85,10 @@ public class TestRejistExcuteAction extends HttpServlet {
 					}
 				}
 
-				request.getRequestDispatcher("test_rejist_done.jsp")
-				.forward(request,response);
-
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "test_regist_done.jsp";
 	}
 
 }

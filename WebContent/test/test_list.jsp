@@ -26,7 +26,7 @@
 
 
 
-            <form action="test_list_subject_execute_action" method="get">
+            <form action="TestListSubjectExecute.action" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div class="test-wide mx-3">
                 <p>科目情報</p>
@@ -74,7 +74,7 @@
 
 
 
-            <form action="test_list_student_execute_action" method="get">
+            <form action="TestListStudentExecute.action" method="get">
                 <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                <div class="test-wide mx-3">
                 <p>学生情報</p>

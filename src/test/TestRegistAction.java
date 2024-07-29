@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,10 +19,10 @@ import dao.ClassNumDAO;
 import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/test/test_regist_action"})
-public class TestRegistAction extends HttpServlet {
-	public void doGet (
+public class TestRegistAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 
@@ -158,12 +156,11 @@ public class TestRegistAction extends HttpServlet {
 					}
 				}
 
-//				test_regist.jspにデータを送信
-				request.getRequestDispatcher("test_regist.jsp")
-				.forward(request,response);
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			//	test_regist.jspにデータを送信
+			return "test_regist.jsp";
 	}
 }

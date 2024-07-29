@@ -55,7 +55,7 @@ public class Testjudge extends HttpServlet {
 					int line =dao.update2(p);
 				}
 				}
-				request.getRequestDispatcher("../test/test_regist_action")
+				request.getRequestDispatcher("../test/TestRegist.action")
 				.forward(request,response);
 
 			} catch (Exception e) {

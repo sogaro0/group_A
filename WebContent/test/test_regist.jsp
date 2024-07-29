@@ -20,7 +20,7 @@
     <c:import url="/common/sidemenu.jsp"></c:import>
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma bg-opacity-10 py-2 px-4 grade">成績管理</h2>
-            <form action="../test/test_regist_action" method="get">
+            <form action="../test/TestRegist.action" method="get">
                 <div class="test-wide border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                     <div class="list-style mx-3">
                         <label class="form-label" for="test-f1-select">入学年度</label><br>
@@ -91,7 +91,7 @@
                          	</c:forEach>
 	                    <button class="btn btn-secondary" id="filter-button">基準点の変更</button>
 	            </form>
-				<form action="test_rejist_execute_action" method="get">
+				<form action="TestRegistExecute.action" method="get">
                     <table class="table table-hover mx-3">
 
                         	<tr>

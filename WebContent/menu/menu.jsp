@@ -28,10 +28,10 @@
                 </form>
              </div>
             <div class="box grade">
-                <form action="../test/test_regist_action" method="get">
+                <form action="../test/TestRegist.action" method="get">
                 	<button type="submit" class="StudentCreate.action bt2">成績登録</button>
                 </form>
-             <form action="../test/test_list_action" method="get">
+             <form action="../test/TestList.action" method="get">
                 <button class="TestCreate.action bt2">成績参照</button>
                 </form>
              </div>

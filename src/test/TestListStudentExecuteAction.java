@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,11 +16,11 @@ import dao.ClassNumDAO;
 import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/test/test_list_student_execute_action"})
-public class TestListStudentExecuteAction extends HttpServlet {
-	public void doGet (
+public class TestListStudentExecuteAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -56,16 +54,14 @@ public class TestListStudentExecuteAction extends HttpServlet {
 
 
 
-					TestDAO dao3=new TestDAO();
-					List<Test> list3=dao3.searchstudentcd(p);
-					request.setAttribute("test", list3);
-
-				request.getRequestDispatcher("test_list_student.jsp")
-				.forward(request,response);
+				TestDAO dao3=new TestDAO();
+				List<Test> list3=dao3.searchstudentcd(p);
+				request.setAttribute("test", list3);
 
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "test_list_student.jsp";
 	}
 
 }

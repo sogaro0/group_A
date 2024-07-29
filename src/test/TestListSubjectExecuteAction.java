@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,13 +18,12 @@ import dao.ClassNumDAO;
 import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/test/test_list_subject_execute_action"})
-public class TestListSubjectExecuteAction extends HttpServlet {
-	private static final Object line = null;
+public class TestListSubjectExecuteAction extends Action {
 
-	public void doGet (
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
@@ -64,25 +61,19 @@ public class TestListSubjectExecuteAction extends HttpServlet {
 				int ent_year = Integer.parseInt(request.getParameter("f1"));
 				String class_num = request.getParameter("f2");
 				String subject_name = request.getParameter("f3");
-
+				//	入学年度、クラス番号、科目名のいずれかが空の場合、errorMessageにエラー文を格納し
+				//	test_list.jspにフォワードする。
 	            if (ent_year == 0 || class_num.equals("0") || subject_name.equals("0")) {
+
 	                request.setAttribute("errorMessage", "入学年度とクラスと科目を選択してください");
 	                request.getRequestDispatcher("test_list.jsp").forward(request, response);
-	                return;
 	            }
-
-
-
-				System.out.print(subject_name);
 
 
 				Test p = new Test();
 				p.setEntYear(ent_year);
 				p.setClassNum(class_num);
 				p.setName(subject_name);
-
-
-
 
 				TestDAO dao_test=new TestDAO();
 				List<Test> list3 = dao_test.search1(p);
@@ -91,12 +82,9 @@ public class TestListSubjectExecuteAction extends HttpServlet {
 				request.setAttribute("test",list3);
 
 
-
-				request.getRequestDispatcher("test_list_subject.jsp")
-				.forward(request,response);
-
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "test_list_subject.jsp";
 	}
 }

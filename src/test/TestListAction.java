@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,18 +14,18 @@ import bean.Subject;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
 import dao.SubjectDAO;
+import tool.Action;
 
 
-@WebServlet(urlPatterns={"/test/test_list_action"})
-public class TestListAction extends HttpServlet {
-	public void doGet (
+public class TestListAction extends Action {
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
 
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
-			try{
 
+			try{
 			    // h2コンソールから入学年度のリストを取得
 				StudentDAO dao=new StudentDAO();
 				List<Student> list=dao.ent_year();
@@ -45,12 +43,10 @@ public class TestListAction extends HttpServlet {
 				request.setAttribute("class_num",list1);
 				request.setAttribute("subject_name",list2);
 
-				request.getRequestDispatcher("test_list.jsp")
-				.forward(request,response);
-
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}
+			return "test_list.jsp";
 	}
 
 }
