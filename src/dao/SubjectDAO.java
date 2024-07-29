@@ -111,7 +111,7 @@ public Subject search_name(String subject) throws Exception {
 	Connection con=getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-	"select * from Subject "
+	"select * from subject "
 	+ "where cd = ?");
 
 	st.setString(1, subject);
@@ -122,7 +122,7 @@ public Subject search_name(String subject) throws Exception {
 		Subject p=new Subject();
 		p.setCd(rs.getString("cd"));
 
-		subject_name.setCd(rs.getString("subject_cd"));
+		subject_name.setCd(rs.getString("cd"));
 
 	}
 	st.close();
