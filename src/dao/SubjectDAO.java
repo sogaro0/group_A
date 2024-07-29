@@ -106,6 +106,7 @@ public int insert(Subject subject) throws Exception {
 
 public String search_name(String subject) throws Exception {
 
+	System.out.println("hello");
 	String subject_name=new String();
 
 	Connection con=getConnection();
@@ -124,6 +125,7 @@ public String search_name(String subject) throws Exception {
 
 		subject_name = p.getName();
 	}
+	System.out.println(subject_name);
 	st.close();
 	con.close();
 

@@ -25,17 +25,13 @@ public class TestRegistAction extends Action {
 	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
-
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
-
 			try{
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
 				int year = date.getYear() + 1900;
-
 			    ArrayList<Integer> year_list = new ArrayList<>();
-
 			    for (int i = year-10; i < year+11; i++){
 			    	year_list.add(i);
 			    	}
@@ -68,16 +64,14 @@ public class TestRegistAction extends Action {
 
 //				もしもbootがnullでない時次の処理へ
 				if (boot != null){
-
 //					もしbootがboot2と同じ文字列だったら次の処理へ
 					if (boot.equals(boot2)){
 
 //						test_regist.jspからデータを取り寄せる
-						int ent_year = Integer.parseInt(request.getParameter("f1"));
+						Integer ent_year = Integer.parseInt(request.getParameter("f1"));
 						String class_num = request.getParameter("f2");
 						String subject = request.getParameter("f3");
-						int times = Integer.parseInt(request.getParameter("f4"));
-
+						Integer times = Integer.parseInt(request.getParameter("f4"));
 						Student p = new Student();
 						p.setClassNum(class_num);
 						p.setEntYear(ent_year);
@@ -88,14 +82,12 @@ public class TestRegistAction extends Action {
 
 						SubjectDAO dao7=new SubjectDAO();
 						String subject_name=dao7.search_name(subject);
+						System.out.println(subject_name);
 
 //						TestDAOからデータを取り寄せる
 						TestDAO dao4=new TestDAO();
 						List<Test> list4=dao4.search(p, p1);
 						request.setAttribute("result", list4);
-
-//						基準点の初期値設定のフラグ設定
-					    int flag = 0;
 
 //					    基準点の初期値設定
 					    HttpSession session = request.getSession();
@@ -103,12 +95,9 @@ public class TestRegistAction extends Action {
 
 					    if(judge == null){
 					    	judge = 60;
-					    	flag = 1;
 							session.setAttribute("judge", judge);
 					    }
 
-//						基準値の初期設定の反映
-						if(flag == 1){
 
 							//配列を準備
 							List<Integer> point = new ArrayList<Integer>();
@@ -119,7 +108,7 @@ public class TestRegistAction extends Action {
 					    		point.add(list4.get(i).getPoint());
 					    	};
 
-//					    	を配学生番号を配列に入れる
+//					    	学生番号を配列に入れる
 					    	for(int i = 0; i < list4.size(); i++){
 					    		student_no.add(list4.get(i).getStudentNum());
 					    	};
@@ -149,10 +138,11 @@ public class TestRegistAction extends Action {
 							request.setAttribute("class_num", class_num);
 							request.setAttribute("ent_year", ent_year);
 							request.setAttribute("subject_name", subject_name);
+							System.out.println(subject_name);
+							System.out.println(times);
 
-							flag = 0;
 							}
-						}
+
 					}
 				}
 
