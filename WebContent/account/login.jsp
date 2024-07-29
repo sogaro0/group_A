@@ -48,7 +48,7 @@ input[type="submit"]:hover {
 
 <c:import url="/common/base.jsp">
 <c:param name="content">
-<form action="login_execute_action" method="post">
+<form action="../account/login_execute_action" method="post">
 ID<br><input type="text" name="id">
 <p>パスワード
 <input type="password" id="password" name="password">
