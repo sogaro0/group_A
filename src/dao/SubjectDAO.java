@@ -104,9 +104,9 @@ public int insert(Subject subject) throws Exception {
 	return line;
 }
 
-public Subject search_name(String subject) throws Exception {
+public String search_name(String subject) throws Exception {
 
-	Subject subject_name=new Subject();
+	String subject_name=new String();
 
 	Connection con=getConnection();
 
@@ -120,10 +120,9 @@ public Subject search_name(String subject) throws Exception {
 
 	while (rs.next()){
 		Subject p=new Subject();
-		p.setCd(rs.getString("cd"));
+		p.setName(rs.getString("name"));
 
-		subject_name.setCd(rs.getString("cd"));
-
+		subject_name = p.getName();
 	}
 	st.close();
 	con.close();
