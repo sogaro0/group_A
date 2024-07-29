@@ -102,7 +102,7 @@
                     <td>${test.name}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${empty test.point || test.point == 0}">
+                            <c:when test="${empty test.point || test.point == null}">
                                 －
                             </c:when>
                             <c:otherwise>
@@ -122,7 +122,7 @@
                     </td>
                     <td>
                         <c:choose>
-                            <c:when test="${empty test.point2 || test.point2 == 0}">
+                            <c:when test="${empty test.point2 || test.point2 == null}">
                                 －
                             </c:when>
                             <c:otherwise>

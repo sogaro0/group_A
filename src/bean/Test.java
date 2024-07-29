@@ -8,8 +8,8 @@ public class Test {
 	private String subject_cd;
 	private String school_cd;
 	private int times;
-	private int point;
-	private int point2;
+	private Integer point;
+	private Integer point2;
 	private int no;
 	private String class_num;
 	private Date test_day;
@@ -31,10 +31,10 @@ public class Test {
 	public int getTimes() {
 		return times;
 	}
-	public int getPoint() {
+	public Integer getPoint() {
 		return point;
 	}
-	public int getPoint2() {
+	public Integer getPoint2() {
 		return point2;
 	}
 	public int getNo() {
@@ -71,10 +71,10 @@ public class Test {
 	public void setTimes(int times){
 		this.times=times;
 	}
-	public void setPoint(int point){
+	public void setPoint(Integer point){
 		this.point=point;
 	}
-	public void setPoint2(int point2){
+	public void setPoint2(Integer point2){
 		this.point2=point2;
 	}
 	public void setNo(int no){
