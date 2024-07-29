@@ -80,7 +80,7 @@
 					<c:when test="${not empty result}">
 						<c:forEach var="result" items="${result}" end="0">
 							<div class="mx-3">
-								<p>科目:${subject_name.subject_name}(${times}回)</p>
+								<p>科目:${subject_name}(${times}回)</p>
 	                    	</div>
 	                    </c:forEach>
 	            <form class="mx-3" action="../test/test_judge" >
