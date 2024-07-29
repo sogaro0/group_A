@@ -18,7 +18,7 @@
     </c:import>
         <section class="mo-4">
             <h2 class="h3 mb-3 fw-norma student bg-opacity-10 py-2 px-4">学生情報変更</h2>
-			<label class="mx-3">変更が完了しました。</label>
+			<label class="btn-position">変更が完了しました。</label>
 
 
 		<form class="mx-3" action="../student/StudentList.action" method="get">

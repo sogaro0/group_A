@@ -129,8 +129,10 @@ footer{
 	margin-bottom :20px ;
 }
 
+/*テキストボックスの枠を消す*/
 .select-shape3 {
 	border: none;
+	outline: none;
 	height: 35px;
 	margin-bottom :20px ;
 }

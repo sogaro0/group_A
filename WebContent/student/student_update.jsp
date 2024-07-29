@@ -33,11 +33,11 @@
 			<form class="mx-3" action="../student/StudentUpdateExcute.action" method="get">
 
             <label>入学年度</label><br>
- 			<input class="select-shape" type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly>
+ 			<input class="select-shape3" type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly><br>
 
 
 			<label>学生番号</label><br>
-			<input class="select-shape" type="text" value="<%=request.getParameter("no")%>" name='no'readonly>
+			<input class="select-shape3" type="text" value="<%=request.getParameter("no")%>" name='no'readonly><br>
 
 
 			<label>氏名</label><br>

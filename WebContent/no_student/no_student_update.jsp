@@ -30,34 +30,32 @@
 
 			<p><span id="year"></span></p>
 
-			<form action="../no_student/NoStudentUpdateExcute.action" method="get">
+			<form class="mx-3" action="../no_student/NoStudentUpdateExcute.action" method="get">
 
-            <p><label class="mx-3">入学年度<br>
- 			<input type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly>
-			</label></p>
+            <label>入学年度</label><br>
+ 			<input class="select-shape3" type="text" value="<%=request.getParameter("ent_year")%>" name='ent_year' readonly><br>
 
-			<p><label class="mx-3">学生番号<br>
-			<input type="text" value="<%=request.getParameter("no")%>" name='no'readonly>
-			</label></p>
+			<label>学生番号</label><br>
+			<input class="select-shape3" type="text" value="<%=request.getParameter("no")%>" name='no'readonly><br>
 
-			<label class="mx-3">氏名</label><br>
-			<input class="select-shape2 mx-3" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
+			<label>氏名</label><br>
+			<input class="select-shape2" type="text"  name="name" placeholder="<%=request.getParameter("name")%>"  value="${name}" required="required">
 
-			<label class="mx-3">クラス</label><br>
-			<select class="select-shape2 mx-3" name="class_num">
+			<label>クラス</label><br>
+			<select class="select-shape2" name="class_num">
 			<c:forEach var="class_num" items="${class_num}">
             <option value=${class_num.classNum}>${class_num.classNum}</option>
             </c:forEach>
 			</select>
 
-			<p><label class="mx-3">在学中
-    		<input class="mx-3" type="checkbox" name="is_attend" value="ture">
+			<p><label>在学中
+    		<input type="checkbox" name="is_attend" value="ture">
 			</label></p>
 
-			<label class="mx-3">誕生日</label><br>
-			<input class="select-shape2 mx-3" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
+			<label>誕生日</label><br>
+			<input class="select-shape2" type="date" class="textsize" name="birth_day" placeholder="<%=request.getParameter("birth_day")%>" required="required" value=${birthday} >
 
-            <button class="mx-3" type="submit" class="StudentUpdate.action">
+            <button type="submit" class="StudentUpdate.action">
             変更
             </button>
 			</form>
