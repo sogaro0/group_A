@@ -18,7 +18,6 @@ public class LogoutAction extends HttpServlet{
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out=response.getWriter();
 		try{
-		System.out.println("ログアウト画面に遷移");
 		HttpSession session=request.getSession();
 //		セッションを破棄する
 		if(session != null){
