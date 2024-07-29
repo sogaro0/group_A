@@ -28,6 +28,9 @@ public class StudentSearch extends HttpServlet {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
 			try{
+				//	エラー文を格納する変数
+				String message = "";
+
 
 				// 現在の年数+-10年のリストを取得
 			    Date date = new Date();
@@ -80,8 +83,6 @@ public class StudentSearch extends HttpServlet {
 					List<Student> list=dao.search3(p);
 					request.setAttribute("students", list);
 				}
-
-
 
 				//入学年度:指定 クラス番号:指定(分類番号:なし)
 				else{

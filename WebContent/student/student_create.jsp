@@ -35,19 +35,19 @@
 
             <label>入学年度</label><br>
             <select class="select-shape" name="ent_year" required="required">
-				<option value="">--------</option>
+				<option value=0>--------</option>
                 <c:forEach var="year" items="${year_list}">
 				<option value=${year}>${year}</option>
 				</c:forEach>
 			</select>
-
+			<div id="error-message">${message_ent_year}</div>
 
 			<label>学生番号</label><br>
 			<input class="select-shape" type="text" class="textsize" name="no" placeholder="学生番号を入力してください" required="required" value=${no} >
 
 
 			<%-- エラー文 --%>
-			<div id="error-message">${message}</div>
+			<div id="error-message">${message_student_no}</div>
 
 			<label>氏名</label><br>
 			<input class="select-shape" type="text" class="textsize" name="name" placeholder="氏名を入力してください" required="required" value=${name} >

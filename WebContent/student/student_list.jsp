@@ -27,7 +27,7 @@
                     <div class="col-3 select-style">
                         <label class="form-label" for="student-f1-select">入学年度</label><br>
                         <select class="form-select" id="student-f1-select" name="f1">
-                            <option value="0">--------　　</option>
+                            <option value=0>--------　　</option>
                             <c:forEach var="year" items="${year_list}">
 							<option value=${year}>${year}</option>
 							</c:forEach>
@@ -51,16 +51,15 @@
                         <label class="form-check-label" for="student-f3-check">在学中
                             <%-- パラメーターf3が存在している場合checkboxを追記 --%>
                             <input class="from-check-input" type="checkbox"
-                            id="student-f3-check" name="f3" value="True"
+                            id="student-f3-check" name="f3" value="True" checked="checked"
                             <c:if test="${!empty f3}">checked</c:if> />
                         </label>
                     </div>
                     <div class="col-2 text-center select-style">
                         <button class="btn btn-secondary" id="filter-button">絞込み</button>
                     </div>
-
-
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
+                <div id="error-message">${message}</div>
                 </div>
             </form>
             <c:choose>

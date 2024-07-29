@@ -50,10 +50,10 @@ public class StudentListAction extends Action {
 				StudentDAO dao=new StudentDAO();
 				List<Student> list=dao.all();
 
+
 				// アトリビュート
 				request.setAttribute("students", list);
 				request.setAttribute("year_list", year_list);
-
 
 
 			} catch (Exception e) {
