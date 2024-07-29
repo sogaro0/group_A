@@ -215,16 +215,15 @@ public List<Test> search1(Test test ) throws Exception {
 
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"insert into student (student_no, subject_cd, school_cd, no, point, class_num, is_pass, ent_year, name)"
-				+ " values(?, ?, 'oom', ?, ?, ?, ?, ?, ?)");
+				"insert into test (student_no, subject_cd, school_cd, no, point, class_num, ent_year, name)"
+				+ " values(?, ?, 'oom', ?, ?, ?, ?, ?)");
 
 		st.setString(1, test.getStudentNum());
 		st.setString(2, test.getSubject_cd());
 		st.setInt(3, test.getTimes());
 		st.setInt(4, test.getPoint());
 		st.setString(5, test.getClassNum());
-		st.setBoolean(6, test.getIs_pass());
-		st.setInt(7, test.getEntYear());
+		st.setInt(6, test.getEntYear());
 		st.setString(7, test.getName());
 
 		int line= st.executeUpdate();
@@ -232,5 +231,31 @@ public List<Test> search1(Test test ) throws Exception {
 		con.close();
 
 		return line;
+	}
+
+	public Test search3(String student_no, String subject_cd,Integer times) throws Exception {
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"select * from test "
+				+ "where student_no = ? and subject_cd = ? and no = ?");
+
+		st.setString(1, student_no);
+		st.setString(2, subject_cd);
+		st.setInt(3, times);
+
+		ResultSet rs=st.executeQuery();
+
+		Test test_check = new Test();
+		while (rs.next()) {
+			test_check.setSubject_cd(rs.getString("subject_cd"));
+
+		}
+
+		st.close();
+		con.close();
+
+		return test_check;
+
 	}
 }

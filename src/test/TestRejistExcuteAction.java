@@ -53,8 +53,12 @@ public class TestRejistExcuteAction extends HttpServlet {
 				p.setTimes(times);
 
 
+				TestDAO dao5=new TestDAO();
+				Test test_check = dao5.search3(student_no[i], subject_cd, times);
+
+
 				//データがない(新規登録)の場合
-				if(subject_cd == null){
+				if(test_check.getSubject_cd() == null){
 					TestDAO dao1=new TestDAO();
 					int line1 =dao1.insert(p);
 
@@ -71,6 +75,7 @@ public class TestRejistExcuteAction extends HttpServlet {
 
 				//既にデータがある(更新)の場合
 				else{
+
 					//赤点の場合
 					if (point_int[i] < judge){
 					TestDAO dao=new TestDAO();

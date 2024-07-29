@@ -11,7 +11,6 @@
     <c:import url="/common/sidemenu.jsp"></c:import>
 
     <div class="function">
-
         <section class="mo-4">
 			<h2 class="h3 mb-3 fw-norma bg-light bg-opacisty-10 menu-height px-5">メニュー</h2>
 			<div class="box student">
