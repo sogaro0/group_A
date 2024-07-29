@@ -15,7 +15,7 @@ import dao.TestDAO;
 
 
 @WebServlet(urlPatterns={"/test/test_judge"})
-public class Testjudge extends HttpServlet {
+public class TestJudge extends HttpServlet {
 	public void doGet (
 			HttpServletRequest request, HttpServletResponse response
 			) throws ServletException, IOException {
