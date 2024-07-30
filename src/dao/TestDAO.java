@@ -43,6 +43,7 @@ public class TestDAO extends DAO {
 	//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
 	public List<Test> search(Student test, Test test1) throws Exception {
 		List<Test> list=new ArrayList<>();
+		System.out.println("searchメソッドが呼び出されました");
 
 		Connection con=getConnection();
 
@@ -73,7 +74,13 @@ public class TestDAO extends DAO {
 				p.setClassNum(rs.getString("class_num"));
 				p.setStudentNum(rs.getString("student.no"));
 				p.setName(rs.getString("student.name"));
-				p.setPoint(rs.getInt("point"));
+				//	もし得点の値がnullなら、代わりに-1をセットする
+				if (rs.getObject("point") == null) {
+					p.setPoint(-1);
+		        }
+				else {
+					p.setPoint(rs.getInt("point"));
+				}
 				p.setIs_pass(rs.getBoolean("is_pass"));
 				list.add(p);
 			}

@@ -120,7 +120,16 @@
                                 	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
                                 	<td>${result.name}</td>
                                 	<input type="hidden" class="tests" name="name" value=${result.name}>
-                                	<td><input type="number" min="0" max="100" class="tests" name="point" value=${result.point}></td>
+
+                                	<c:choose>
+                                      <c:when test="${result.point==-1}">
+                                        <td><input type="number" min="0" max="100" class="tests" name="point" value=null></td>
+                                      </c:when>
+                                      <c:otherwise>
+                                       <td><input type="number" min="0" max="100" class="tests" name="point" value=${result.point}></td>
+                                      </c:otherwise>
+                                    </c:choose>
+
                                 	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
                                 	<input type="hidden" class="tests" name="times" value=${times}>
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
