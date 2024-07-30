@@ -34,10 +34,18 @@ public class TestRegistExecuteAction extends Action {
 			    HttpSession session = request.getSession();
 			    Integer judge = (Integer) session.getAttribute("judge");
 
+
 			    //得点のリストをintに変換
 			    Integer[] point_int = new Integer[point.length];
+			    System.out.println("checkpoint");
 			    for (int i = 0; i < point.length; i++) {
-			    point_int[i] = Integer.parseInt(point[i]);
+			    	if (point[i].isEmpty()){
+			    		point_int[i] = -1;
+			    	}
+			    	else {
+					    point_int[i] = Integer.parseInt(point[i]);
+			    	}
+			    	System.out.println(point_int[i]);
 			    }
 
 			    for(int i = 0; i < point_int.length; i++){

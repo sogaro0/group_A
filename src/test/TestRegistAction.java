@@ -93,7 +93,6 @@ public class TestRegistAction extends Action {
 						TestDAO dao4=new TestDAO();
 						List<Test> list4=dao4.search(p, p1);
 						for(int i = 0; i < list4.size(); i++){
-							System.out.println(list4.get(i).getPoint());
 							if (list4.get(i).getPoint() == -1){
 								System.out.println("これはnull値です");
 							}

@@ -43,7 +43,6 @@ public class TestDAO extends DAO {
 	//TestRegistAction.javaから取り寄せたデータでh2コンソールを検索
 	public List<Test> search(Student test, Test test1) throws Exception {
 		List<Test> list=new ArrayList<>();
-		System.out.println("searchメソッドが呼び出されました");
 
 		Connection con=getConnection();
 
