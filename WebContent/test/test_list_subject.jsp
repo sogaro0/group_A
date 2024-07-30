@@ -104,7 +104,7 @@
                     <td>${test.name}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${empty test.point || test.point == null}">
+                            <c:when test="${test.point == -1}">
                                 －
                             </c:when>
                             <c:otherwise>
@@ -127,6 +127,9 @@
                             <c:when test="${empty test.point2 || test.point2 == null}">
                                 －
                             </c:when>
+                            <c:when test="${test.point2 == -1}">
+                                －
+                            </c:when>
                             <c:otherwise>
                                 ${test.point2}
                             </c:otherwise>
@@ -137,6 +140,12 @@
 
                             <c:when test="${test.point2 >= judge}">
                                 〇
+                            </c:when>
+                            <c:when test="${test.point2 == -1}">
+                                －
+                            </c:when>
+                            <c:when test="${empty test.point2 || test.point2 == null}">
+                                －
                             </c:when>
                             <c:otherwise>
                                 ×

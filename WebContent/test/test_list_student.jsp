@@ -103,12 +103,22 @@
                                <td>${test.subject}</td>
                                <td>${test.subject_cd}</td>
                                <td>${test.no}</td>
-                               <td>${test.point}</td>
-
-                               <td class="text-center">
+                               <td>
+                               <c:choose>
+                            	<c:when test="${test.point == -1}">
+                                －
+                            	</c:when>
+                            	<c:otherwise>
+                                ${test.point}
+                            	</c:otherwise>
+                        		</c:choose>
+                        		<td class="text-center">
                                     <c:choose>
                                       <c:when test="${test.is_pass==true}">
                                         〇
+                                      </c:when>
+                                      <c:when test="${test.point == -1}">
+                                        －
                                       </c:when>
                                       <c:otherwise>
                                         ×

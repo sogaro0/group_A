@@ -68,7 +68,7 @@ public class TestRegistExecuteAction extends Action {
 					int line1 =dao1.insert(p);
 
 						//赤点の場合
-						if (point_int[i] < judge){
+						if (point_int[i] < judge && point_int[i] != -1){
 							TestDAO dao=new TestDAO();
 							int line2 =dao.update1(p);}
 
@@ -76,23 +76,36 @@ public class TestRegistExecuteAction extends Action {
 						else if(point_int[i] >= judge){
 							TestDAO dao=new TestDAO();
 							int line2 =dao.update2(p);}
+
+						//	値が未入力の場合
+						else{
+							TestDAO dao=new TestDAO();
+							int line2 =dao.update3(p);
+						}
 				}
 
 				//既にデータがある(更新)の場合
 				else{
 
 					//赤点の場合
-					if (point_int[i] < judge){
-					TestDAO dao=new TestDAO();
-					int line =dao.update1(p);}
+					if (point_int[i] < judge && point_int[i] != -1) {
+						TestDAO dao=new TestDAO();
+						int line =dao.update1(p);
+					}
 
 					//黒点の場合
-					else if(point_int[i] >= judge){
+					else if(point_int[i] >= judge) {
 						TestDAO dao=new TestDAO();
-						int line =dao.update2(p);}
+						int line =dao.update2(p);
+						}
+
+					//	値が未入力の場合
+					else {
+						TestDAO dao=new TestDAO();
+						int line =dao.update3(p);
+						}
 					}
 				}
-
 			} catch (Exception e) {
 				e.printStackTrace(out);
 		}

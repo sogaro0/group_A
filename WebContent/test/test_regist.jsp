@@ -135,12 +135,15 @@
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
                                 	<td class="text-center">
                                     <c:choose>
-                                      <c:when test="${result.is_pass==true}">
-                                        〇
-                                      </c:when>
-                                      <c:otherwise>
-                                        ×
-                                      </c:otherwise>
+                                    <c:when test="${result.is_pass==true}">
+                                    〇
+                                    </c:when>
+                                    <c:when test="${result.point==-1}">
+                                    -
+                                    </c:when>
+                                    <c:otherwise>
+                                      ×
+                                    </c:otherwise>
                                     </c:choose>
                                 </td>
                                 </tr>

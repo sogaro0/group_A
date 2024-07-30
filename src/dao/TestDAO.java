@@ -149,6 +149,25 @@ public int update2(Test test) throws Exception {
 	return line;
 		}
 
+//成績登録のDAO3(点数が未入力の場合)
+public int update3(Test test) throws Exception {
+	System.out.println("点数が未入力の場合ここに飛ぶ");
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			 "update test set point = ?, is_pass = null "
+			+ "where student_no = ?  and subject_cd = ? and no = ?");
+
+	st.setInt(1, test.getPoint());
+	st.setString(2, test.getStudentNum());
+	st.setString(3, test.getSubject_cd());
+	st.setInt(4, test.getTimes());
+	int line= st.executeUpdate();
+
+	st.close();
+	con.close();
+	return line;
+		}
+
 public List<Test> search1(Test test ) throws Exception {
 	List<Test> list3=new ArrayList<>();
 
