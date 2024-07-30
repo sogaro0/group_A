@@ -33,7 +33,7 @@ public class TestListSubjectExecuteAction extends Action {
 				//	セッションを取得
 				HttpSession session=request.getSession();
 				//	基準点を取得
-				Integer judge = (int) session.getAttribute("judge");
+				Integer judge = (Integer) session.getAttribute("judge");
 				//	セッションで基準点が設定されていなかった場合、基準点は60とする
 				if (judge == null){
 					judge = 60;
