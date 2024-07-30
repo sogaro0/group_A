@@ -111,10 +111,12 @@ public int update1(Test test) throws Exception {
 	Connection con=getConnection();
 	PreparedStatement st=con.prepareStatement(
 			 "update test set point = ?, is_pass = false "
-			+ "where student_no = ?");
+			+ "where student_no = ? and subject_cd = ? and no = ?");
 
 	st.setInt(1, test.getPoint());
 	st.setString(2, test.getStudentNum());
+	st.setString(3, test.getSubject_cd());
+	st.setInt(4, test.getTimes());
 	int line= st.executeUpdate();
 
 	st.close();
@@ -128,10 +130,12 @@ public int update2(Test test) throws Exception {
 	Connection con=getConnection();
 	PreparedStatement st=con.prepareStatement(
 			 "update test set point = ?, is_pass = true "
-			+ "where student_no = ?");
+			+ "where student_no = ?  and subject_cd = ? and no = ?");
 
 	st.setInt(1, test.getPoint());
 	st.setString(2, test.getStudentNum());
+	st.setString(3, test.getSubject_cd());
+	st.setInt(4, test.getTimes());
 	int line= st.executeUpdate();
 
 	st.close();
