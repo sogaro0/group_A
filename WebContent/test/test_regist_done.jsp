@@ -25,8 +25,8 @@
 
 		<form class="mx-3" action="../test/test_list_action" method="get">
     	<button type="submit" class="TestListAction">成績参照</button>
-   		</form><br>
-   		<a href="../test/test_regist_action">戻る</a>
+   		</form>
+   		<button class="mx-3"  type="button" onclick="history.back()">戻る</button>
 
         </section>
         </div>
