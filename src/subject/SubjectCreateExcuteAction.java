@@ -29,13 +29,13 @@ public class SubjectCreateExcuteAction extends Action {
 				int count = cd.length();
 
 				if (count > 3){
-					message = "科目コードが2文字以上です";
+					message = "科目コードが4文字以上です";
 
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
 					.forward(request,response);
 				}else if(count < 3){
-					message = "科目コードが4文字以下です";
+					message = "科目コードが2文字以下です";
 
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
