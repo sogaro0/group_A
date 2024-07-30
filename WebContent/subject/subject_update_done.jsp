@@ -21,7 +21,7 @@
 			<label class="btn-position">変更が完了しました。</label>
 
 		<form class="mx-3" action="../subject/SubjectList.action" method="get">
-    	<button type="submit" class="SubjectCreate.action">科目一覧</button>
+    	<button type="submit" class="SubjectCreate.action">戻る</button>
    		</form>
 
         </section>
