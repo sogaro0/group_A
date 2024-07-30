@@ -120,7 +120,7 @@
                                 	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
                                 	<td>${result.name}</td>
                                 	<input type="hidden" class="tests" name="name" value=${result.name}>
-                                	<td><input type="text" class="tests" name="point" value=${result.point}></td>
+                                	<td><input type="number" min="0" max="100" class="tests" name="point" value=${result.point}></td>
                                 	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
                                 	<input type="hidden" class="tests" name="times" value=${times}>
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
