@@ -18,8 +18,8 @@ public class SubjectCreateExcuteAction extends Action {
 			) throws ServletException, IOException {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out=response.getWriter();
-			try{
 
+			try{
 				String cd = request.getParameter("cd");
 				String name = request.getParameter("name");
 
@@ -27,29 +27,41 @@ public class SubjectCreateExcuteAction extends Action {
 				String message="";
 //				科目コードの文字数を調べる
 				int count = cd.length();
-
+				System.out.println("konnnitiha6");
 				if (count > 3){
 					message = "科目コードが4文字以上です";
-
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
 					.forward(request,response);
-				}else if(count < 3){
+				}
+				else if(count < 3){
 					message = "科目コードが2文字以下です";
-
 					request.setAttribute("message", message);
 					request.getRequestDispatcher("subject_create.jsp")
 					.forward(request,response);
-				}else{
+				}
+				else {
+				System.out.println("konnnitiha7");
+
+				// 科目コードに重複があるか調べる
+				SubjectDAO dao=new SubjectDAO();
+				String cnt=dao.validate(cd);
+				// 重複していた場合、エラーメッセージを格納
+
+				if (cnt.equals("1")){
+					message = "科目コードが重複しています";
+					request.setAttribute("message", message);
+					request.getRequestDispatcher("subject_create.jsp")
+					.forward(request,response);
+				}
+
 					Subject p = new Subject();
 					p.setCd(cd);
 					p.setName(name);
-
-					SubjectDAO dao=new SubjectDAO();
 					int line =dao.insert(p);
-
 					request.setAttribute("message", message);
-					}
+				}
+
 
 			} catch (Exception e) {
 				e.printStackTrace(out);

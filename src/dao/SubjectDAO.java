@@ -130,4 +130,21 @@ public String search_name(String subject) throws Exception {
 	return subject_name;
 }
 
+public String validate(String cd) throws Exception {
+	// ここから
+	Connection con=getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+	"select count(*) as no from subject where cd = ?");
+	st.setString(1, cd);
+
+	ResultSet rs=st.executeQuery();
+	rs.next();
+	rs.getString("no");
+	String cnt = rs.getString("no");
+
+	return cnt;
+	// ここまで
+}
+
 }
