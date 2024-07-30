@@ -79,9 +79,11 @@ public class StudentSearch extends HttpServlet {
 
 				//入学年度:なし クラス番号:指定(分類番号:3)
 				else if(ent_year == 0){
-					StudentSearchDAO dao=new StudentSearchDAO();
-					List<Student> list=dao.search3(p);
-					request.setAttribute("students", list);
+					message = "クラスを指定する場合は入学年度も指定してください";
+
+					request.setAttribute("message", message);
+					request.getRequestDispatcher("student_list.jsp")
+					.forward(request,response);
 				}
 
 				//入学年度:指定 クラス番号:指定(分類番号:なし)
