@@ -35,7 +35,7 @@ public class TestRegistExecuteAction extends Action {
 			    Integer judge = (Integer) session.getAttribute("judge");
 
 			    //得点のリストをintに変換
-			    int[] point_int = new int[point.length];
+			    Integer[] point_int = new Integer[point.length];
 			    for (int i = 0; i < point.length; i++) {
 			    point_int[i] = Integer.parseInt(point[i]);
 			    }

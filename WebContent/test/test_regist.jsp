@@ -73,6 +73,14 @@
                     </div>
                     <div class="mt-2 text-warning">${errors.get("f1")}</div>
                 </div>
+                                            <!-- エラーメッセージの表示 -->
+            <c:if test="${not empty errorMessage}">
+                <div class=" col-12 ">
+                    ${errorMessage}
+                </div>
+            	</c:if>
+                </div>
+            </form>
             </form>
 
 				<!-- リスト表示 -->

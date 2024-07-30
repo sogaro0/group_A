@@ -73,6 +73,12 @@ public class TestRegistAction extends Action {
 						String subject = request.getParameter("f3");
 						Integer times = Integer.parseInt(request.getParameter("f4"));
 						Student p = new Student();
+
+			            if (ent_year == 0 || class_num.equals("0") || subject.equals("0") || times == 0) {
+
+			                request.setAttribute("errorMessage", "入学年度・クラス・科目・回数を選択してください");
+			                request.getRequestDispatcher("test_regist.jsp").forward(request, response);
+			            }
 						p.setClassNum(class_num);
 						p.setEntYear(ent_year);
 
