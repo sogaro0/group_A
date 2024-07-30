@@ -164,8 +164,19 @@ public List<Test> search1(Test test ) throws Exception {
 			p.setClassNum(rs.getString("class_num"));
 			p.setNo(rs.getInt("no"));
 			p.setName(rs.getString("name"));
-			p.setPoint(rs.getInt("point_1"));
-			p.setPoint2(rs.getInt("point_2"));
+			 // POINT_1のNULLチェック
+	        if (rs.getObject("POINT_1") != null) {
+	            p.setPoint(rs.getInt("POINT_1"));
+	        } else {
+	            p.setPoint(null); // または、nullを表す値を設定する
+	        }
+
+	        // POINT_2のNULLチェック
+	        if (rs.getObject("POINT_2") != null) {
+	            p.setPoint2(rs.getInt("POINT_2"));
+	        } else {
+	            p.setPoint2(null); // または、nullを表す値を設定する
+	        }
 
 
 			list3.add(p);
