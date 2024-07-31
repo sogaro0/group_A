@@ -27,17 +27,17 @@
                 <c:when test="${subject.size()>0}">
                     <table class="test-table table-hover mx-3">
                         <tr>
-                            <th class="test-boder test-table-wide">科目コード</th>
-                            <th class="test-boder test-table-wide">科目名</th>
-                            <th class="test-boder test-table-width"></th>
-                            <th class="test-boder test-table-width"></th>
+                            <th class="subject-boder test-table-wide">科目コード</th>
+                            <th class="subject-boder test-table-wide">科目名</th>
+                            <th class="subject-boder test-table-width"></th>
+                            <th class="subject-boder test-table-width"></th>
                         </tr>
                         <c:forEach var="subject" items="${subject}">
                             <tr>
-                                <td class="test-table-wide test-boder">${subject.cd}</td>
-                                <td class="test-table-wide test-boder">${subject.name}</td>
-                                <td class="test-table-width test-boder"><a href="SubjectUpdate.action?cd=${subject.cd}&name=${subject.name}">変更</a></td>
-                                <td class="test-table-width test-boder"><a href="subject_delete.jsp?cd=${subject.cd}">削除</a></td>
+                                <td class="subject-table-wide test-boder">${subject.cd}</td>
+                                <td class="subject-table-wide test-boder">${subject.name}</td>
+                                <td class="subject-table-width test-boder"><a href="SubjectUpdate.action?cd=${subject.cd}&name=${subject.name}">変更</a></td>
+                                <td class="subject-table-width test-boder"><a href="subject_delete.jsp?cd=${subject.cd}">削除</a></td>
                             </tr>
                         </c:forEach>
                     </table>

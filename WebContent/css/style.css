@@ -142,17 +142,32 @@ footer{
 	gap: 0px 20px;
 }
 
-.test-table-width {
+.test-table2 {
+	width: 85%;
+	gap: 0px 20px;
+}
+
+.subject-table-width {
 	width: 10%;
 }
 
-.test-table-wide {
+.subject-table-wide {
 	width: 30%;
 	height: 45px;
 }
 
 .student-table-wide {
 	width: 12%;
+	height: 45px;
+}
+
+.test-table-wide {
+	width: 15%;
+	height: 45px;
+}
+
+.test-table-wide2 {
+	width: 13%;
 	height: 45px;
 }
 

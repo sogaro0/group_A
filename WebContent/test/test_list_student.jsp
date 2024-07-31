@@ -88,22 +88,21 @@
 	                   </div>
 	                 </c:forEach>
 
-                    <table class="table table-hover">
+                    <table class="test-table table-hover mx-3">
                         <tr>
-                            <th>科目名</th>
-                            <th>科目コード</th>
-                            <th>回数</th>
-                            <th>点数</th>
-                            <th class="text-center">判定</th>
+                            <th class="test-table-wide test-boder">科目名</th>
+                            <th class="test-table-wide test-boder">科目コード</th>
+                            <th class="test-table-wide test-boder">回数</th>
+                            <th class="test-table-wide test-boder">点数</th>
+                            <th class="test-table-wide test-boder text-center">判定</th>
 
-                            <th></th>
                         </tr>
                         <c:forEach var="test" items="${test}">
                             <tr>
-                               <td>${test.subject}</td>
-                               <td>${test.subject_cd}</td>
-                               <td>${test.no}</td>
-                               <td>
+                               <td class="test-table-wide test-boder">${test.subject}</td>
+                               <td class="test-table-wide test-boder">${test.subject_cd}</td>
+                               <td class="test-table-wide test-boder">${test.no}</td>
+                               <td class="test-table-wide test-boder">
                                <c:choose>
                             	<c:when test="${test.point == -1}">
                                 －
@@ -112,7 +111,7 @@
                                 ${test.point}
                             	</c:otherwise>
                         		</c:choose>
-                        		<td class="text-center">
+                        		<td class="test-table-wide test-boder text-center">
                                     <c:choose>
                                       <c:when test="${test.is_pass==true}">
                                         〇

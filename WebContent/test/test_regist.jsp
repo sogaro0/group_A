@@ -100,40 +100,40 @@
 	                    <button class="btn btn-secondary" id="filter-button">基準点の変更</button>
 	            </form>
 				<form action="TestRegistExecute.action" method="get">
-                    <table class="table table-hover mx-3">
+                    <table class="test-table2 table-hover mx-3">
 
                         	<tr>
-                            	<th>入学年度</th>
-                            	<th>クラス</th>
-                            	<th>学生番号</th>
-                            	<th>氏名</th>
-                            	<th>点数</th>
-                            	<th class="text-center">判定</th>
+                            	<th class="test-table-wide test-boder">入学年度</th>
+                            	<th class="test-table-wide test-boder">クラス</th>
+                            	<th class="test-table-wide test-boder">学生番号</th>
+                            	<th class="test-table-wide test-boder">氏名</th>
+                            	<th class="test-table-wide test-boder">点数</th>
+                            	<th class="test-table-wide test-boder text-center">判定</th>
                         	</tr>
                         	<c:forEach var="result" items="${result}">
                             	<tr>
-                                	<td>${result.entYear}</td>
+                                	<td class="test-table-wide test-boder">${result.entYear}</td>
                                 	<input type="hidden" class="tests" name="ent_year" value=${ent_year}>
-                                	<td>${result.classNum}</td>
+                                	<td class="test-table-wide test-boder">${result.classNum}</td>
                                 	<input type="hidden" class="tests" name="class_num" value=${class_num}>
-                                	<td>${result.studentNum}</td>
+                                	<td class="test-table-wide test-boder">${result.studentNum}</td>
                                 	<input type="hidden" class="tests" name="studentNum" value=${result.studentNum}>
-                                	<td>${result.name}</td>
+                                	<td class="test-table-wide test-boder">${result.name}</td>
                                 	<input type="hidden" class="tests" name="name" value=${result.name}>
 
                                 	<c:choose>
                                       <c:when test="${result.point==-1}">
-                                        <td><input type="number" min="0" max="100" class="tests" name="point" value=null></td>
+                                        <td class="test-table-wide test-boder"><input type="number" min="0" max="100" class="tests" name="point" value=null></td>
                                       </c:when>
                                       <c:otherwise>
-                                       <td><input type="number" min="0" max="100" class="tests" name="point" value=${result.point}></td>
+                                       <td class="test-table-wide test-boder"><input type="number" min="0" max="100" class="tests" name="point" value=${result.point}></td>
                                       </c:otherwise>
                                     </c:choose>
 
                                 	<input type="hidden" class="tests" name="subject_cd" value=${subject_cd}>
                                 	<input type="hidden" class="tests" name="times" value=${times}>
 									<input type="hidden" class="tests" name="is_pass" value=${result.is_pass}>
-                                	<td class="text-center">
+                                	<td class="test-table-wide test-boder text-center">
                                     <c:choose>
                                     <c:when test="${result.is_pass==true}">
                                     〇

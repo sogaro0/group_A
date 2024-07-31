@@ -84,25 +84,25 @@
 			<!-- リスト表示 -->
 <c:choose>
     <c:when test="${test.size() > 0}">
-        <div>検索結果: ${test.size()}件</div>
-        <table class="table table-hover">
+        <div class="mx-3">検索結果: ${test.size()}件</div>
+        <table class="test-table table-hover mx-3 ">
             <tr>
-                <th>入学年度</th>
-                <th>クラス</th>
-                <th>学生番号</th>
-                <th>氏名</th>
-                <th>1回</th>
-                <th>判定1</th>
-                <th>2回</th>
-                <th>判定2</th>
+                <th class="test-table-wide2 test-boder">入学年度</th>
+                <th class="test-table-wide2 test-boder">クラス</th>
+                <th class="test-table-wide2 test-boder">学生番号</th>
+                <th class="test-table-wide2 test-boder">氏名</th>
+                <th class="test-table-wide2 test-boder">1回</th>
+                <th class="test-table-wide2 test-boder">判定1</th>
+                <th class="test-table-wide2 test-boder">2回</th>
+                <th class="test-table-wide2 test-boder">判定2</th>
             </tr>
             <c:forEach var="test" items="${test}">
                 <tr>
-                    <td>${test.entYear}</td>
-                    <td>${test.classNum}</td>
-                    <td>${test.no}</td>
-                    <td>${test.name}</td>
-                    <td>
+                    <td class="test-table-wide2 test-boder">${test.entYear}</td>
+                    <td class="test-table-wide2 test-boder">${test.classNum}</td>
+                    <td class="test-table-wide2 test-boder">${test.no}</td>
+                    <td class="test-table-wide2 test-boder">${test.name}</td>
+                    <td class="test-table-wide2 test-boder">
                         <c:choose>
                             <c:when test="${test.point == -1}">
                                 －
@@ -112,17 +112,17 @@
                             </c:otherwise>
                         </c:choose>
                     </td>
-                    <td>
+                    <td class="test-table-wide2 test-boder">
                         <c:choose>
                             <c:when test="${test.point >= judge}">
-                                〇
+                                　〇
                             </c:when>
                             <c:otherwise>
-                                ×
+                                　×
                             </c:otherwise>
                         </c:choose>
                     </td>
-                    <td>
+                    <td class="test-table-wide2 test-boder">
                         <c:choose>
                             <c:when test="${empty test.point2 || test.point2 == null}">
                                 －
@@ -135,20 +135,20 @@
                             </c:otherwise>
                         </c:choose>
                     </td>
-                    <td>
+                    <td class="test-table-wide2 test-boder">
                         <c:choose>
 
                             <c:when test="${test.point2 >= judge}">
-                                〇
+                                　〇
                             </c:when>
                             <c:when test="${test.point2 == -1}">
-                                －
+                                　－
                             </c:when>
                             <c:when test="${empty test.point2 || test.point2 == null}">
-                                －
+                                　－
                             </c:when>
                             <c:otherwise>
-                                ×
+                                　×
                             </c:otherwise>
                         </c:choose>
                     </td>
