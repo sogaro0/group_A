@@ -20,8 +20,8 @@
     <c:import url="/common/sidemenu.jsp">
     </c:import>
         <section class="mo-4">
-            <h2 class="h3 mb-3 fw-norma grade bg-opacity-10 py-2 px-4">学生情報変更</h2>
-			<label class="btn-position">登録が完了しました。</label>
+            <h2 class="h3 mb-3 fw-norma grade bg-opacity-10 py-2 px-4">成績情報情報変更</h2>
+			<label class="btn-position">登録・変更が完了しました。</label>
 
 		<form class="mx-3" action="../test/TestList.action" method="get">
     	<button type="submit" class="TestListAction">成績参照</button>
